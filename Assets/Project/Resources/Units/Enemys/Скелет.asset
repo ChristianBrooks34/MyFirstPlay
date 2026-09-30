@@ -1,0 +1,63 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c08b7ab7b3b197546b8132a21f49523a, type: 3}
+  m_Name: "\u0421\u043A\u0435\u043B\u0435\u0442"
+  m_EditorClassIdentifier: 
+  UnitPrefab: {fileID: 1735192245115525113, guid: fbabb5f8621d07d44b979a05625e5054,
+    type: 3}
+  HealthBarPrefab: {fileID: 1110254071292701984, guid: 11110fd82d866ef46a2e703ae5394a09,
+    type: 3}
+  _enemyData:
+    Name: "\u0421\u043A\u0435\u043B\u0435\u0442"
+    Information: 
+    Exp: 7
+    StartLevel: 0
+    MaxLevel: 0
+    CurrentLevel: 0
+    Health:
+      NumberDevelop: 0
+      Name: Health
+      CurrentValue: 25
+      StartValue: 25
+      IncrementValue: 0
+      Price: 0
+      StartPrice: 0
+      PriceMultiplayer: 0
+    Damage:
+      NumberDevelop: 0
+      Name: Damage
+      CurrentValue: 7
+      StartValue: 7
+      IncrementValue: 0
+      Price: 0
+      StartPrice: 0
+      PriceMultiplayer: 0
+    SpeedMovement:
+      NumberDevelop: 0
+      Name: Speed
+      CurrentValue: 2
+      StartValue: 2
+      IncrementValue: 0
+      Price: 0
+      StartPrice: 0
+      PriceMultiplayer: 0
+    MaxHealth: 25
+    DeadCooldown: 1
+    ForseAttack: 200
+    KnockbackTime: 0.2
+    KnockbackDistance: 0.7
+    SizeType: 1
+    DropItems:
+    - DropRage: 100
+      MaxDropCount: 20
+      MinDropCount: 10
+      DropProfile: {fileID: 11400000, guid: d4b447c08c59a9a44b8e197ec3ea05a8, type: 2}

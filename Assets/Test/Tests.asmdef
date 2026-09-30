@@ -1,0 +1,33 @@
+{
+    "name": "Tests",
+    "rootNamespace": "",
+    "references": [
+        "GUID:dcc60ca2b8a4c6c45aaf5906b6547f91",
+        "GUID:d0acddb179989574c8355991596bd3e6",
+        "GUID:0d8beb7f090555447a6cf5ce9e54dbb4"
+    ],
+    "includePlatforms": [
+        "Editor"
+    ],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": true,
+    "precompiledReferences": [
+        "FluentAssertions.dll",
+        "nunit.framework.dll",
+        "NSubstitute.dll",
+        "Zenject.ReflectionBaking.Mono.Cecil.dll",
+        "Zenject.ReflectionBaking.Mono.Cecil.Mdb.dll",
+        "Zenject.ReflectionBaking.Mono.Cecil.Pdb.dll",
+        "Zenject.ReflectionBaking.Mono.Cecil.Rocks.dll",
+        "Zenject-usage.dll",
+        "Moq.dll"
+    ],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false,
+    "optionalUnityReferences": [
+        "TestAssemblies"
+    ]
+}

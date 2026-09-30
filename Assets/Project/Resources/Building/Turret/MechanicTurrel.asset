@@ -1,0 +1,107 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b9d46bf101892ca489c86410887170de, type: 3}
+  m_Name: MechanicTurrel
+  m_EditorClassIdentifier: 
+  _buildingData:
+    Name: 
+    Information: 
+    Exp: 0
+    StartLevel: 0
+    MaxLevel: 0
+    CurrentLevel: 0
+    Health:
+      NumberDevelop: 0
+      Name: 
+      CurrentValue: 10
+      StartValue: 10
+      IncrementValue: 0
+      Price: 0
+      StartPrice: 0
+      PriceMultiplayer: 0
+    Damage:
+      NumberDevelop: 0
+      Name: 
+      CurrentValue: 1
+      StartValue: 1
+      IncrementValue: 0
+      Price: 0
+      StartPrice: 0
+      PriceMultiplayer: 0
+    SpeedMovement:
+      NumberDevelop: 0
+      Name: 
+      CurrentValue: 0
+      StartValue: 0
+      IncrementValue: 0
+      Price: 0
+      StartPrice: 0
+      PriceMultiplayer: 0
+    MaxHealth: 10
+    DeadCooldown: 0
+    ForseAttack: 0
+    KnockbackTime: 0
+    KnockbackDistance: 0
+    SizeType: 1
+    DropItems: []
+    Size: {x: 1, y: 1}
+  BuildingPrefab: {fileID: 3354781991425638030, guid: e1dcf02557b7e144980980959619bff5,
+    type: 3}
+  _turretBuildingData:
+    Name: 
+    Information: 
+    Exp: 0
+    StartLevel: 0
+    MaxLevel: 0
+    CurrentLevel: 0
+    Health:
+      NumberDevelop: 0
+      Name: Health
+      CurrentValue: 10
+      StartValue: 10
+      IncrementValue: 0
+      Price: 0
+      StartPrice: 0
+      PriceMultiplayer: 0
+    Damage:
+      NumberDevelop: 0
+      Name: Damahe
+      CurrentValue: 0
+      StartValue: 2
+      IncrementValue: 0
+      Price: 0
+      StartPrice: 0
+      PriceMultiplayer: 0
+    SpeedMovement:
+      NumberDevelop: 0
+      Name: Speed
+      CurrentValue: 0
+      StartValue: 0
+      IncrementValue: 0
+      Price: 0
+      StartPrice: 0
+      PriceMultiplayer: 0
+    MaxHealth: 10
+    DeadCooldown: 0
+    ForseAttack: 0
+    KnockbackTime: 0
+    KnockbackDistance: 0
+    SizeType: 1
+    DropItems: []
+    Size: {x: 1, y: 1}
+    SpeedRotate: 3
+    RadiusAttack: 5
+    AttackCooldownInSeconds: 2
+  TurretBuildingPrefab: {fileID: 3354781991425638030, guid: e1dcf02557b7e144980980959619bff5,
+    type: 3}
+  TurretHealthBarPrefab: {fileID: 1110254071292701984, guid: 11110fd82d866ef46a2e703ae5394a09,
+    type: 3}

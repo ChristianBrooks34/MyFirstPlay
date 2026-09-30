@@ -1,0 +1,35 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d25191c3ca6ef0c409124b864ad98cad, type: 3}
+  m_Name: IceBall
+  m_EditorClassIdentifier: 
+  _projectileData:
+    Name: 
+    Information: 
+    Exp: 0
+    StartLevel: 0
+    MaxLevel: 0
+    Prefab: {fileID: 0}
+    MaxDamage: 5
+    MinDamage: 1
+    Speed: 7
+    SourceUnit: {fileID: 0}
+    VecrticalMovementCurve:
+      serializedVersion: 2
+      m_Curve: []
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    ExplosiveRange: 1
+    TimeLiveInSeconds: 3
+    MaxForseExplosive: 5
+    MinForseExplosive: 1

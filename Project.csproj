@@ -1,0 +1,1204 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <!-- Generated file, do not modify, your changes will be overwritten (use AssetPostprocessor.OnGeneratedCSProject) -->
+  <PropertyGroup>
+    <LangVersion>9.0</LangVersion>
+  </PropertyGroup>
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>10.0.20506</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <RootNamespace></RootNamespace>
+    <ProjectGuid>{56D32CE8-B295-E7E0-B04A-DA74D081AB8F}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <AssemblyName>Project</AssemblyName>
+    <TargetFrameworkVersion>v4.7.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <BaseDirectory>.</BaseDirectory>
+  </PropertyGroup>
+  <PropertyGroup>
+    <NoWarn>0169;USG0001</NoWarn>
+    <DefineConstants>UNITY_2022_3_62;UNITY_2022_3;UNITY_2022;UNITY_5_3_OR_NEWER;UNITY_5_4_OR_NEWER;UNITY_5_5_OR_NEWER;UNITY_5_6_OR_NEWER;UNITY_2017_1_OR_NEWER;UNITY_2017_2_OR_NEWER;UNITY_2017_3_OR_NEWER;UNITY_2017_4_OR_NEWER;UNITY_2018_1_OR_NEWER;UNITY_2018_2_OR_NEWER;UNITY_2018_3_OR_NEWER;UNITY_2018_4_OR_NEWER;UNITY_2019_1_OR_NEWER;UNITY_2019_2_OR_NEWER;UNITY_2019_3_OR_NEWER;UNITY_2019_4_OR_NEWER;UNITY_2020_1_OR_NEWER;UNITY_2020_2_OR_NEWER;UNITY_2020_3_OR_NEWER;UNITY_2021_1_OR_NEWER;UNITY_2021_2_OR_NEWER;UNITY_2021_3_OR_NEWER;UNITY_2022_1_OR_NEWER;UNITY_2022_2_OR_NEWER;UNITY_2022_3_OR_NEWER;PLATFORM_ARCH_64;UNITY_64;UNITY_INCLUDE_TESTS;ENABLE_AR;ENABLE_AUDIO;ENABLE_CACHING;ENABLE_CLOTH;ENABLE_EVENT_QUEUE;ENABLE_MICROPHONE;ENABLE_MULTIPLE_DISPLAYS;ENABLE_PHYSICS;ENABLE_TEXTURE_STREAMING;ENABLE_VIRTUALTEXTURING;ENABLE_LZMA;ENABLE_UNITYEVENTS;ENABLE_VR;ENABLE_WEBCAM;ENABLE_UNITYWEBREQUEST;ENABLE_WWW;ENABLE_CLOUD_SERVICES;ENABLE_CLOUD_SERVICES_ADS;ENABLE_CLOUD_SERVICES_USE_WEBREQUEST;ENABLE_CLOUD_SERVICES_CRASH_REPORTING;ENABLE_CLOUD_SERVICES_PURCHASING;ENABLE_CLOUD_SERVICES_ANALYTICS;ENABLE_CLOUD_SERVICES_BUILD;ENABLE_EDITOR_GAME_SERVICES;ENABLE_UNITY_GAME_SERVICES_ANALYTICS_SUPPORT;ENABLE_CLOUD_LICENSE;ENABLE_EDITOR_HUB_LICENSE;ENABLE_WEBSOCKET_CLIENT;ENABLE_GENERATE_NATIVE_PLUGINS_FOR_ASSEMBLIES_API;ENABLE_DIRECTOR_AUDIO;ENABLE_DIRECTOR_TEXTURE;ENABLE_MANAGED_JOBS;ENABLE_MANAGED_TRANSFORM_JOBS;ENABLE_MANAGED_ANIMATION_JOBS;ENABLE_MANAGED_AUDIO_JOBS;ENABLE_MANAGED_UNITYTLS;INCLUDE_DYNAMIC_GI;ENABLE_SCRIPTING_GC_WBARRIERS;PLATFORM_SUPPORTS_MONO;RENDER_SOFTWARE_CURSOR;ENABLE_VIDEO;ENABLE_ACCELERATOR_CLIENT_DEBUGGING;ENABLE_NAVIGATION_PACKAGE_DEBUG_VISUALIZATION;ENABLE_NAVIGATION_HEIGHTMESH_RUNTIME_SUPPORT;ENABLE_NAVIGATION_UI_REQUIRES_PACKAGE;PLATFORM_STANDALONE;TEXTCORE_1_0_OR_NEWER;PLATFORM_STANDALONE_WIN;UNITY_STANDALONE_WIN;UNITY_STANDALONE;ENABLE_RUNTIME_GI;ENABLE_MOVIES;ENABLE_NETWORK;ENABLE_NVIDIA;ENABLE_CRUNCH_TEXTURE_COMPRESSION;ENABLE_OUT_OF_PROCESS_CRASH_HANDLER;ENABLE_CLUSTER_SYNC;ENABLE_CLUSTERINPUT;PLATFORM_UPDATES_TIME_OUTSIDE_OF_PLAYER_LOOP;GFXDEVICE_WAITFOREVENT_MESSAGEPUMP;PLATFORM_INITIALIZES_MEMORY_MANAGER_EXPLICITLY;ENABLE_MONO;NET_STANDARD_2_0;NET_STANDARD;NET_STANDARD_2_1;NETSTANDARD;NETSTANDARD2_1;ENABLE_PROFILER;DEBUG;TRACE;UNITY_ASSERTIONS;UNITY_EDITOR;UNITY_EDITOR_64;UNITY_EDITOR_WIN;ENABLE_UNITY_COLLECTIONS_CHECKS;ENABLE_BURST_AOT;UNITY_TEAM_LICENSE;ENABLE_CUSTOM_RENDER_TEXTURE;ENABLE_DIRECTOR;ENABLE_LOCALIZATION;ENABLE_SPRITES;ENABLE_TERRAIN;ENABLE_TILEMAP;ENABLE_TIMELINE;ENABLE_INPUT_SYSTEM;ENABLE_LEGACY_INPUT_MANAGER;TEXTCORE_FONT_ENGINE_1_5_OR_NEWER;AMPLIFY_SHADER_EDITOR;CSHARP_7_OR_LATER;CSHARP_7_3_OR_NEWER</DefineConstants>
+    <AllowUnsafeBlocks>False</AllowUnsafeBlocks>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>Temp\bin\Debug\</OutputPath>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>Temp\bin\Release\</OutputPath>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <NoConfig>true</NoConfig>
+    <NoStdLib>true</NoStdLib>
+    <AddAdditionalExplicitAssemblyReferences>false</AddAdditionalExplicitAssemblyReferences>
+    <ImplicitlyExpandNETStandardFacades>false</ImplicitlyExpandNETStandardFacades>
+    <ImplicitlyExpandDesignTimeFacades>false</ImplicitlyExpandDesignTimeFacades>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ProjectTypeGuids>{E097FAD1-6243-4DAD-9C02-E9B9EFC3FFC1};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <UnityProjectGenerator>Package</UnityProjectGenerator>
+    <UnityProjectGeneratorVersion>2.0.28</UnityProjectGeneratorVersion>
+    <UnityProjectGeneratorStyle>Legacy</UnityProjectGeneratorStyle>
+    <UnityProjectType>Game:1</UnityProjectType>
+    <UnityBuildTarget>StandaloneWindows64:19</UnityBuildTarget>
+    <UnityVersion>2022.3.62f2</UnityVersion>
+  </PropertyGroup>
+  <ItemGroup>
+    <Analyzer Include="C:\Program Files\Microsoft Visual Studio\2022\Community\Common7\IDE\Extensions\Microsoft\Visual Studio Tools for Unity\Analyzers\Microsoft.Unity.Analyzers.dll" />
+    <Analyzer Include="D:\Unity\Hub\Editor\2022.3.62f2\Editor\Data\Tools\Unity.SourceGenerators\Unity.SourceGenerators.dll" />
+    <Analyzer Include="D:\Unity\Hub\Editor\2022.3.62f2\Editor\Data\Tools\Unity.SourceGenerators\Unity.Properties.SourceGenerator.dll" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Assets\Project\Scripts\UI\Wallet\DisplayWallet.cs" />
+    <Compile Include="Assets\Project\Scripts\Event\PlayerEventManager.cs" />
+    <Compile Include="Assets\Project\Scripts\Unit\Units\Enemy\Boss\BossAttackController.cs" />
+    <Compile Include="Assets\Project\Scripts\Attacks\Player\PlayerChargeAttack.cs" />
+    <Compile Include="Assets\Project\Scripts\StateMachine\BaseStateMashine.cs" />
+    <Compile Include="Assets\Project\Scripts\interfaces\IEffectManager.cs" />
+    <Compile Include="Assets\Project\Scripts\Event\TurretEventManager.cs" />
+    <Compile Include="Assets\Project\Scripts\Projectile\ProjectileProfile.cs" />
+    <Compile Include="Assets\Project\Scripts\Unit\BaseData.cs" />
+    <Compile Include="Assets\Project\Scripts\Unit\Units\Enemy\IBuildingEnemy.cs" />
+    <Compile Include="Assets\Project\Scripts\Factorys\BuildingSpawnFactory.cs" />
+    <Compile Include="Assets\Project\Scripts\Unit\Units\Turret\Turret.cs" />
+    <Compile Include="Assets\Project\Scripts\UI\AttackSlot\AttackSlot.cs" />
+    <Compile Include="Assets\Project\Scripts\UI\ResultLevelPanel\ResultLevelMenu.cs" />
+    <Compile Include="Assets\Project\Scripts\Attacks\RangedAttack\RangedAttack.cs" />
+    <Compile Include="Assets\Project\Scripts\UI\PlayerHub\SpawnerPlayerButton.cs" />
+    <Compile Include="Assets\Project\Scripts\Unit\Units\Enemy\Boss\BossProfile.cs" />
+    <Compile Include="Assets\Project\Scripts\System\EntityType.cs" />
+    <Compile Include="Assets\Project\Scripts\Camera\CameraFollow.cs" />
+    <Compile Include="Assets\Project\Scripts\System\Game\ApplicationFinisher.cs" />
+    <Compile Include="Assets\Project\Zenject\Level\TilemapInstaller.cs" />
+    <Compile Include="Assets\Project\Scripts\Attacks\Boss\RedirectingProjectileBossAttack.cs" />
+    <Compile Include="Assets\Project\Scripts\Projectile\RedirectingBullet.cs" />
+    <Compile Include="Assets\Project\Scripts\UI\Buttons\NextLevelButton.cs" />
+    <Compile Include="Assets\Project\Scripts\Objects Pool\DamageBloodSplashEffectPool.cs" />
+    <Compile Include="Assets\Project\Zenject\PlayerInstaller.cs" />
+    <Compile Include="Assets\Project\Scripts\Attacks\Player\PlayerStandartAttack.cs" />
+    <Compile Include="Assets\Project\FlipDirection.cs" />
+    <Compile Include="Assets\Project\Scripts\Unit\StateUnit.cs" />
+    <Compile Include="Assets\Project\Scripts\interfaces\IKnockbackable.cs" />
+    <Compile Include="Assets\Project\Scripts\Drop\VisualEffectManager.cs" />
+    <Compile Include="Assets\Project\Scripts\Event\BuildingEventManager.cs" />
+    <Compile Include="Assets\Project\Scripts\Unit\Units\Turret\Rotation.cs" />
+    <Compile Include="Assets\Project\Scripts\interfaces\ISelectable.cs" />
+    <Compile Include="Assets\Project\Scripts\interfaces\ISpawner.cs" />
+    <Compile Include="Assets\Project\Scripts\Drop\LootDrop\LootDroper.cs" />
+    <Compile Include="Assets\Project\Scripts\LevelsMenu\LevelsMenu.cs" />
+    <Compile Include="Assets\Project\Scripts\Event\EnemyEventManager.cs" />
+    <Compile Include="Assets\Project\Scripts\Unit\Units\Enemy\EnemyMoveController.cs" />
+    <Compile Include="Assets\Project\Scripts\Event\BossEventManager.cs" />
+    <Compile Include="Assets\Project\Scripts\UI\PlayerHub\PlayerStatsPanel.cs" />
+    <Compile Include="Assets\Project\Scripts\Weapon\WeaponProfile.cs" />
+    <Compile Include="Assets\Project\Scripts\Unit\Units\Enemy\Boss\BossPhase.cs" />
+    <Compile Include="Assets\Project\Scripts\UI\PlayerLevelBar\PlayerLevelBar.cs" />
+    <Compile Include="Assets\Project\Scripts\Wave\WaveEnemy.cs" />
+    <Compile Include="Assets\Project\Scripts\Container\ProjectileContainer.cs" />
+    <Compile Include="Assets\Project\Scripts\UI\PlayerHub\DisplayPlayerLevel.cs" />
+    <Compile Include="Assets\Project\Scripts\Unit\Units\Enemy\EnemyProfile.cs" />
+    <Compile Include="Assets\Project\Scripts\TriggerChecker.cs" />
+    <Compile Include="Assets\Project\Scripts\Container\EnemyMoveContainer.cs" />
+    <Compile Include="Assets\Project\Scripts\UI\Buttons\OpenPlayersPanelButton.cs" />
+    <Compile Include="Assets\Project\Scripts\Container\BuildingContainer.cs" />
+    <Compile Include="Assets\Project\Scripts\Event\GlobalEventManager.cs" />
+    <Compile Include="Assets\Project\Scripts\Unit\Units\Enemy\Enemy.cs" />
+    <Compile Include="Assets\Project\Scripts\Level\LevelProfile.cs" />
+    <Compile Include="Assets\Project\Scripts\UI\Buttons\ExitGameButton.cs" />
+    <Compile Include="Assets\Project\Zenject\AttackSlotInstaller.cs" />
+    <Compile Include="Assets\Project\Scripts\Drop\GoldMoney.cs" />
+    <Compile Include="Assets\Project\Scripts\System\PositionGenerator.cs" />
+    <Compile Include="Assets\Project\Zenject\Level\LevelEffectsInstaller.cs" />
+    <Compile Include="Assets\Project\Scripts\UI\PlayerHub\PlayerStateItem.cs" />
+    <Compile Include="Assets\Project\Scripts\interfaces\BaseMove.cs" />
+    <Compile Include="Assets\Project\Scripts\Unit\Units\Player\PlayerAnimationController.cs" />
+    <Compile Include="Assets\Project\Scripts\Unit\Units\Enemy\Boss\Boss.cs" />
+    <Compile Include="Assets\Project\Scripts\Event\LevelEventManager.cs" />
+    <Compile Include="Assets\Project\Scripts\Unit\Units\Turret\EnemyTurretProfile.cs" />
+    <Compile Include="Assets\Project\Scripts\Unit\UnitSizeSettings.cs" />
+    <Compile Include="Assets\Project\Scripts\UI\ValueBar\DisplayValueBar.cs" />
+    <Compile Include="Assets\Project\Zenject\IDiContainer.cs" />
+    <Compile Include="Assets\Project\Scripts\TileMap\TilemapUtils.cs" />
+    <Compile Include="Assets\Project\Scripts\Drop\DropProfile.cs" />
+    <Compile Include="Assets\Project\Scripts\UI\PlayerHub\PlayerHub.cs" />
+    <Compile Include="Assets\Project\Zenject\SwordChargeBarInstaller.cs" />
+    <Compile Include="Assets\Project\Scripts\StatusEffect\PlayerStatusEffectManager.cs" />
+    <Compile Include="Assets\Project\Scripts\System\AdaptiveSpawnZoneAnalyzer.cs" />
+    <Compile Include="Assets\Project\Scripts\Attacks\Player\BallController.cs" />
+    <Compile Include="Assets\Project\Scripts\Unit\UnitDataInitializer.cs" />
+    <Compile Include="Assets\Project\Scripts\Animation\PlayerAnimator.cs" />
+    <Compile Include="Assets\Project\Scripts\Projectile\ProjectileMovementController.cs" />
+    <Compile Include="Assets\Project\Scripts\Unit\Units\Enemy\EnemyEffectManager.cs" />
+    <Compile Include="Assets\Project\Scripts\Unit\Units\Player\PlayerMove.cs" />
+    <Compile Include="Assets\Project\Scripts\Objects Pool\DeadBloodSplashEffectPool.cs" />
+    <Compile Include="Assets\Project\Zenject\BuildingInstaller.cs" />
+    <Compile Include="Assets\Project\Scripts\Container\DropContainer.cs" />
+    <Compile Include="Assets\Project\Scripts\UI\PlayerHub\PlayerList.cs" />
+    <Compile Include="Assets\Project\Scripts\Attacks\Boss\CircleProjectileBossAttack.cs" />
+    <Compile Include="Assets\Project\Scripts\UI\PlayerHub\CurrentPlayerPanel.cs" />
+    <Compile Include="Assets\Project\Zenject\Level\SceneTransformInstaller.cs" />
+    <Compile Include="Assets\Project\Scripts\Projectile\LinearProjectile.cs" />
+    <Compile Include="Assets\Project\Scripts\Objects Pool\IObjectPool.cs" />
+    <Compile Include="Assets\Project\Scripts\Unit\Units\Enemy\EnemyMove.cs" />
+    <Compile Include="Assets\Project\Scripts\Unit\Units\Enemy\EnemyCounter.cs" />
+    <Compile Include="Assets\Project\Scripts\UI\PlayerHub\PlayerButton.cs" />
+    <Compile Include="Assets\Project\Scripts\Wave\WaveManager.cs" />
+    <Compile Include="Assets\Project\Scripts\Unit\UnitProfile.cs" />
+    <Compile Include="Assets\Project\Scripts\Unit\Units\Player\PlayerTriggerController.cs" />
+    <Compile Include="Assets\Project\Scripts\Building\Building.cs" />
+    <Compile Include="Assets\Project\Scripts\Attacks\Player\BallAttack.cs" />
+    <Compile Include="Assets\Project\Scripts\Container\Container.cs" />
+    <Compile Include="Assets\Project\Scripts\Explosion\Explosion.cs" />
+    <Compile Include="Assets\Project\Scripts\Attacks\Player\SpawnBuildingAttack.cs" />
+    <Compile Include="Assets\Project\Scripts\UI\PlayerLevelBar\DisplayPlayerLevelBar.cs" />
+    <Compile Include="Assets\Project\Scripts\Unit\Units\Player\Player.cs" />
+    <Compile Include="Assets\Project\Scripts\UI\PlayerHub\SpawnerDevelopButton.cs" />
+    <Compile Include="Assets\Project\Scripts\Building\BuildingSpawner.cs" />
+    <Compile Include="Assets\Project\Scripts\System\JsonSaveSystem\IObjectSaveSystem.cs" />
+    <Compile Include="Assets\Project\Scripts\Event\UnitEventManager.cs" />
+    <Compile Include="Assets\Project\Scripts\interfaces\IAnimation.cs" />
+    <Compile Include="Assets\Project\Scripts\Animation\WeaponUpDownAnimator.cs" />
+    <Compile Include="Assets\Project\Scripts\Container\EnemyContainer.cs" />
+    <Compile Include="Assets\Project\Scripts\Animation\WeaponUpDownAnimationController.cs" />
+    <Compile Include="Assets\Project\Zenject\TurretInstaller.cs" />
+    <Compile Include="Assets\Project\Scripts\UI\AttackSlot\SpawnerAttackSlot.cs" />
+    <Compile Include="Assets\Project\Scripts\Effects\BloodSplashDeadEffect.cs" />
+    <Compile Include="Assets\Project\Scripts\System\Game\GameLauncher.cs" />
+    <Compile Include="Assets\Project\Scripts\Unit\Units\Player\PlayerController.cs" />
+    <Compile Include="Assets\Project\Scripts\Unit\Units\Player\PlayerEffectManager.cs" />
+    <Compile Include="Assets\Project\Scripts\Objects Pool\EnemyPool.cs" />
+    <Compile Include="Assets\Project\Scripts\UI\PlayerHub\DevelopButton.cs" />
+    <Compile Include="Assets\Project\Scripts\Projectile\BaseProjectileMovement.cs" />
+    <Compile Include="Assets\Project\Scripts\Effects\EffectManager.cs" />
+    <Compile Include="Assets\Project\Scripts\DepthController.cs" />
+    <Compile Include="Assets\Project\Scripts\Attacks\AttackHitChecker.cs" />
+    <Compile Include="Assets\Project\Scripts\ProjectileTrigerChecker.cs" />
+    <Compile Include="Assets\Project\Scripts\Unit\Units\Enemy\Enemys\Sceleton.cs" />
+    <Compile Include="Assets\Project\Scripts\KnockbackControoller.cs" />
+    <Compile Include="Assets\Project\Scripts\UI\ResultLevelPanel\DisplayResultLevelText.cs" />
+    <Compile Include="Assets\Project\Scripts\UI\PlayerHub\DisplayPlayerStatsItem.cs" />
+    <Compile Include="Assets\Project\Scripts\UnitProfileManager.cs" />
+    <Compile Include="Assets\Project\Scripts\StateMachine\TurretStateMachine.cs" />
+    <Compile Include="Assets\Project\Zenject\LobbySceneInstaller.cs" />
+    <Compile Include="Assets\Project\Scripts\Projectile\Projectile.cs" />
+    <Compile Include="Assets\Project\Scripts\Unit\Units\Player\PlayerUpgradeSistem.cs" />
+    <Compile Include="Assets\Project\Scripts\Drop\AnimationCurvesConfig.cs" />
+    <Compile Include="Assets\Project\Scripts\Unit\Units\Enemy\EnemyController.cs" />
+    <Compile Include="Assets\Project\Zenject\StartMenuInstaller.cs" />
+    <Compile Include="Assets\Project\Scripts\interfaces\BuildingState.cs" />
+    <Compile Include="Assets\Project\Scripts\System\Game\GameData.cs" />
+    <Compile Include="Assets\Project\Zenject\Level\ContainersInstaller.cs" />
+    <Compile Include="Assets\Project\Scripts\Building\BuildingProfile.cs" />
+    <Compile Include="Assets\Project\Input\PlayerInput.cs" />
+    <Compile Include="Assets\Project\Scripts\Effects\IEffect.cs" />
+    <Compile Include="Assets\Project\Scripts\UI\Buttons\LevelOpenButton.cs" />
+    <Compile Include="Assets\Project\Scripts\System\TileOccupancyMap.cs" />
+    <Compile Include="Assets\Project\Scripts\Container\BulletsContainer.cs" />
+    <Compile Include="Assets\Project\Scripts\Level\LevelState.cs" />
+    <Compile Include="Assets\Project\Scripts\LevelProfileManager.cs" />
+    <Compile Include="Assets\Project\FacingDirection.cs" />
+    <Compile Include="Assets\Project\Scripts\Unit\Units\Player\Players\Mage.cs" />
+    <Compile Include="Assets\Project\Zenject\BossInstaller.cs" />
+    <Compile Include="Assets\Project\Zenject\Level\BuildingSystemInstaller.cs" />
+    <Compile Include="Assets\Project\Scripts\Factorys\SpawnUnitFactory.cs" />
+    <Compile Include="Assets\Project\Scripts\Effects\BloodSplashDamageEffect.cs" />
+    <Compile Include="Assets\Project\Scripts\StatusEffect\Invincible.cs" />
+    <Compile Include="Assets\Project\Scripts\TileMap\CursorTileLocator.cs" />
+    <Compile Include="Assets\Project\Scripts\StateMachine\IStateMachine.cs" />
+    <Compile Include="Assets\Project\Scripts\TileMap\TileMapClick.cs" />
+    <Compile Include="Assets\Project\Scripts\Attacks\Player\PlayerCircleIceBallAttack.cs" />
+    <Compile Include="Assets\Project\Zenject\EnemyInstaller.cs" />
+    <Compile Include="Assets\Project\Scripts\UI\ValueBar\SwordChargeBar.cs" />
+    <Compile Include="Assets\Project\Scripts\UI\PlayerHub\DevelopItem.cs" />
+    <Compile Include="Assets\Project\Scripts\UI\Buttons\ExitLevelMenuButton.cs" />
+    <Compile Include="Assets\Project\Scripts\UI\Buttons\OpenLevelMenuButton.cs" />
+    <Compile Include="Assets\Project\Scripts\Attacks\Turret\BulletTurretAttack.cs" />
+    <Compile Include="Assets\Project\Scripts\Unit\UnitLevelManager.cs" />
+    <Compile Include="Assets\Project\Scripts\Objects Pool\TurretPool.cs" />
+    <Compile Include="Assets\Project\Scripts\Attacks\BaseAttack.cs" />
+    <Compile Include="Assets\Project\Scripts\Weapon\Weapon.cs" />
+    <Compile Include="Assets\Project\Scripts\interfaces\IBuildableOnTilemap.cs" />
+    <Compile Include="Assets\Project\Scripts\UI\Buttons\ExitInStartMenuButton.cs" />
+    <Compile Include="Assets\Project\Scripts\StateMachine\EnemyStateMachine.cs" />
+    <Compile Include="Assets\Project\Scripts\Attacks\Player\SpawnTurretAttack.cs" />
+    <Compile Include="Assets\Project\Scripts\Level\LevelController.cs" />
+    <Compile Include="Assets\Project\Scripts\Projectile\RedirectingProjectileMovement.cs" />
+    <Compile Include="Assets\Project\Scripts\Building\Buildings\TurretBuildingProfile.cs" />
+    <Compile Include="Assets\Project\Scripts\Attacks\RangedAttack\RedirectingProjectileAttack.cs" />
+    <Compile Include="Assets\Project\Scripts\interfaces\ISelected.cs" />
+    <Compile Include="Assets\Project\Scripts\UI\Wallet\Wallet.cs" />
+    <Compile Include="Assets\Project\Scripts\Unit\Units\Enemy\Boss\BossController.cs" />
+    <Compile Include="Assets\Project\Scripts\System\TargetLocator.cs" />
+    <Compile Include="Assets\Project\Scripts\Attacks\Player\BallMovement.cs" />
+    <Compile Include="Assets\Project\Scripts\UI\PlayerHub\DisplayDevelopButton.cs" />
+    <Compile Include="Assets\Project\Scripts\Attacks\Player\PlayerIceBallAttack.cs" />
+    <Compile Include="Assets\Project\Scripts\Projectile\RedirectingProjectile.cs" />
+    <Compile Include="Assets\Project\Scripts\System\JsonSaveSystem\GameSaveSystem.cs" />
+    <Compile Include="Assets\Project\Scripts\Event\IEventManager.cs" />
+    <Compile Include="Assets\Project\Scripts\Drop\HealthDrop.cs" />
+    <Compile Include="Assets\Project\Scripts\Unit\Units\Player\Players\Swordsman.cs" />
+    <Compile Include="Assets\Project\Zenject\WeaponInstaller.cs" />
+    <Compile Include="Assets\Project\Scripts\Wave\Wave.cs" />
+    <Compile Include="Assets\Project\Zenject\Level\WaveInstaller.cs" />
+    <Compile Include="Assets\Project\Scripts\Unit\Units\Enemy\DistanceKeepingEnemyMovement.cs" />
+    <Compile Include="Assets\Project\Scripts\System\JsonSaveSystem\JsonSaveSystem.cs" />
+    <Compile Include="Assets\Project\Scripts\Projectile\ProjectileMovement.cs" />
+    <Compile Include="Assets\Project\Scripts\Unit\Units\Enemy\EnemyAnimationController.cs" />
+    <Compile Include="Assets\Project\Scripts\RandomPointGenerator.cs" />
+    <Compile Include="Assets\Project\Scripts\interfaces\ITargetInfo.cs" />
+    <Compile Include="Assets\Project\Scripts\Building\BuildingPreviewSystem.cs" />
+    <Compile Include="Assets\Project\Scripts\UI\PlayerHub\SpawnerPlayerStatsItem.cs" />
+    <Compile Include="Assets\Project\Scripts\System\DamageRules.cs" />
+    <Compile Include="Assets\Project\Scripts\UI\Buttons\RestartLevelButton.cs" />
+    <Compile Include="Assets\Project\Zenject\LevelsMenuInstaller.cs" />
+    <Compile Include="Assets\Project\Zenject\UnitInstaller.cs" />
+    <Compile Include="Assets\Project\Scripts\Attacks\Turret\BuildingTurretAttack.cs" />
+    <Compile Include="Assets\Project\Scripts\Event\SpawnUnitEventManager.cs" />
+    <Compile Include="Assets\Project\FlipController.cs" />
+    <Compile Include="Assets\Project\Scripts\Unit\Units\Enemy\Enemys\DroneStriker.cs" />
+    <Compile Include="Assets\Project\Zenject\GameSystemInstaller.cs" />
+    <Compile Include="Assets\Project\Scripts\Building\Buildings\TurretBuilding.cs" />
+    <Compile Include="Assets\Project\Scripts\Objects Pool\BaseEffectPool.cs" />
+    <Compile Include="Assets\Project\Scripts\Effects\DamageFlash.cs" />
+    <Compile Include="Assets\Project\Scripts\UI\ValueBar\ValueBar.cs" />
+    <Compile Include="Assets\Project\Scripts\UI\Buttons\ExitPlayerHubButton.cs" />
+    <Compile Include="Assets\Project\Scripts\Unit\Units\Player\PlayerProfile.cs" />
+    <Compile Include="Assets\Project\Scripts\Attribute\ItemDisplayNameAttribute.cs" />
+    <Compile Include="Assets\Project\Scripts\Projectile\TurretBullet.cs" />
+    <Compile Include="Assets\Project\Scripts\Unit\ProgressableData.cs" />
+    <Compile Include="Assets\Project\Scripts\UI\Buttons\ExitLevelButton.cs" />
+    <Compile Include="Assets\Project\Zenject\ProjectInstaller.cs" />
+    <Compile Include="Assets\Project\Scripts\Attribute\CanUpgradeAttribute.cs" />
+    <Compile Include="Assets\Project\Zenject\HealthBarInstaller.cs" />
+    <Compile Include="Assets\Project\Scripts\Unit\Units\Player\PlayerAttackController.cs" />
+    <Compile Include="Assets\Project\Scripts\UI\Buttons\StartGameButton.cs" />
+    <Compile Include="Assets\Project\Scripts\Health\Health.cs" />
+    <Compile Include="Assets\Project\Scripts\Unit\Unit.cs" />
+    <Compile Include="Assets\Project\Scripts\Animation\AnimationController.cs" />
+    <Compile Include="Assets\Project\Zenject\Level\AnimatorInstaller.cs" />
+    <Compile Include="Assets\Project\Zenject\Level\LevelUIInstaller.cs" />
+    <Compile Include="Assets\Project\Scripts\Attacks\Enemy\StandartEnemyAttack.cs" />
+    <Compile Include="Assets\Project\Scripts\interfaces\IDamageable.cs" />
+    <Compile Include="Assets\Project\Scripts\Unit\Units\Player\Players\Mechanic.cs" />
+    <Compile Include="Assets\Project\Scripts\LevelsMenu\SpawnerLevelButton.cs" />
+    <Compile Include="Assets\Project\Scripts\System\JsonSaveSystem\TestSaveSystem.cs" />
+    <Compile Include="Assets\Project\Scripts\Drop\Drop.cs" />
+    <Compile Include="Assets\Project\Scripts\Factorys\SpawnUnitForUIFactory.cs" />
+    <Compile Include="Assets\Project\Scripts\UI\ValueBar\HealthBar.cs" />
+    <Compile Include="Assets\Project\Scripts\Animation\AnimatorBase.cs" />
+    <Compile Include="Assets\Project\Scripts\System\Game\Game.cs" />
+    <Compile Include="Assets\Project\Scripts\Projectile\IceBall.cs" />
+    <Compile Include="Assets\Project\Scripts\Unit\Units\Enemy\Enemys\Zombie.cs" />
+    <Compile Include="Assets\Project\Scripts\Level\LevelType.cs" />
+    <Compile Include="Assets\Project\Scripts\Attacks\AttackData.cs" />
+    <Compile Include="Assets\Project\Scripts\Unit\BaseProfile.cs" />
+    <Compile Include="Assets\Project\Scripts\Attacks\Enemy\RedirectingProjectileEnemyAttack.cs" />
+    <Compile Include="Assets\Project\Scripts\Classed\ПроцедурнаяГенерация.cs" />
+    <Compile Include="Assets\Project\Zenject\Level\CoreLevelInstaller.cs" />
+    <Compile Include="Assets\Project\Scripts\Unit\Units\Turret\TurretRotationController.cs" />
+    <Compile Include="Assets\Project\Scripts\Drop\DropItem.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Assets\Project\Project.asmdef" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="UnityEngine">
+      <HintPath>D:\Unity\Hub\Editor\2022.3.62f2\Editor\Data\Managed\UnityEngine\UnityEngine.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UnityEngine.AIModule">
+      <HintPath>D:\Unity\Hub\Editor\2022.3.62f2\Editor\Data\Managed\UnityEngine\UnityEngine.AIModule.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UnityEngine.ARModule">
+      <HintPath>D:\Unity\Hub\Editor\2022.3.62f2\Editor\Data\Managed\UnityEngine\UnityEngine.ARModule.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UnityEngine.AccessibilityModule">
+      <HintPath>D:\Unity\Hub\Editor\2022.3.62f2\Editor\Data\Managed\UnityEngine\UnityEngine.AccessibilityModule.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UnityEngine.AndroidJNIModule">
+      <HintPath>D:\Unity\Hub\Editor\2022.3.62f2\Editor\Data\Managed\UnityEngine\UnityEngine.AndroidJNIModule.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UnityEngine.AnimationModule">
+      <HintPath>D:\Unity\Hub\Editor\2022.3.62f2\Editor\Data\Managed\UnityEngine\UnityEngine.AnimationModule.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UnityEngine.AssetBundleModule">
+      <HintPath>D:\Unity\Hub\Editor\2022.3.62f2\Editor\Data\Managed\UnityEngine\UnityEngine.AssetBundleModule.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UnityEngine.AudioModule">
+      <HintPath>D:\Unity\Hub\Editor\2022.3.62f2\Editor\Data\Managed\UnityEngine\UnityEngine.AudioModule.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UnityEngine.ClothModule">
+      <HintPath>D:\Unity\Hub\Editor\2022.3.62f2\Editor\Data\Managed\UnityEngine\UnityEngine.ClothModule.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UnityEngine.ClusterInputModule">
+      <HintPath>D:\Unity\Hub\Editor\2022.3.62f2\Editor\Data\Managed\UnityEngine\UnityEngine.ClusterInputModule.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UnityEngine.ClusterRendererModule">
+      <HintPath>D:\Unity\Hub\Editor\2022.3.62f2\Editor\Data\Managed\UnityEngine\UnityEngine.ClusterRendererModule.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UnityEngine.ContentLoadModule">
+      <HintPath>D:\Unity\Hub\Editor\2022.3.62f2\Editor\Data\Managed\UnityEngine\UnityEngine.ContentLoadModule.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UnityEngine.CoreModule">
+      <HintPath>D:\Unity\Hub\Editor\2022.3.62f2\Editor\Data\Managed\UnityEngine\UnityEngine.CoreModule.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UnityEngine.CrashReportingModule">
+      <HintPath>D:\Unity\Hub\Editor\2022.3.62f2\Editor\Data\Managed\UnityEngine\UnityEngine.CrashReportingModule.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UnityEngine.DSPGraphModule">
+      <HintPath>D:\Unity\Hub\Editor\2022.3.62f2\Editor\Data\Managed\UnityEngine\UnityEngine.DSPGraphModule.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UnityEngine.DirectorModule">
+      <HintPath>D:\Unity\Hub\Editor\2022.3.62f2\Editor\Data\Managed\UnityEngine\UnityEngine.DirectorModule.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UnityEngine.GIModule">
+      <HintPath>D:\Unity\Hub\Editor\2022.3.62f2\Editor\Data\Managed\UnityEngine\UnityEngine.GIModule.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UnityEngine.GameCenterModule">
+      <HintPath>D:\Unity\Hub\Editor\2022.3.62f2\Editor\Data\Managed\UnityEngine\UnityEngine.GameCenterModule.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UnityEngine.GridModule">
+      <HintPath>D:\Unity\Hub\Editor\2022.3.62f2\Editor\Data\Managed\UnityEngine\UnityEngine.GridModule.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UnityEngine.HotReloadModule">
+      <HintPath>D:\Unity\Hub\Editor\2022.3.62f2\Editor\Data\Managed\UnityEngine\UnityEngine.HotReloadModule.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UnityEngine.IMGUIModule">
+      <HintPath>D:\Unity\Hub\Editor\2022.3.62f2\Editor\Data\Managed\UnityEngine\UnityEngine.IMGUIModule.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UnityEngine.ImageConversionModule">
+      <HintPath>D:\Unity\Hub\Editor\2022.3.62f2\Editor\Data\Managed\UnityEngine\UnityEngine.ImageConversionModule.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UnityEngine.InputModule">
+      <HintPath>D:\Unity\Hub\Editor\2022.3.62f2\Editor\Data\Managed\UnityEngine\UnityEngine.InputModule.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UnityEngine.InputLegacyModule">
+      <HintPath>D:\Unity\Hub\Editor\2022.3.62f2\Editor\Data\Managed\UnityEngine\UnityEngine.InputLegacyModule.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UnityEngine.JSONSerializeModule">
+      <HintPath>D:\Unity\Hub\Editor\2022.3.62f2\Editor\Data\Managed\UnityEngine\UnityEngine.JSONSerializeModule.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UnityEngine.LocalizationModule">
+      <HintPath>D:\Unity\Hub\Editor\2022.3.62f2\Editor\Data\Managed\UnityEngine\UnityEngine.LocalizationModule.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UnityEngine.ParticleSystemModule">
+      <HintPath>D:\Unity\Hub\Editor\2022.3.62f2\Editor\Data\Managed\UnityEngine\UnityEngine.ParticleSystemModule.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UnityEngine.PerformanceReportingModule">
+      <HintPath>D:\Unity\Hub\Editor\2022.3.62f2\Editor\Data\Managed\UnityEngine\UnityEngine.PerformanceReportingModule.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UnityEngine.PhysicsModule">
+      <HintPath>D:\Unity\Hub\Editor\2022.3.62f2\Editor\Data\Managed\UnityEngine\UnityEngine.PhysicsModule.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UnityEngine.Physics2DModule">
+      <HintPath>D:\Unity\Hub\Editor\2022.3.62f2\Editor\Data\Managed\UnityEngine\UnityEngine.Physics2DModule.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UnityEngine.ProfilerModule">
+      <HintPath>D:\Unity\Hub\Editor\2022.3.62f2\Editor\Data\Managed\UnityEngine\UnityEngine.ProfilerModule.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UnityEngine.PropertiesModule">
+      <HintPath>D:\Unity\Hub\Editor\2022.3.62f2\Editor\Data\Managed\UnityEngine\UnityEngine.PropertiesModule.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UnityEngine.RuntimeInitializeOnLoadManagerInitializerModule">
+      <HintPath>D:\Unity\Hub\Editor\2022.3.62f2\Editor\Data\Managed\UnityEngine\UnityEngine.RuntimeInitializeOnLoadManagerInitializerModule.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UnityEngine.ScreenCaptureModule">
+      <HintPath>D:\Unity\Hub\Editor\2022.3.62f2\Editor\Data\Managed\UnityEngine\UnityEngine.ScreenCaptureModule.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UnityEngine.SharedInternalsModule">
+      <HintPath>D:\Unity\Hub\Editor\2022.3.62f2\Editor\Data\Managed\UnityEngine\UnityEngine.SharedInternalsModule.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UnityEngine.SpriteMaskModule">
+      <HintPath>D:\Unity\Hub\Editor\2022.3.62f2\Editor\Data\Managed\UnityEngine\UnityEngine.SpriteMaskModule.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UnityEngine.SpriteShapeModule">
+      <HintPath>D:\Unity\Hub\Editor\2022.3.62f2\Editor\Data\Managed\UnityEngine\UnityEngine.SpriteShapeModule.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UnityEngine.StreamingModule">
+      <HintPath>D:\Unity\Hub\Editor\2022.3.62f2\Editor\Data\Managed\UnityEngine\UnityEngine.StreamingModule.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UnityEngine.SubstanceModule">
+      <HintPath>D:\Unity\Hub\Editor\2022.3.62f2\Editor\Data\Managed\UnityEngine\UnityEngine.SubstanceModule.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UnityEngine.SubsystemsModule">
+      <HintPath>D:\Unity\Hub\Editor\2022.3.62f2\Editor\Data\Managed\UnityEngine\UnityEngine.SubsystemsModule.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UnityEngine.TLSModule">
+      <HintPath>D:\Unity\Hub\Editor\2022.3.62f2\Editor\Data\Managed\UnityEngine\UnityEngine.TLSModule.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UnityEngine.TerrainModule">
+      <HintPath>D:\Unity\Hub\Editor\2022.3.62f2\Editor\Data\Managed\UnityEngine\UnityEngine.TerrainModule.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UnityEngine.TerrainPhysicsModule">
+      <HintPath>D:\Unity\Hub\Editor\2022.3.62f2\Editor\Data\Managed\UnityEngine\UnityEngine.TerrainPhysicsModule.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UnityEngine.TextCoreFontEngineModule">
+      <HintPath>D:\Unity\Hub\Editor\2022.3.62f2\Editor\Data\Managed\UnityEngine\UnityEngine.TextCoreFontEngineModule.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UnityEngine.TextCoreTextEngineModule">
+      <HintPath>D:\Unity\Hub\Editor\2022.3.62f2\Editor\Data\Managed\UnityEngine\UnityEngine.TextCoreTextEngineModule.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UnityEngine.TextRenderingModule">
+      <HintPath>D:\Unity\Hub\Editor\2022.3.62f2\Editor\Data\Managed\UnityEngine\UnityEngine.TextRenderingModule.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UnityEngine.TilemapModule">
+      <HintPath>D:\Unity\Hub\Editor\2022.3.62f2\Editor\Data\Managed\UnityEngine\UnityEngine.TilemapModule.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UnityEngine.UIModule">
+      <HintPath>D:\Unity\Hub\Editor\2022.3.62f2\Editor\Data\Managed\UnityEngine\UnityEngine.UIModule.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UnityEngine.UIElementsModule">
+      <HintPath>D:\Unity\Hub\Editor\2022.3.62f2\Editor\Data\Managed\UnityEngine\UnityEngine.UIElementsModule.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UnityEngine.UmbraModule">
+      <HintPath>D:\Unity\Hub\Editor\2022.3.62f2\Editor\Data\Managed\UnityEngine\UnityEngine.UmbraModule.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UnityEngine.UnityAnalyticsModule">
+      <HintPath>D:\Unity\Hub\Editor\2022.3.62f2\Editor\Data\Managed\UnityEngine\UnityEngine.UnityAnalyticsModule.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UnityEngine.UnityAnalyticsCommonModule">
+      <HintPath>D:\Unity\Hub\Editor\2022.3.62f2\Editor\Data\Managed\UnityEngine\UnityEngine.UnityAnalyticsCommonModule.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UnityEngine.UnityConnectModule">
+      <HintPath>D:\Unity\Hub\Editor\2022.3.62f2\Editor\Data\Managed\UnityEngine\UnityEngine.UnityConnectModule.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UnityEngine.UnityCurlModule">
+      <HintPath>D:\Unity\Hub\Editor\2022.3.62f2\Editor\Data\Managed\UnityEngine\UnityEngine.UnityCurlModule.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UnityEngine.UnityTestProtocolModule">
+      <HintPath>D:\Unity\Hub\Editor\2022.3.62f2\Editor\Data\Managed\UnityEngine\UnityEngine.UnityTestProtocolModule.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UnityEngine.UnityWebRequestModule">
+      <HintPath>D:\Unity\Hub\Editor\2022.3.62f2\Editor\Data\Managed\UnityEngine\UnityEngine.UnityWebRequestModule.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UnityEngine.UnityWebRequestAssetBundleModule">
+      <HintPath>D:\Unity\Hub\Editor\2022.3.62f2\Editor\Data\Managed\UnityEngine\UnityEngine.UnityWebRequestAssetBundleModule.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UnityEngine.UnityWebRequestAudioModule">
+      <HintPath>D:\Unity\Hub\Editor\2022.3.62f2\Editor\Data\Managed\UnityEngine\UnityEngine.UnityWebRequestAudioModule.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UnityEngine.UnityWebRequestTextureModule">
+      <HintPath>D:\Unity\Hub\Editor\2022.3.62f2\Editor\Data\Managed\UnityEngine\UnityEngine.UnityWebRequestTextureModule.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UnityEngine.UnityWebRequestWWWModule">
+      <HintPath>D:\Unity\Hub\Editor\2022.3.62f2\Editor\Data\Managed\UnityEngine\UnityEngine.UnityWebRequestWWWModule.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UnityEngine.VFXModule">
+      <HintPath>D:\Unity\Hub\Editor\2022.3.62f2\Editor\Data\Managed\UnityEngine\UnityEngine.VFXModule.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UnityEngine.VRModule">
+      <HintPath>D:\Unity\Hub\Editor\2022.3.62f2\Editor\Data\Managed\UnityEngine\UnityEngine.VRModule.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UnityEngine.VehiclesModule">
+      <HintPath>D:\Unity\Hub\Editor\2022.3.62f2\Editor\Data\Managed\UnityEngine\UnityEngine.VehiclesModule.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UnityEngine.VideoModule">
+      <HintPath>D:\Unity\Hub\Editor\2022.3.62f2\Editor\Data\Managed\UnityEngine\UnityEngine.VideoModule.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UnityEngine.VirtualTexturingModule">
+      <HintPath>D:\Unity\Hub\Editor\2022.3.62f2\Editor\Data\Managed\UnityEngine\UnityEngine.VirtualTexturingModule.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UnityEngine.WindModule">
+      <HintPath>D:\Unity\Hub\Editor\2022.3.62f2\Editor\Data\Managed\UnityEngine\UnityEngine.WindModule.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UnityEngine.XRModule">
+      <HintPath>D:\Unity\Hub\Editor\2022.3.62f2\Editor\Data\Managed\UnityEngine\UnityEngine.XRModule.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UnityEditor">
+      <HintPath>D:\Unity\Hub\Editor\2022.3.62f2\Editor\Data\Managed\UnityEngine\UnityEditor.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UnityEditor.CoreModule">
+      <HintPath>D:\Unity\Hub\Editor\2022.3.62f2\Editor\Data\Managed\UnityEngine\UnityEditor.CoreModule.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UnityEditor.DeviceSimulatorModule">
+      <HintPath>D:\Unity\Hub\Editor\2022.3.62f2\Editor\Data\Managed\UnityEngine\UnityEditor.DeviceSimulatorModule.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UnityEditor.DiagnosticsModule">
+      <HintPath>D:\Unity\Hub\Editor\2022.3.62f2\Editor\Data\Managed\UnityEngine\UnityEditor.DiagnosticsModule.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UnityEditor.EditorToolbarModule">
+      <HintPath>D:\Unity\Hub\Editor\2022.3.62f2\Editor\Data\Managed\UnityEngine\UnityEditor.EditorToolbarModule.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UnityEditor.GraphViewModule">
+      <HintPath>D:\Unity\Hub\Editor\2022.3.62f2\Editor\Data\Managed\UnityEngine\UnityEditor.GraphViewModule.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UnityEditor.PresetsUIModule">
+      <HintPath>D:\Unity\Hub\Editor\2022.3.62f2\Editor\Data\Managed\UnityEngine\UnityEditor.PresetsUIModule.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UnityEditor.QuickSearchModule">
+      <HintPath>D:\Unity\Hub\Editor\2022.3.62f2\Editor\Data\Managed\UnityEngine\UnityEditor.QuickSearchModule.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UnityEditor.SceneTemplateModule">
+      <HintPath>D:\Unity\Hub\Editor\2022.3.62f2\Editor\Data\Managed\UnityEngine\UnityEditor.SceneTemplateModule.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UnityEditor.SceneViewModule">
+      <HintPath>D:\Unity\Hub\Editor\2022.3.62f2\Editor\Data\Managed\UnityEngine\UnityEditor.SceneViewModule.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UnityEditor.TextCoreFontEngineModule">
+      <HintPath>D:\Unity\Hub\Editor\2022.3.62f2\Editor\Data\Managed\UnityEngine\UnityEditor.TextCoreFontEngineModule.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UnityEditor.TextCoreTextEngineModule">
+      <HintPath>D:\Unity\Hub\Editor\2022.3.62f2\Editor\Data\Managed\UnityEngine\UnityEditor.TextCoreTextEngineModule.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UnityEditor.UIBuilderModule">
+      <HintPath>D:\Unity\Hub\Editor\2022.3.62f2\Editor\Data\Managed\UnityEngine\UnityEditor.UIBuilderModule.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UnityEditor.UIElementsModule">
+      <HintPath>D:\Unity\Hub\Editor\2022.3.62f2\Editor\Data\Managed\UnityEngine\UnityEditor.UIElementsModule.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UnityEditor.UIElementsSamplesModule">
+      <HintPath>D:\Unity\Hub\Editor\2022.3.62f2\Editor\Data\Managed\UnityEngine\UnityEditor.UIElementsSamplesModule.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UnityEditor.UnityConnectModule">
+      <HintPath>D:\Unity\Hub\Editor\2022.3.62f2\Editor\Data\Managed\UnityEngine\UnityEditor.UnityConnectModule.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UnityEditor.Graphs">
+      <HintPath>D:\Unity\Hub\Editor\2022.3.62f2\Editor\Data\Managed\UnityEditor.Graphs.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UnityEditor.WindowsStandalone.Extensions">
+      <HintPath>D:\Unity\Hub\Editor\2022.3.62f2\Editor\Data\PlaybackEngines\WindowsStandaloneSupport\UnityEditor.WindowsStandalone.Extensions.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Zenject-usage">
+      <HintPath>Assets\Plugins\Zenject\Source\Usage\Zenject-usage.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Zenject.ReflectionBaking.Mono.Cecil.Rocks">
+      <HintPath>Assets\Plugins\Zenject\OptionalExtras\ReflectionBaking\Lib\Zenject.ReflectionBaking.Mono.Cecil.Rocks.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Zenject.ReflectionBaking.Mono.Cecil.Pdb">
+      <HintPath>Assets\Plugins\Zenject\OptionalExtras\ReflectionBaking\Lib\Zenject.ReflectionBaking.Mono.Cecil.Pdb.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Zenject.ReflectionBaking.Mono.Cecil">
+      <HintPath>Assets\Plugins\Zenject\OptionalExtras\ReflectionBaking\Lib\Zenject.ReflectionBaking.Mono.Cecil.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Zenject.ReflectionBaking.Mono.Cecil.Mdb">
+      <HintPath>Assets\Plugins\Zenject\OptionalExtras\ReflectionBaking\Lib\Zenject.ReflectionBaking.Mono.Cecil.Mdb.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="netstandard">
+      <HintPath>D:\Unity\Hub\Editor\2022.3.62f2\Editor\Data\NetStandard\ref\2.1.0\netstandard.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Microsoft.Win32.Primitives">
+      <HintPath>D:\Unity\Hub\Editor\2022.3.62f2\Editor\Data\NetStandard\compat\2.1.0\shims\netstandard\Microsoft.Win32.Primitives.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.AppContext">
+      <HintPath>D:\Unity\Hub\Editor\2022.3.62f2\Editor\Data\NetStandard\compat\2.1.0\shims\netstandard\System.AppContext.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.Buffers">
+      <HintPath>D:\Unity\Hub\Editor\2022.3.62f2\Editor\Data\NetStandard\compat\2.1.0\shims\netstandard\System.Buffers.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.Collections.Concurrent">
+      <HintPath>D:\Unity\Hub\Editor\2022.3.62f2\Editor\Data\NetStandard\compat\2.1.0\shims\netstandard\System.Collections.Concurrent.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.Collections">
+      <HintPath>D:\Unity\Hub\Editor\2022.3.62f2\Editor\Data\NetStandard\compat\2.1.0\shims\netstandard\System.Collections.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.Collections.NonGeneric">
+      <HintPath>D:\Unity\Hub\Editor\2022.3.62f2\Editor\Data\NetStandard\compat\2.1.0\shims\netstandard\System.Collections.NonGeneric.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.Collections.Specialized">
+      <HintPath>D:\Unity\Hub\Editor\2022.3.62f2\Editor\Data\NetStandard\compat\2.1.0\shims\netstandard\System.Collections.Specialized.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.ComponentModel">
+      <HintPath>D:\Unity\Hub\Editor\2022.3.62f2\Editor\Data\NetStandard\compat\2.1.0\shims\netstandard\System.ComponentModel.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.ComponentModel.EventBasedAsync">
+      <HintPath>D:\Unity\Hub\Editor\2022.3.62f2\Editor\Data\NetStandard\compat\2.1.0\shims\netstandard\System.ComponentModel.EventBasedAsync.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.ComponentModel.Primitives">
+      <HintPath>D:\Unity\Hub\Editor\2022.3.62f2\Editor\Data\NetStandard\compat\2.1.0\shims\netstandard\System.ComponentModel.Primitives.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.ComponentModel.TypeConverter">
+      <HintPath>D:\Unity\Hub\Editor\2022.3.62f2\Editor\Data\NetStandard\compat\2.1.0\shims\netstandard\System.ComponentModel.TypeConverter.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.Console">
+      <HintPath>D:\Unity\Hub\Editor\2022.3.62f2\Editor\Data\NetStandard\compat\2.1.0\shims\netstandard\System.Console.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.Data.Common">
+      <HintPath>D:\Unity\Hub\Editor\2022.3.62f2\Editor\Data\NetStandard\compat\2.1.0\shims\netstandard\System.Data.Common.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.Diagnostics.Contracts">
+      <HintPath>D:\Unity\Hub\Editor\2022.3.62f2\Editor\Data\NetStandard\compat\2.1.0\shims\netstandard\System.Diagnostics.Contracts.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.Diagnostics.Debug">
+      <HintPath>D:\Unity\Hub\Editor\2022.3.62f2\Editor\Data\NetStandard\compat\2.1.0\shims\netstandard\System.Diagnostics.Debug.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.Diagnostics.FileVersionInfo">
+      <HintPath>D:\Unity\Hub\Editor\2022.3.62f2\Editor\Data\NetStandard\compat\2.1.0\shims\netstandard\System.Diagnostics.FileVersionInfo.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.Diagnostics.Process">
+      <HintPath>D:\Unity\Hub\Editor\2022.3.62f2\Editor\Data\NetStandard\compat\2.1.0\shims\netstandard\System.Diagnostics.Process.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.Diagnostics.StackTrace">
+      <HintPath>D:\Unity\Hub\Editor\2022.3.62f2\Editor\Data\NetStandard\compat\2.1.0\shims\netstandard\System.Diagnostics.StackTrace.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.Diagnostics.TextWriterTraceListener">
+      <HintPath>D:\Unity\Hub\Editor\2022.3.62f2\Editor\Data\NetStandard\compat\2.1.0\shims\netstandard\System.Diagnostics.TextWriterTraceListener.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.Diagnostics.Tools">
+      <HintPath>D:\Unity\Hub\Editor\2022.3.62f2\Editor\Data\NetStandard\compat\2.1.0\shims\netstandard\System.Diagnostics.Tools.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.Diagnostics.TraceSource">
+      <HintPath>D:\Unity\Hub\Editor\2022.3.62f2\Editor\Data\NetStandard\compat\2.1.0\shims\netstandard\System.Diagnostics.TraceSource.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.Diagnostics.Tracing">
+      <HintPath>D:\Unity\Hub\Editor\2022.3.62f2\Editor\Data\NetStandard\compat\2.1.0\shims\netstandard\System.Diagnostics.Tracing.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.Drawing.Primitives">
+      <HintPath>D:\Unity\Hub\Editor\2022.3.62f2\Editor\Data\NetStandard\compat\2.1.0\shims\netstandard\System.Drawing.Primitives.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.Dynamic.Runtime">
+      <HintPath>D:\Unity\Hub\Editor\2022.3.62f2\Editor\Data\NetStandard\compat\2.1.0\shims\netstandard\System.Dynamic.Runtime.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.Globalization.Calendars">
+      <HintPath>D:\Unity\Hub\Editor\2022.3.62f2\Editor\Data\NetStandard\compat\2.1.0\shims\netstandard\System.Globalization.Calendars.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.Globalization">
+      <HintPath>D:\Unity\Hub\Editor\2022.3.62f2\Editor\Data\NetStandard\compat\2.1.0\shims\netstandard\System.Globalization.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.Globalization.Extensions">
+      <HintPath>D:\Unity\Hub\Editor\2022.3.62f2\Editor\Data\NetStandard\compat\2.1.0\shims\netstandard\System.Globalization.Extensions.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.IO.Compression">
+      <HintPath>D:\Unity\Hub\Editor\2022.3.62f2\Editor\Data\NetStandard\compat\2.1.0\shims\netstandard\System.IO.Compression.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.IO.Compression.ZipFile">
+      <HintPath>D:\Unity\Hub\Editor\2022.3.62f2\Editor\Data\NetStandard\compat\2.1.0\shims\netstandard\System.IO.Compression.ZipFile.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.IO">
+      <HintPath>D:\Unity\Hub\Editor\2022.3.62f2\Editor\Data\NetStandard\compat\2.1.0\shims\netstandard\System.IO.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.IO.FileSystem">
+      <HintPath>D:\Unity\Hub\Editor\2022.3.62f2\Editor\Data\NetStandard\compat\2.1.0\shims\netstandard\System.IO.FileSystem.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.IO.FileSystem.DriveInfo">
+      <HintPath>D:\Unity\Hub\Editor\2022.3.62f2\Editor\Data\NetStandard\compat\2.1.0\shims\netstandard\System.IO.FileSystem.DriveInfo.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.IO.FileSystem.Primitives">
+      <HintPath>D:\Unity\Hub\Editor\2022.3.62f2\Editor\Data\NetStandard\compat\2.1.0\shims\netstandard\System.IO.FileSystem.Primitives.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.IO.FileSystem.Watcher">
+      <HintPath>D:\Unity\Hub\Editor\2022.3.62f2\Editor\Data\NetStandard\compat\2.1.0\shims\netstandard\System.IO.FileSystem.Watcher.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.IO.IsolatedStorage">
+      <HintPath>D:\Unity\Hub\Editor\2022.3.62f2\Editor\Data\NetStandard\compat\2.1.0\shims\netstandard\System.IO.IsolatedStorage.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.IO.MemoryMappedFiles">
+      <HintPath>D:\Unity\Hub\Editor\2022.3.62f2\Editor\Data\NetStandard\compat\2.1.0\shims\netstandard\System.IO.MemoryMappedFiles.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.IO.Pipes">
+      <HintPath>D:\Unity\Hub\Editor\2022.3.62f2\Editor\Data\NetStandard\compat\2.1.0\shims\netstandard\System.IO.Pipes.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.IO.UnmanagedMemoryStream">
+      <HintPath>D:\Unity\Hub\Editor\2022.3.62f2\Editor\Data\NetStandard\compat\2.1.0\shims\netstandard\System.IO.UnmanagedMemoryStream.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.Linq">
+      <HintPath>D:\Unity\Hub\Editor\2022.3.62f2\Editor\Data\NetStandard\compat\2.1.0\shims\netstandard\System.Linq.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.Linq.Expressions">
+      <HintPath>D:\Unity\Hub\Editor\2022.3.62f2\Editor\Data\NetStandard\compat\2.1.0\shims\netstandard\System.Linq.Expressions.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.Linq.Parallel">
+      <HintPath>D:\Unity\Hub\Editor\2022.3.62f2\Editor\Data\NetStandard\compat\2.1.0\shims\netstandard\System.Linq.Parallel.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.Linq.Queryable">
+      <HintPath>D:\Unity\Hub\Editor\2022.3.62f2\Editor\Data\NetStandard\compat\2.1.0\shims\netstandard\System.Linq.Queryable.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.Memory">
+      <HintPath>D:\Unity\Hub\Editor\2022.3.62f2\Editor\Data\NetStandard\compat\2.1.0\shims\netstandard\System.Memory.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.Net.Http">
+      <HintPath>D:\Unity\Hub\Editor\2022.3.62f2\Editor\Data\NetStandard\compat\2.1.0\shims\netstandard\System.Net.Http.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.Net.NameResolution">
+      <HintPath>D:\Unity\Hub\Editor\2022.3.62f2\Editor\Data\NetStandard\compat\2.1.0\shims\netstandard\System.Net.NameResolution.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.Net.NetworkInformation">
+      <HintPath>D:\Unity\Hub\Editor\2022.3.62f2\Editor\Data\NetStandard\compat\2.1.0\shims\netstandard\System.Net.NetworkInformation.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.Net.Ping">
+      <HintPath>D:\Unity\Hub\Editor\2022.3.62f2\Editor\Data\NetStandard\compat\2.1.0\shims\netstandard\System.Net.Ping.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.Net.Primitives">
+      <HintPath>D:\Unity\Hub\Editor\2022.3.62f2\Editor\Data\NetStandard\compat\2.1.0\shims\netstandard\System.Net.Primitives.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.Net.Requests">
+      <HintPath>D:\Unity\Hub\Editor\2022.3.62f2\Editor\Data\NetStandard\compat\2.1.0\shims\netstandard\System.Net.Requests.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.Net.Security">
+      <HintPath>D:\Unity\Hub\Editor\2022.3.62f2\Editor\Data\NetStandard\compat\2.1.0\shims\netstandard\System.Net.Security.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.Net.Sockets">
+      <HintPath>D:\Unity\Hub\Editor\2022.3.62f2\Editor\Data\NetStandard\compat\2.1.0\shims\netstandard\System.Net.Sockets.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.Net.WebHeaderCollection">
+      <HintPath>D:\Unity\Hub\Editor\2022.3.62f2\Editor\Data\NetStandard\compat\2.1.0\shims\netstandard\System.Net.WebHeaderCollection.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.Net.WebSockets.Client">
+      <HintPath>D:\Unity\Hub\Editor\2022.3.62f2\Editor\Data\NetStandard\compat\2.1.0\shims\netstandard\System.Net.WebSockets.Client.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.Net.WebSockets">
+      <HintPath>D:\Unity\Hub\Editor\2022.3.62f2\Editor\Data\NetStandard\compat\2.1.0\shims\netstandard\System.Net.WebSockets.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.Numerics.Vectors">
+      <HintPath>D:\Unity\Hub\Editor\2022.3.62f2\Editor\Data\NetStandard\compat\2.1.0\shims\netstandard\System.Numerics.Vectors.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.ObjectModel">
+      <HintPath>D:\Unity\Hub\Editor\2022.3.62f2\Editor\Data\NetStandard\compat\2.1.0\shims\netstandard\System.ObjectModel.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.Reflection.DispatchProxy">
+      <HintPath>D:\Unity\Hub\Editor\2022.3.62f2\Editor\Data\NetStandard\compat\2.1.0\shims\netstandard\System.Reflection.DispatchProxy.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.Reflection">
+      <HintPath>D:\Unity\Hub\Editor\2022.3.62f2\Editor\Data\NetStandard\compat\2.1.0\shims\netstandard\System.Reflection.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.Reflection.Emit">
+      <HintPath>D:\Unity\Hub\Editor\2022.3.62f2\Editor\Data\NetStandard\compat\2.1.0\shims\netstandard\System.Reflection.Emit.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.Reflection.Emit.ILGeneration">
+      <HintPath>D:\Unity\Hub\Editor\2022.3.62f2\Editor\Data\NetStandard\compat\2.1.0\shims\netstandard\System.Reflection.Emit.ILGeneration.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.Reflection.Emit.Lightweight">
+      <HintPath>D:\Unity\Hub\Editor\2022.3.62f2\Editor\Data\NetStandard\compat\2.1.0\shims\netstandard\System.Reflection.Emit.Lightweight.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.Reflection.Extensions">
+      <HintPath>D:\Unity\Hub\Editor\2022.3.62f2\Editor\Data\NetStandard\compat\2.1.0\shims\netstandard\System.Reflection.Extensions.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.Reflection.Primitives">
+      <HintPath>D:\Unity\Hub\Editor\2022.3.62f2\Editor\Data\NetStandard\compat\2.1.0\shims\netstandard\System.Reflection.Primitives.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.Resources.Reader">
+      <HintPath>D:\Unity\Hub\Editor\2022.3.62f2\Editor\Data\NetStandard\compat\2.1.0\shims\netstandard\System.Resources.Reader.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.Resources.ResourceManager">
+      <HintPath>D:\Unity\Hub\Editor\2022.3.62f2\Editor\Data\NetStandard\compat\2.1.0\shims\netstandard\System.Resources.ResourceManager.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.Resources.Writer">
+      <HintPath>D:\Unity\Hub\Editor\2022.3.62f2\Editor\Data\NetStandard\compat\2.1.0\shims\netstandard\System.Resources.Writer.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.Runtime.CompilerServices.VisualC">
+      <HintPath>D:\Unity\Hub\Editor\2022.3.62f2\Editor\Data\NetStandard\compat\2.1.0\shims\netstandard\System.Runtime.CompilerServices.VisualC.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.Runtime">
+      <HintPath>D:\Unity\Hub\Editor\2022.3.62f2\Editor\Data\NetStandard\compat\2.1.0\shims\netstandard\System.Runtime.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.Runtime.Extensions">
+      <HintPath>D:\Unity\Hub\Editor\2022.3.62f2\Editor\Data\NetStandard\compat\2.1.0\shims\netstandard\System.Runtime.Extensions.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.Runtime.Handles">
+      <HintPath>D:\Unity\Hub\Editor\2022.3.62f2\Editor\Data\NetStandard\compat\2.1.0\shims\netstandard\System.Runtime.Handles.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.Runtime.InteropServices">
+      <HintPath>D:\Unity\Hub\Editor\2022.3.62f2\Editor\Data\NetStandard\compat\2.1.0\shims\netstandard\System.Runtime.InteropServices.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.Runtime.InteropServices.RuntimeInformation">
+      <HintPath>D:\Unity\Hub\Editor\2022.3.62f2\Editor\Data\NetStandard\compat\2.1.0\shims\netstandard\System.Runtime.InteropServices.RuntimeInformation.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.Runtime.Numerics">
+      <HintPath>D:\Unity\Hub\Editor\2022.3.62f2\Editor\Data\NetStandard\compat\2.1.0\shims\netstandard\System.Runtime.Numerics.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.Runtime.Serialization.Formatters">
+      <HintPath>D:\Unity\Hub\Editor\2022.3.62f2\Editor\Data\NetStandard\compat\2.1.0\shims\netstandard\System.Runtime.Serialization.Formatters.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.Runtime.Serialization.Json">
+      <HintPath>D:\Unity\Hub\Editor\2022.3.62f2\Editor\Data\NetStandard\compat\2.1.0\shims\netstandard\System.Runtime.Serialization.Json.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.Runtime.Serialization.Primitives">
+      <HintPath>D:\Unity\Hub\Editor\2022.3.62f2\Editor\Data\NetStandard\compat\2.1.0\shims\netstandard\System.Runtime.Serialization.Primitives.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.Runtime.Serialization.Xml">
+      <HintPath>D:\Unity\Hub\Editor\2022.3.62f2\Editor\Data\NetStandard\compat\2.1.0\shims\netstandard\System.Runtime.Serialization.Xml.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.Security.Claims">
+      <HintPath>D:\Unity\Hub\Editor\2022.3.62f2\Editor\Data\NetStandard\compat\2.1.0\shims\netstandard\System.Security.Claims.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.Security.Cryptography.Algorithms">
+      <HintPath>D:\Unity\Hub\Editor\2022.3.62f2\Editor\Data\NetStandard\compat\2.1.0\shims\netstandard\System.Security.Cryptography.Algorithms.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.Security.Cryptography.Csp">
+      <HintPath>D:\Unity\Hub\Editor\2022.3.62f2\Editor\Data\NetStandard\compat\2.1.0\shims\netstandard\System.Security.Cryptography.Csp.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.Security.Cryptography.Encoding">
+      <HintPath>D:\Unity\Hub\Editor\2022.3.62f2\Editor\Data\NetStandard\compat\2.1.0\shims\netstandard\System.Security.Cryptography.Encoding.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.Security.Cryptography.Primitives">
+      <HintPath>D:\Unity\Hub\Editor\2022.3.62f2\Editor\Data\NetStandard\compat\2.1.0\shims\netstandard\System.Security.Cryptography.Primitives.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.Security.Cryptography.X509Certificates">
+      <HintPath>D:\Unity\Hub\Editor\2022.3.62f2\Editor\Data\NetStandard\compat\2.1.0\shims\netstandard\System.Security.Cryptography.X509Certificates.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.Security.Principal">
+      <HintPath>D:\Unity\Hub\Editor\2022.3.62f2\Editor\Data\NetStandard\compat\2.1.0\shims\netstandard\System.Security.Principal.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.Security.SecureString">
+      <HintPath>D:\Unity\Hub\Editor\2022.3.62f2\Editor\Data\NetStandard\compat\2.1.0\shims\netstandard\System.Security.SecureString.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.Text.Encoding">
+      <HintPath>D:\Unity\Hub\Editor\2022.3.62f2\Editor\Data\NetStandard\compat\2.1.0\shims\netstandard\System.Text.Encoding.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.Text.Encoding.Extensions">
+      <HintPath>D:\Unity\Hub\Editor\2022.3.62f2\Editor\Data\NetStandard\compat\2.1.0\shims\netstandard\System.Text.Encoding.Extensions.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.Text.RegularExpressions">
+      <HintPath>D:\Unity\Hub\Editor\2022.3.62f2\Editor\Data\NetStandard\compat\2.1.0\shims\netstandard\System.Text.RegularExpressions.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.Threading">
+      <HintPath>D:\Unity\Hub\Editor\2022.3.62f2\Editor\Data\NetStandard\compat\2.1.0\shims\netstandard\System.Threading.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.Threading.Overlapped">
+      <HintPath>D:\Unity\Hub\Editor\2022.3.62f2\Editor\Data\NetStandard\compat\2.1.0\shims\netstandard\System.Threading.Overlapped.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.Threading.Tasks">
+      <HintPath>D:\Unity\Hub\Editor\2022.3.62f2\Editor\Data\NetStandard\compat\2.1.0\shims\netstandard\System.Threading.Tasks.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.Threading.Tasks.Extensions">
+      <HintPath>D:\Unity\Hub\Editor\2022.3.62f2\Editor\Data\NetStandard\compat\2.1.0\shims\netstandard\System.Threading.Tasks.Extensions.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.Threading.Tasks.Parallel">
+      <HintPath>D:\Unity\Hub\Editor\2022.3.62f2\Editor\Data\NetStandard\compat\2.1.0\shims\netstandard\System.Threading.Tasks.Parallel.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.Threading.Thread">
+      <HintPath>D:\Unity\Hub\Editor\2022.3.62f2\Editor\Data\NetStandard\compat\2.1.0\shims\netstandard\System.Threading.Thread.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.Threading.ThreadPool">
+      <HintPath>D:\Unity\Hub\Editor\2022.3.62f2\Editor\Data\NetStandard\compat\2.1.0\shims\netstandard\System.Threading.ThreadPool.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.Threading.Timer">
+      <HintPath>D:\Unity\Hub\Editor\2022.3.62f2\Editor\Data\NetStandard\compat\2.1.0\shims\netstandard\System.Threading.Timer.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.ValueTuple">
+      <HintPath>D:\Unity\Hub\Editor\2022.3.62f2\Editor\Data\NetStandard\compat\2.1.0\shims\netstandard\System.ValueTuple.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.Xml.ReaderWriter">
+      <HintPath>D:\Unity\Hub\Editor\2022.3.62f2\Editor\Data\NetStandard\compat\2.1.0\shims\netstandard\System.Xml.ReaderWriter.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.Xml.XDocument">
+      <HintPath>D:\Unity\Hub\Editor\2022.3.62f2\Editor\Data\NetStandard\compat\2.1.0\shims\netstandard\System.Xml.XDocument.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.Xml.XmlDocument">
+      <HintPath>D:\Unity\Hub\Editor\2022.3.62f2\Editor\Data\NetStandard\compat\2.1.0\shims\netstandard\System.Xml.XmlDocument.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.Xml.XmlSerializer">
+      <HintPath>D:\Unity\Hub\Editor\2022.3.62f2\Editor\Data\NetStandard\compat\2.1.0\shims\netstandard\System.Xml.XmlSerializer.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.Xml.XPath">
+      <HintPath>D:\Unity\Hub\Editor\2022.3.62f2\Editor\Data\NetStandard\compat\2.1.0\shims\netstandard\System.Xml.XPath.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.Xml.XPath.XDocument">
+      <HintPath>D:\Unity\Hub\Editor\2022.3.62f2\Editor\Data\NetStandard\compat\2.1.0\shims\netstandard\System.Xml.XPath.XDocument.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.Runtime.InteropServices.WindowsRuntime">
+      <HintPath>D:\Unity\Hub\Editor\2022.3.62f2\Editor\Data\NetStandard\Extensions\2.0.0\System.Runtime.InteropServices.WindowsRuntime.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="mscorlib">
+      <HintPath>D:\Unity\Hub\Editor\2022.3.62f2\Editor\Data\NetStandard\compat\2.1.0\shims\netfx\mscorlib.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.ComponentModel.Composition">
+      <HintPath>D:\Unity\Hub\Editor\2022.3.62f2\Editor\Data\NetStandard\compat\2.1.0\shims\netfx\System.ComponentModel.Composition.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.Core">
+      <HintPath>D:\Unity\Hub\Editor\2022.3.62f2\Editor\Data\NetStandard\compat\2.1.0\shims\netfx\System.Core.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.Data">
+      <HintPath>D:\Unity\Hub\Editor\2022.3.62f2\Editor\Data\NetStandard\compat\2.1.0\shims\netfx\System.Data.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System">
+      <HintPath>D:\Unity\Hub\Editor\2022.3.62f2\Editor\Data\NetStandard\compat\2.1.0\shims\netfx\System.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.Drawing">
+      <HintPath>D:\Unity\Hub\Editor\2022.3.62f2\Editor\Data\NetStandard\compat\2.1.0\shims\netfx\System.Drawing.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.IO.Compression.FileSystem">
+      <HintPath>D:\Unity\Hub\Editor\2022.3.62f2\Editor\Data\NetStandard\compat\2.1.0\shims\netfx\System.IO.Compression.FileSystem.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.Net">
+      <HintPath>D:\Unity\Hub\Editor\2022.3.62f2\Editor\Data\NetStandard\compat\2.1.0\shims\netfx\System.Net.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.Numerics">
+      <HintPath>D:\Unity\Hub\Editor\2022.3.62f2\Editor\Data\NetStandard\compat\2.1.0\shims\netfx\System.Numerics.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.Runtime.Serialization">
+      <HintPath>D:\Unity\Hub\Editor\2022.3.62f2\Editor\Data\NetStandard\compat\2.1.0\shims\netfx\System.Runtime.Serialization.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.ServiceModel.Web">
+      <HintPath>D:\Unity\Hub\Editor\2022.3.62f2\Editor\Data\NetStandard\compat\2.1.0\shims\netfx\System.ServiceModel.Web.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.Transactions">
+      <HintPath>D:\Unity\Hub\Editor\2022.3.62f2\Editor\Data\NetStandard\compat\2.1.0\shims\netfx\System.Transactions.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.Web">
+      <HintPath>D:\Unity\Hub\Editor\2022.3.62f2\Editor\Data\NetStandard\compat\2.1.0\shims\netfx\System.Web.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.Windows">
+      <HintPath>D:\Unity\Hub\Editor\2022.3.62f2\Editor\Data\NetStandard\compat\2.1.0\shims\netfx\System.Windows.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.Xml">
+      <HintPath>D:\Unity\Hub\Editor\2022.3.62f2\Editor\Data\NetStandard\compat\2.1.0\shims\netfx\System.Xml.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.Xml.Linq">
+      <HintPath>D:\Unity\Hub\Editor\2022.3.62f2\Editor\Data\NetStandard\compat\2.1.0\shims\netfx\System.Xml.Linq.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.Xml.Serialization">
+      <HintPath>D:\Unity\Hub\Editor\2022.3.62f2\Editor\Data\NetStandard\compat\2.1.0\shims\netfx\System.Xml.Serialization.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UniTask">
+      <HintPath>Library\ScriptAssemblies\UniTask.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Unity.InputSystem">
+      <HintPath>Library\ScriptAssemblies\Unity.InputSystem.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UnityEditor.UI">
+      <HintPath>Library\ScriptAssemblies\UnityEditor.UI.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UnityEngine.UI">
+      <HintPath>Library\ScriptAssemblies\UnityEngine.UI.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="Zenject-Editor.csproj">
+      <Project>{5A3CCE93-4847-92EB-4586-E380E24CE116}</Project>
+      <Name>Zenject-Editor</Name>
+    </ProjectReference>
+    <ProjectReference Include="Zenject.csproj">
+      <Project>{70F5BF5F-98CC-E51F-1FB0-7423E3DCC6ED}</Project>
+      <Name>Zenject</Name>
+    </ProjectReference>
+    <ProjectReference Include="UniRx.csproj">
+      <Project>{BDC57CAE-1620-3AB7-840C-2B564B5029E6}</Project>
+      <Name>UniRx</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Target Name="GenerateTargetFrameworkMonikerAttribute" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

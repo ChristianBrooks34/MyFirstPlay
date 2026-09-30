@@ -1,0 +1,32 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b5658ed738c9de941878e0d0460712c3, type: 3}
+  m_Name: Level17
+  m_EditorClassIdentifier: 
+  _levelData:
+    Name: 
+    Information: 
+    Exp: 0
+    StartLevel: 0
+    MaxLevel: 0
+    Prefab: {fileID: 0}
+    NumberLevel: 17
+    NumberMap: 1
+    LevelType: 1
+    LevelState: 0
+    PointSpawnPlayer: {x: 0, y: 0}
+    Waves:
+    - WaveSpawnDelayInMilliseconds: 0
+      Enemies:
+      - SpawnCooldownInMilliseconds: 0
+        CountEnemy: 1
+        EnemyProfile: {fileID: 11400000, guid: 2ecc6f100a462f54aae83436879ec189, type: 2}

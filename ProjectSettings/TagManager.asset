@@ -1,0 +1,88 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!78 &1
+TagManager:
+  serializedVersion: 2
+  tags: []
+  layers:
+  - Default
+  - TransparentFX
+  - Ignore Raycast
+  - 
+  - Water
+  - UI
+  - Enemy
+  - Player
+  - Weapon
+  - EnemyAttack
+  - RangeAttack
+  - Drop
+  - Building
+  - EnemyHitBox
+  - PlayerHitBox
+  - PlayerAttack
+  - BuildingHitBox
+  - 
+  - 
+  - 
+  - Layer 1
+  - Layer 2
+  - Layer 3
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  m_SortingLayers:
+  - name: Default
+    uniqueID: 0
+    locked: 0
+  - name: Layer 1
+    uniqueID: 2425651459
+    locked: 0
+  - name: Layer 2
+    uniqueID: 4250941897
+    locked: 0
+  - name: Layer 3
+    uniqueID: 4189426099
+    locked: 0
+  - name: Envinroment
+    uniqueID: 4146996413
+    locked: 0
+  - name: Drop
+    uniqueID: 3327737823
+    locked: 0
+  - name: 'ProjectileBackground '
+    uniqueID: 3381225567
+    locked: 0
+  - name: Building
+    uniqueID: 2216442151
+    locked: 0
+  - name: Weapon
+    uniqueID: 2122500325
+    locked: 0
+  - name: Unit
+    uniqueID: 3714191989
+    locked: 0
+  - name: BuildingForegroung
+    uniqueID: 223111157
+    locked: 0
+  - name: Projectile
+    uniqueID: 176853921
+    locked: 0
+  - name: Explosion
+    uniqueID: 1586542961
+    locked: 0
+  - name: Effect
+    uniqueID: 3165898633
+    locked: 0
+  - name: UI
+    uniqueID: 2248607699
+    locked: 0
+  - name: UIForeground
+    uniqueID: 2945873179
+    locked: 0

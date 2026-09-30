@@ -1,0 +1,68 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 734b378bccda26c4093e076a20887d81, type: 3}
+  m_Name: "\u041C\u0435\u0447\u043D\u0438\u043A"
+  m_EditorClassIdentifier: 
+  UnitPrefabForUI: {fileID: 8575103982616219907, guid: 3378221ec274bd243aa5dcca4d08678f,
+    type: 3}
+  UnitPrefab: {fileID: 6970042241912136329, guid: 51d4c49e2249d5b4eb19712a1c0e5eac,
+    type: 3}
+  HealthBarPrefab: {fileID: 7476489287850560769, guid: 61232d9599d78c2478eb06b7f8968076,
+    type: 3}
+  _playerData:
+    Name: "\u041C\u0435\u0447\u043D\u0438\u043A"
+    Information: 
+    Exp: 127
+    StartLevel: 0
+    MaxLevel: 100
+    CurrentLevel: 4
+    Health:
+      NumberDevelop: 8
+      Name: Health
+      CurrentValue: 100
+      StartValue: 100
+      IncrementValue: 2
+      Price: 162
+      StartPrice: 20
+      PriceMultiplayer: 1.3
+    Damage:
+      NumberDevelop: 8
+      Name: Damage
+      CurrentValue: 15
+      StartValue: 7
+      IncrementValue: 1
+      Price: 86
+      StartPrice: 20
+      PriceMultiplayer: 1.2
+    SpeedMovement:
+      NumberDevelop: 8
+      Name: Speed
+      CurrentValue: 5.799999
+      StartValue: 5
+      IncrementValue: 0.1
+      Price: 10240
+      StartPrice: 40
+      PriceMultiplayer: 2
+    MaxHealth: 108
+    DeadCooldown: 2
+    ForseAttack: 200
+    KnockbackTime: 0.2
+    KnockbackDistance: 0.7
+    SizeType: 1
+    DropItems: []
+    LevelUpExp: 160
+    StartLevelUpExp: 10
+    LevelUpExpMultiplayer: 2
+    SpeedRegeneration: 0
+    WeaponProfile: {fileID: 0}
+  SwordChargeBarPrefab: {fileID: 2061922709367149238, guid: 55ecd7f03bfd9e445883fdd6c45a8ec6,
+    type: 3}

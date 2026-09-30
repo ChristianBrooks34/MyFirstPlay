@@ -1,0 +1,67 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6a92a86beeaff5f46b5afbad2dec9115, type: 3}
+  m_Name: Boss
+  m_EditorClassIdentifier: 
+  UnitPrefab: {fileID: 8491094935979761762, guid: 34f6ef6b167a20d48b9ab55eab75c3fe,
+    type: 3}
+  HealthBarPrefab: {fileID: 1110254071292701984, guid: fe5f25411f4ddbe40976ba9b7f6af29d,
+    type: 3}
+  _enemyData:
+    Name: Boss
+    Information: 
+    Exp: 0
+    StartLevel: 0
+    MaxLevel: 0
+    CurrentLevel: 0
+    Health:
+      NumberDevelop: 0
+      Name: Health
+      CurrentValue: 200
+      StartValue: 200
+      IncrementValue: 0
+      Price: 0
+      StartPrice: 0
+      PriceMultiplayer: 0
+    Damage:
+      NumberDevelop: 0
+      Name: Damage
+      CurrentValue: 10
+      StartValue: 10
+      IncrementValue: 0
+      Price: 0
+      StartPrice: 0
+      PriceMultiplayer: 0
+    SpeedMovement:
+      NumberDevelop: 0
+      Name: Speed
+      CurrentValue: 1
+      StartValue: 1
+      IncrementValue: 0
+      Price: 0
+      StartPrice: 0
+      PriceMultiplayer: 0
+    MaxHealth: 200
+    DeadCooldown: 0
+    ForseAttack: 500
+    KnockbackTime: 0.1
+    KnockbackDistance: 0.2
+    SizeType: 3
+    DropItems:
+    - DropRage: 40
+      MaxDropCount: 50
+      MinDropCount: 25
+      DropProfile: {fileID: 11400000, guid: 3041e7d76229d4f409cbe36799d8f630, type: 2}
+    - DropRage: 60
+      MaxDropCount: 150
+      MinDropCount: 50
+      DropProfile: {fileID: 11400000, guid: d4b447c08c59a9a44b8e197ec3ea05a8, type: 2}

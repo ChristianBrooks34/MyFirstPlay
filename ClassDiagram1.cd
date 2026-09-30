@@ -1,0 +1,186 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="@PlayerInput" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="5.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AIIGAAAAACAAIhAiAAKEGxAJYAIXBmAUAGEgIFhQAsA=</HashCode>
+      <FileName>Assets\Project\Input\PlayerInput.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="AnimationController" Collapsed="true">
+    <Position X="1.75" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAEAAAAAAAAAAAAAAIAAAAAAAAQAAQAAAAAAAAAAMA=</HashCode>
+      <FileName>Assets\Project\Scripts\Animation\AnimationController.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Enemy" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="7" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAAAAIAAgAAAAAoAAAAAAIAAAACAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Project\Scripts\Enemy\Enemy.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="EnemyAnimationController" Collapsed="true">
+    <Position X="0.5" Y="5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAAgAAAAgAAAAAAAAAAAAAAAAACAIAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Project\Scripts\Enemy\EnemyAnimationController.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="EnemyAttack" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="8.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAIAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Project\Scripts\Enemy\EnemyAttack.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="EnemyMove" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="5.25" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAIAAAAAAAAAAACAAAAAAAAAAAAAAAAAAgAA=</HashCode>
+      <FileName>Assets\Project\Scripts\Enemy\EnemyMove.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="EnemyProfile" Collapsed="true">
+    <Position X="0.5" Y="2" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Project\Scripts\Enemy\EnemyProfile.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SpawnerEnemy" Collapsed="true">
+    <Position X="8.75" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Project\Scripts\Enemy\SpawnerEnemy.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Level" Collapsed="true">
+    <Position X="7" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ABAAAAAAAAAAAAAAEAAAAAQAAAEAAAAAAAAAAQAAAAA=</HashCode>
+      <FileName>Assets\Project\Scripts\Level\Level.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Player" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="8.75" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AASEAABAAIAEoACAAAIAAAAAAIAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Project\Scripts\Player\Player.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Orientation="Left" Position="0.1" Collapsed="true" />
+  </Class>
+  <Class Name="PlayerAnimationController" Collapsed="true">
+    <Position X="2.75" Y="5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQEAAAgAAAAoAAAAAAACAAAAAAAAAAAIAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Project\Scripts\Player\PlayerAnimationController.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PlayerAttack" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="10.5" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAIAAAIAAQAAAAAAAAEA=</HashCode>
+      <FileName>Assets\Project\Scripts\Player\PlayerAttack.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.112" Collapsed="true" />
+  </Class>
+  <Class Name="PlayerMove" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="7" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AACAAAAAAIAAgAAAAAQAAAAAAAAAAAAAAAAAAAAAgAA=</HashCode>
+      <FileName>Assets\Project\Scripts\Player\PlayerMove.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="PlayerProfile" Collapsed="true">
+    <Position X="2.75" Y="2" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AEAAAAAAAAAIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Project\Scripts\Player\PlayerProfile.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SpawnUnit" Collapsed="true">
+    <Position X="10.5" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Project\Scripts\Unit\SpawnUnit.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Unit" Collapsed="true">
+    <Position X="1.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>EAAAGACAAEAABAAAAAAAAAQAAAAAgAAQAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Project\Scripts\Unit\Unit.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Weapon" Collapsed="true">
+    <Position X="8.75" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAIAA=</HashCode>
+      <FileName>Assets\Project\Scripts\Weapon\Weapon.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="WeaponProfile" Collapsed="true">
+    <Position X="10.5" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAEAAAAAAAAAAAAAAAAAAQAAAAAAAAQQAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Project\Scripts\Weapon\WeaponProfile.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SpriteController" Collapsed="true">
+    <Position X="5.25" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAACAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Project\SpriteController.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="EnemyInstaller" Collapsed="true">
+    <Position X="10.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAACCAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Project\Zenject\EnemyInstaller.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PlayerInstaller" Collapsed="true">
+    <Position X="5.25" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AACEAAAAAAAAIAAAAAAAAAAAAAAAACAIAAAAAAAACAA=</HashCode>
+      <FileName>Assets\Project\Zenject\PlayerInstaller.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="UnitInstaller" Collapsed="true">
+    <Position X="7" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAACAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Project\Zenject\UnitInstaller.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Interface Name="IAttack" Collapsed="true">
+    <Position X="5.25" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAIAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Project\Scripts\interfaces\IAttack.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="IDamageable" Collapsed="true">
+    <Position X="7" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAIAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Project\Scripts\interfaces\IDamageable.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="IMove" Collapsed="true">
+    <Position X="8.75" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Project\Scripts\interfaces\IMove.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>
