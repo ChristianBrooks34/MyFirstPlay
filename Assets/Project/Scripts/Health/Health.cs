@@ -8,22 +8,22 @@ public class Health
 
     public event Action<float> OnChangeHealth;
 
-    public Health(UnitData unitData)
+    public Health(UnitData unitData, bool initializeWithMax = true)
     {
-        _maxValue = unitData.Health.CurrentValue;
-        _currentValue = _maxValue;
+        _maxValue = unitData.Health.StartValue;
+        _currentValue = initializeWithMax ? _maxValue : unitData.Health.CurrentValue;
     }
 
-    public Health(UnitProfile unitProfile)
+    public Health(UnitProfile unitProfile, bool initializeWithMax = true)
     {
         _maxValue = unitProfile.BaseData.Health.StartValue;
-        _currentValue = _maxValue;
+        _currentValue = initializeWithMax ? _maxValue : unitProfile.BaseData.Health.CurrentValue;
     }
 
-    public Health(BuildingProfile buildingProfile)
+    public Health(BuildingProfile buildingProfile, bool initializeWithMax = true)
     {
         _maxValue = buildingProfile.BaseData.Health.StartValue;
-        _currentValue = _maxValue;
+        _currentValue = initializeWithMax ? _maxValue : buildingProfile.BaseData.Health.CurrentValue;
     }
 
     public void Initialize(float currentHealth)
