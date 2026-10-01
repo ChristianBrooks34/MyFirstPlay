@@ -17,8 +17,7 @@ public class SpawnUnitForUIFactory // ??
             return null;
         }
 
-        // Если есть префаб для спавна — проверьте его
-        if (playerProfile.UnitPrefabForUI == null) // замените _playerPrefab на имя вашего префаба
+        if (playerProfile.UnitPrefabForUI == null)
         {
             Debug.LogError("Player prefab is null! Assign prefab in inspector or DI.");
             return null;

@@ -27,6 +27,7 @@ public class SpawnUnitFactory
         var healthBar = go2.GetComponentInChildren<HealthBar>();
 
         go2.transform.localScale = Vector3.one;
+        enemy.Health = new Health(enemyProfile.Data);
 
         healthBar.transform.localScale = Vector3.one * 150;
         healthBar.Initialize(enemy, enemy.Health);
@@ -54,9 +55,6 @@ public class SpawnUnitFactory
 
         var go1 = _container.InstantiatePrefab(playerProfile.UnitPrefab, position, Quaternion.identity, parentForPlayer);
 
-        Debug.Log($"prefab == null: {playerProfile.HealthBarPrefab == null}");
-        Debug.Log($"parentForPlayer == null: {parentForPlayer == null}");
-        Debug.Log($"parentForPlayerHealthBar == null: {parentForPlayerHealthBar == null}");
         var go2 = _container.InstantiatePrefab(playerProfile.HealthBarPrefab, parentForPlayerHealthBar);
 
         var player = go1.GetComponentInChildren<Player>();
@@ -64,7 +62,14 @@ public class SpawnUnitFactory
 
         player.PlayerContext = go1;
 
+        player.Health = new Health(playerProfile.Data, false);
+        Debug.LogError($"1 playerProfile.Data.Health.StartValue = {playerProfile.Data.Health.StartValue}");
+        Debug.LogError($"1 playerProfile.Data.Health.CurrentValue = {playerProfile.Data.Health.CurrentValue}");
+        Debug.LogError($"1 player.Health.MaxValue = {player.Health.MaxValue}");
+        Debug.LogError($"1 player.Health.CurrentValue = {player.Health.CurrentValue}");
         healthBar.Initialize(player, player.Health);
+
+        Debug.LogError($"2 player.Health.CurrentValue = {player.Health.CurrentValue}");
 
         player.HealthBar = healthBar;
 

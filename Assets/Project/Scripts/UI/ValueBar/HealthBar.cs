@@ -19,10 +19,14 @@ public class HealthBar : ValueBar
 
     public void Initialize(IDamageable unit, Health health)
     {
-        if (unit == null || health == null) return;
+        if (unit == null || health == null)
+        {
+            Debug.LogError("unit = null || health = null");
+            return;
+        }
 
         _unit = unit;
-        MaxValue = health.MaxValue;
+        MaxValue = health.CurrentValue;
         _displayValueBar.TextCount = _displayText;
 
         health.OnChangeHealth += UpdateHealth;
@@ -34,6 +38,7 @@ public class HealthBar : ValueBar
 
     private void UpdateHealth(float currentHealth)
     {
+        Debug.LogError($"currentHealth = {currentHealth}; _unit.Health.MaxValue = {_unit.Health.MaxValue}");
         _displayValueBar.Display(currentHealth, _unit.Health.MaxValue);
     }
 

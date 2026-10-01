@@ -8,16 +8,13 @@ public class DevelopButton : MonoBehaviour
     public DisplayDevelopButton _displayDevelopButton;
 
     private Wallet _wallet;
-    private Game _game;
     private GlobalEventManager _globalEventManager;
-    private SpawnUnitEventManager _spawnUnitEventManager;
 
     public DevelopItemFloat DevelopItem { get; private set; }
 
     [Inject]
-    public void Construct(Game game, GlobalEventManager globalEventManager, Wallet wallet)
+    public void Construct(GlobalEventManager globalEventManager, Wallet wallet)
     {
-        _game = game;
         _wallet = wallet;
         _globalEventManager = globalEventManager;
 

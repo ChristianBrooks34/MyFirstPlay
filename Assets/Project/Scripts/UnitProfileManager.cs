@@ -43,6 +43,7 @@ public class UnitProfileManager
 
             unitData.CurrentLevel = 0;
 
+            unitData.Health.StartValue = unitData.BaseMaxHealth;
             unitData.MaxHealth = (int)unitData.Health.StartValue;
             unitData.Health.CurrentValue = unitData.Health.StartValue;
             unitData.Health.Price = unitData.Health.StartPrice;

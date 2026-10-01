@@ -28,6 +28,7 @@ public class UnitData : ProgressableData
     public DevelopItemFloat Damage = new DevelopItemFloat();
     public DevelopItemFloat SpeedMovement = new DevelopItemFloat();
 
+    public int BaseMaxHealth;
     public int MaxHealth;
     public float DeadCooldown;
     public float ForseAttack;

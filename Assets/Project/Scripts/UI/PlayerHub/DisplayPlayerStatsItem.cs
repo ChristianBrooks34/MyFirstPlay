@@ -14,7 +14,7 @@ public class DisplayPlayerStatsItem
         for (int i = 0; i < developItemFloats.Count; i++)
         {
             playerStateItems[i].Text.text = 
-                string.Format(_displayPlayerStatsTextFormat, developItemFloats[i].Name, developItemFloats[i].CurrentValue);
+                string.Format(_displayPlayerStatsTextFormat, developItemFloats[i].Name, developItemFloats[i].StartValue);
         }
     }
 }

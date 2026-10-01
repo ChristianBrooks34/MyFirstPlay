@@ -54,7 +54,7 @@ public class GameSaveSystem : IObjectSaveSystem, IDisposable, ITickable // нужно
         }
     }
 
-    private void UpdateGameDataFromSerializedProfile(GameData gameProfile)
+    private void UpdateGameDataFromSerializedProfile(GameData gameProfile) // слишком большой метод
     {
         for (int i = 0; i < gameProfile.AllPlayers.Count; i++)
         {

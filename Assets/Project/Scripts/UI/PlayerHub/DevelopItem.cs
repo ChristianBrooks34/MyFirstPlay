@@ -8,6 +8,7 @@ public class DevelopItem<T> where T : struct, IConvertible
     [SerializeField] public string Name;
     [SerializeField] public T CurrentValue;
     [SerializeField] public T StartValue;
+    [SerializeField] public T BaseStartValue;
     [SerializeField] public float IncrementValue;
     [SerializeField] public int Price;
     [SerializeField] public int StartPrice;
@@ -19,7 +20,8 @@ public class DevelopItem<T> where T : struct, IConvertible
 
         NumberDevelop++;
 
-        CurrentValue = AddValues(CurrentValue, IncrementValue);
+        StartValue = AddValues(StartValue, IncrementValue);
+        Debug.LogError($"StartValue = {StartValue}");
     }
 
     private T AddValues(T a, float b)
