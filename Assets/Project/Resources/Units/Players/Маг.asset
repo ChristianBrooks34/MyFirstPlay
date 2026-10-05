@@ -26,32 +26,36 @@ MonoBehaviour:
     MaxLevel: 100
     CurrentLevel: 0
     Health:
-      NumberDevelop: 7
+      NumberDevelop: 0
       Name: Heatlh
-      CurrentValue: 133
+      CurrentValue: 125
       StartValue: 125
+      BaseStartValue: 0
       IncrementValue: 2
-      Price: 252
+      Price: 15
       StartPrice: 15
       PriceMultiplayer: 1.5
     Damage:
-      NumberDevelop: 3
+      NumberDevelop: 0
       Name: Damage
       CurrentValue: 3
       StartValue: 3
+      BaseStartValue: 0
       IncrementValue: 1
-      Price: 17
+      Price: 10
       StartPrice: 10
       PriceMultiplayer: 1.2
     SpeedMovement:
-      NumberDevelop: 3
+      NumberDevelop: 0
       Name: Speed
       CurrentValue: 4
       StartValue: 4
+      BaseStartValue: 0
       IncrementValue: 0.1
-      Price: 240
+      Price: 30
       StartPrice: 30
       PriceMultiplayer: 2
+    BaseMaxHealth: 125
     MaxHealth: 125
     DeadCooldown: 2
     ForseAttack: 200

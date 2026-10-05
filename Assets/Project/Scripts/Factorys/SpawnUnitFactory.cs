@@ -3,10 +3,10 @@ using Zenject;
 
 public class SpawnUnitFactory
 {
-    private readonly DiContainer _container;
+    private readonly IInstantiator _container;
     private readonly SpawnUnitEventManager _spawnUnitEventManager;
 
-    public SpawnUnitFactory(DiContainer container, SpawnUnitEventManager spawnUnitEventManager)
+    public SpawnUnitFactory(IInstantiator container, SpawnUnitEventManager spawnUnitEventManager)
     {
         _container = container;
         _spawnUnitEventManager = spawnUnitEventManager;
@@ -63,13 +63,8 @@ public class SpawnUnitFactory
         player.PlayerContext = go1;
 
         player.Health = new Health(playerProfile.Data, false);
-        Debug.LogError($"1 playerProfile.Data.Health.StartValue = {playerProfile.Data.Health.StartValue}");
-        Debug.LogError($"1 playerProfile.Data.Health.CurrentValue = {playerProfile.Data.Health.CurrentValue}");
-        Debug.LogError($"1 player.Health.MaxValue = {player.Health.MaxValue}");
-        Debug.LogError($"1 player.Health.CurrentValue = {player.Health.CurrentValue}");
-        healthBar.Initialize(player, player.Health);
 
-        Debug.LogError($"2 player.Health.CurrentValue = {player.Health.CurrentValue}");
+        healthBar.Initialize(player, player.Health);
 
         player.HealthBar = healthBar;
 

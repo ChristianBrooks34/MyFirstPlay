@@ -29,6 +29,7 @@ MonoBehaviour:
       Name: Health
       CurrentValue: 15
       StartValue: 15
+      BaseStartValue: 0
       IncrementValue: 0
       Price: 0
       StartPrice: 0
@@ -38,6 +39,7 @@ MonoBehaviour:
       Name: Damage
       CurrentValue: 2
       StartValue: 2
+      BaseStartValue: 0
       IncrementValue: 0
       Price: 0
       StartPrice: 0
@@ -47,10 +49,12 @@ MonoBehaviour:
       Name: Speed
       CurrentValue: 3
       StartValue: 3
+      BaseStartValue: 0
       IncrementValue: 0
       Price: 0
       StartPrice: 0
       PriceMultiplayer: 0
+    BaseMaxHealth: 15
     MaxHealth: 15
     DeadCooldown: 0
     ForseAttack: 200

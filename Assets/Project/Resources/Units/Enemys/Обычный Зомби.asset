@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c08b7ab7b3b197546b8132a21f49523a, type: 3}
   m_Name: "\u041E\u0431\u044B\u0447\u043D\u044B\u0439 \u0417\u043E\u043C\u0431\u0438"
   m_EditorClassIdentifier: 
+  UnitPrefabForUI: {fileID: 0}
   UnitPrefab: {fileID: 6257895987113439386, guid: dbbd98284530b5b41ac6c86a81f00e7f,
     type: 3}
   HealthBarPrefab: {fileID: 1110254071292701984, guid: 11110fd82d866ef46a2e703ae5394a09,
@@ -28,6 +29,7 @@ MonoBehaviour:
       Name: Health
       CurrentValue: 10
       StartValue: 10
+      BaseStartValue: 0
       IncrementValue: 0
       Price: 0
       StartPrice: 0
@@ -37,6 +39,7 @@ MonoBehaviour:
       Name: Damage
       CurrentValue: 2
       StartValue: 2
+      BaseStartValue: 0
       IncrementValue: 0
       Price: 0
       StartPrice: 0
@@ -46,10 +49,12 @@ MonoBehaviour:
       Name: Speed
       CurrentValue: 2
       StartValue: 2
+      BaseStartValue: 0
       IncrementValue: 0
       Price: 0
       StartPrice: 0
       PriceMultiplayer: 0
+    BaseMaxHealth: 10
     MaxHealth: 10
     DeadCooldown: 2
     ForseAttack: 200

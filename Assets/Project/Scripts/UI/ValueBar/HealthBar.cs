@@ -17,14 +17,14 @@ public class HealthBar : ValueBar
         _globalEventManager = globalEventManager;
     }
 
-    public void Initialize(IDamageable unit, Health health)
+    public virtual void Initialize(IDamageable unit, Health health)
     {
         if (unit == null || health == null)
         {
             Debug.LogError("unit = null || health = null");
             return;
         }
-
+        
         _unit = unit;
         MaxValue = health.CurrentValue;
         _displayValueBar.TextCount = _displayText;

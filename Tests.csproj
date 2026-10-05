@@ -61,6 +61,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\Test\SpawnUnitTest.cs" />
+    <Compile Include="Assets\Test\StudyNSubstitute.cs" />
     <Compile Include="Assets\Test\HealthTest.cs" />
     <Compile Include="Assets\Test\StaetLevelTest.cs" />
     <Compile Include="Assets\Test\WalletTest.cs" />

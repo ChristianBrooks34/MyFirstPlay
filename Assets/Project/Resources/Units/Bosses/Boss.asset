@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6a92a86beeaff5f46b5afbad2dec9115, type: 3}
   m_Name: Boss
   m_EditorClassIdentifier: 
+  UnitPrefabForUI: {fileID: 0}
   UnitPrefab: {fileID: 8491094935979761762, guid: 34f6ef6b167a20d48b9ab55eab75c3fe,
     type: 3}
   HealthBarPrefab: {fileID: 1110254071292701984, guid: fe5f25411f4ddbe40976ba9b7f6af29d,
@@ -28,6 +29,7 @@ MonoBehaviour:
       Name: Health
       CurrentValue: 200
       StartValue: 200
+      BaseStartValue: 0
       IncrementValue: 0
       Price: 0
       StartPrice: 0
@@ -37,6 +39,7 @@ MonoBehaviour:
       Name: Damage
       CurrentValue: 10
       StartValue: 10
+      BaseStartValue: 0
       IncrementValue: 0
       Price: 0
       StartPrice: 0
@@ -46,10 +49,12 @@ MonoBehaviour:
       Name: Speed
       CurrentValue: 1
       StartValue: 1
+      BaseStartValue: 0
       IncrementValue: 0
       Price: 0
       StartPrice: 0
       PriceMultiplayer: 0
+    BaseMaxHealth: 200
     MaxHealth: 200
     DeadCooldown: 0
     ForseAttack: 500

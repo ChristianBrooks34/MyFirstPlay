@@ -1,80 +1,72 @@
-using Moq;
+п»їusing FluentAssertions;
+using NSubstitute;
+using NSubstitute.Core.Arguments;
 using NUnit.Framework;
 using System;
 using UnityEngine;
+using UnityEngine.Profiling;
 using Zenject;
 
 public class SpawnUnitTest
 {
+
+    internal class HealthBarStub : HealthBar
+    {
+        public override void Initialize(IDamageable unit, Health health)
+        {
+
+        }
+    }
+
+    internal class PlayerStub : Player
+    {
+        public override void Initialize(PlayerProfile playerProfile)
+        {
+            UnitProfile = playerProfile;
+            UnitData = playerProfile.Data;
+            Health = new Health(UnitData);
+            HealthBar.Initialize(this, Health);
+        }
+    }
+
     [Test]
     public void WhenPlayerIsSpawned_AndStartLevel_ThenPlayerShouldNotBeNull()
     {
-        Debug.Log("Run test");
+        // Arrange в†’ РџРѕРґРіРѕС‚РѕРІРєР°
 
-        // Используем Loose для отладки
-        var mockContainer = new Mock<IDiContainer>(MockBehavior.Loose);
-        var mockEventManager = new Mock<SpawnUnitEventManager>();
+        var containerMock = Substitute.For<IInstantiator>();
 
-        var playerGO = new GameObject();
-        var healthBarGO = new GameObject();
+        SpawnUnitEventManager spawnUnitEventManager = new SpawnUnitEventManager();
 
-        Debug.Log(1);
+        SpawnUnitFactory stawnUnitFactory = new SpawnUnitFactory(containerMock, spawnUnitEventManager);
 
-        try
-        {
+        GameObject playerGo = new GameObject("PlayerGO");
+        playerGo.AddComponent<PlayerStub>();
 
-            mockContainer
-                .Setup(c => c.InstantiatePrefab(
-                    It.IsAny<GameObject>(),
-                    It.IsAny<Vector3>(),
-                    It.IsAny<Quaternion>(),
-                    It.IsAny<Transform>()))
-                .Returns(playerGO);
-            Debug.Log("Setup 1 completed");
-        }
-        catch (Exception ex)
-        {
-            Debug.LogError($"Setup 1 failed: {ex.Message}");
-            throw;
-        }
-        Debug.Log(2);
+        GameObject healthBarGO = new GameObject("HealthBarGO");
+        healthBarGO.AddComponent<HealthBarStub>();
 
-        mockContainer
-            .Setup(c => c.InstantiatePrefab(
-                It.IsAny<GameObject>(),
-                It.IsAny<Transform>()))
+        containerMock.InstantiatePrefab(Arg.Any<UnityEngine.Object>(), Arg.Any<Vector3>(), Arg.Any<Quaternion>(), Arg.Any<Transform>())
+            .Returns(playerGo);
+
+        containerMock.InstantiatePrefab(Arg.Any<UnityEngine.Object>(), Arg.Any<Transform>())
             .Returns(healthBarGO);
 
-        //var spawnUnitFactory = new SpawnUnitFactory(mockContainer.Object, mockEventManager.Object);
-        //Debug.Log(23);
+        PlayerProfile playerProfile = ScriptableObject.CreateInstance<PlayerProfile>(); ;
+        PlayerData playerData = new PlayerData();
 
-        //var playerProfile = new PlayerProfile
-        //{
-        //    //Prefab = new GameObject(),
-        //    //HealthBarPrefab = new GameObject()
-        //};
+        playerProfile.Data = playerData;
+        playerProfile.UnitPrefab = playerGo;
+        playerProfile.HealthBarPrefab = healthBarGO;
 
-        //var parent = new GameObject().transform;
+        Vector2 position = new Vector2(0,0);
 
-        //// Act — вызываем тестируемый метод
-        //var player = spawnUnitFactory.PlayerSpawn(playerProfile, Vector2.zero, parent, parent);
+        Transform parent = new GameObject().transform;
 
-        // Assert — проверяем результат
-        //Assert.IsNotNull(player, "PlayerSpawn должен вернуть не-null объект Player");
-        //Assert.AreEqual(playerGO, player.PlayerContext, "PlayerContext должен ссылаться на созданный GameObject");
-        //Assert.IsNotNull(player.HealthBar, "HealthBar должен быть инициализирован");
-    }
+        // Act в†’ Р”РµР№СЃС‚РІРёРµ
+        var player = stawnUnitFactory.PlayerSpawn(playerProfile, position, parent, parent);
 
-    public class DiContainerAdapter : IDiContainer
-    {
-        private readonly DiContainer _container;
-
-        public DiContainerAdapter(DiContainer container) => _container = container;
-
-        public GameObject InstantiatePrefab(GameObject prefab, Vector3 position, Quaternion rotation, Transform parent) =>
-            _container.InstantiatePrefab(prefab, position, rotation, parent);
-
-        public GameObject InstantiatePrefab(GameObject prefab, Transform parent) =>
-            _container.InstantiatePrefab(prefab, parent);
+        // Assert в†’ РџСЂРѕРІРµСЂРєР°
+        player.Should().NotBeNull();
     }
 }

@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c5be95a769fe3cb42b890d2e79f7ef05, type: 3}
   m_Name: Turret
   m_EditorClassIdentifier: 
+  UnitPrefabForUI: {fileID: 0}
   UnitPrefab: {fileID: 595911941972332166, guid: e6bd7731fc500184896061e98d166159,
     type: 3}
   HealthBarPrefab: {fileID: 1110254071292701984, guid: 11110fd82d866ef46a2e703ae5394a09,
@@ -26,8 +27,9 @@ MonoBehaviour:
     Health:
       NumberDevelop: 0
       Name: Health
-      CurrentValue: 15
-      StartValue: 15
+      CurrentValue: 20
+      StartValue: 20
+      BaseStartValue: 0
       IncrementValue: 0
       Price: 0
       StartPrice: 0
@@ -37,6 +39,7 @@ MonoBehaviour:
       Name: Damage
       CurrentValue: 3
       StartValue: 3
+      BaseStartValue: 0
       IncrementValue: 0
       Price: 0
       StartPrice: 0
@@ -46,11 +49,13 @@ MonoBehaviour:
       Name: Speed
       CurrentValue: 0
       StartValue: 0
+      BaseStartValue: 0
       IncrementValue: 0
       Price: 0
       StartPrice: 0
       PriceMultiplayer: 0
-    MaxHealth: 15
+    BaseMaxHealth: 20
+    MaxHealth: 20
     DeadCooldown: 0
     ForseAttack: 200
     KnockbackTime: 0
