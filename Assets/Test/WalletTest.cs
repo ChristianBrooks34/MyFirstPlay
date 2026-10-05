@@ -1,5 +1,7 @@
 ﻿using FluentAssertions;
 using NUnit.Framework;
+using UnityEngine;
+using UnityEngine.TestTools;
 
 public class WalletTest
 {
@@ -47,6 +49,56 @@ public class WalletTest
 
         // Assert.
         wallet.Money.Should().Be(0);
+    }
+
+
+    [Test]
+    public void WhenSubstractMoneyToWallet_AndValueExceedsCurrentBalance_ThenBalanceShouldBeZero()
+    {
+        // Arrange
+        var initialBalance = 100;
+        var amountToSubstract = 120;
+        var wallet = new Wallet(initialBalance);
+
+        // Act
+        wallet.Substract(amountToSubstract);
+
+        // Assert.
+        wallet.Money.Should().Be(initialBalance);
+    }
+
+    [Test]
+    public void WhenSubstractMoneyToWallet_AndValueIsNegative_ThenBalanceDoesNotChange()
+    {
+        // Arrange
+        var initialBalance = 1;
+        var amountToSubstract = -1;
+        var wallet = new Wallet(initialBalance);
+
+        LogAssert.Expect(LogType.Error, "Параметр value не может быть меньше нуля");
+
+        // Act
+        wallet.Substract(amountToSubstract);
+
+        // Assert.
+        wallet.Money.Should().Be(initialBalance);
+    }
+
+    [Test]
+    public void WhenAddMoneyToWallet_AndValueIsNegative_ThenBalanceDoesNotChange()
+    {
+        // Arrange
+        var initialBalance = 1;
+        var amountToSubstract = -1;
+        var wallet = new Wallet(initialBalance);
+
+        LogAssert.Expect(LogType.Error, "Параметр value не может быть меньше нуля");
+
+        // Act
+        wallet.Add(amountToSubstract);
+
+        // Assert.
+        wallet.Money.Should().Be(initialBalance);
     }
 }
 

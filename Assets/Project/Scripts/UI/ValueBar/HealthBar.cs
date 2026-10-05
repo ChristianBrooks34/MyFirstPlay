@@ -38,14 +38,7 @@ public class HealthBar : ValueBar
 
     private void UpdateHealth(float currentHealth)
     {
-        Debug.LogError($"currentHealth = {currentHealth}; _unit.Health.MaxValue = {_unit.Health.MaxValue}");
         _displayValueBar.Display(currentHealth, _unit.Health.MaxValue);
-    }
-
-    private void UpdateHealthOnplayerChangedLevel()
-    {
-        if (_unit == null || _unit.Health == null) return;
-        UpdateHealth(_unit.Health.CurrentValue);
     }
 
     private void OnPlayerLevelChanged()
@@ -59,9 +52,9 @@ public class HealthBar : ValueBar
         if (_unit.Health == null)
         {
             Debug.LogError("_unit.Health == null");
-
             return;
         }
+
         UpdateHealth(_unit.Health.CurrentValue);
     }
 
@@ -72,7 +65,6 @@ public class HealthBar : ValueBar
 
         if (_globalEventManager != null)
         {
-            //_globalEventManager.OnChangedPlayerLevel -= UpdateHealthOnplayerChangedLevel;
             _globalEventManager.OnChangedPlayerLevel -= OnPlayerLevelChanged;
         }
     }
