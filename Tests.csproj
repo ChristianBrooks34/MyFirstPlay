@@ -9,7 +9,8 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProductVersion>10.0.20506</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <RootNamespace></RootNamespace>
+    <RootNamespace>
+    </RootNamespace>
     <ProjectGuid>{267AF7ED-F734-D4BE-3694-CA3CFEBE16E3}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
@@ -60,10 +61,11 @@
     <Analyzer Include="D:\Unity\Hub\Editor\2022.3.62f2\Editor\Data\Tools\Unity.SourceGenerators\Unity.Properties.SourceGenerator.dll" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\Test\ValueBarTest.cs" />
     <Compile Include="Assets\Test\SpawnUnitTest.cs" />
     <Compile Include="Assets\Test\StudyNSubstitute.cs" />
     <Compile Include="Assets\Test\HealthTest.cs" />
-    <Compile Include="Assets\Test\StaetLevelTest.cs" />
+    <Compile Include="Assets\Test\StartLevelTest.cs" />
     <Compile Include="Assets\Test\WalletTest.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -979,6 +981,10 @@
     <ProjectReference Include="Zenject.csproj">
       <Project>{70F5BF5F-98CC-E51F-1FB0-7423E3DCC6ED}</Project>
       <Name>Zenject</Name>
+    </ProjectReference>
+    <ProjectReference Include="UniRx.csproj">
+      <Project>{BDC57CAE-1620-3AB7-840C-2B564B5029E6}</Project>
+      <Name>UniRx</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

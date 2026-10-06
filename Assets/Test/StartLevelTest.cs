@@ -1,6 +1,6 @@
 using NUnit.Framework;
 
-public class StaetLevelTest
+public class StartLevelTest
 {
 
     [Test]
