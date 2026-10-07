@@ -1,4 +1,5 @@
 ﻿using System;
+using UnityEngine;
 
 public class BuildingEventManager
 {
@@ -9,5 +10,4 @@ public class BuildingEventManager
     public void TriggetInitialize() => OnInitialize?.Invoke();
     public void TriggetDestroy() => OnDestroy?.Invoke();
     public void TriggetDamage(float damage) => OnDamage?.Invoke(damage);
-
 }

@@ -5,7 +5,6 @@ using UnityEngine;
 public abstract class Unit : MonoBehaviour, IUnit<UnitProfile, UnitData>, ITargetInfo
 {
     [NonSerialized] public BaseAttack CurrentAttack;
-    [NonSerialized] public bool IsPushing;
 
     public Transform PointDropSpawn;
 
@@ -13,7 +12,6 @@ public abstract class Unit : MonoBehaviour, IUnit<UnitProfile, UnitData>, ITarge
     public EntityType Type => _type;
     public bool CanAttack { get; set; } = false;
     public bool IsDead { get; protected set; } = false;
-    public bool CanBeAttacked { get; set; } = true;
     public Health Health { get; set; }
     public UnitProfile UnitProfile { get; set; }
     public UnitData UnitData { get; set; }
@@ -39,38 +37,6 @@ public abstract class Unit : MonoBehaviour, IUnit<UnitProfile, UnitData>, ITarge
             return;
 
         UnitProfile.BaseData.Health.CurrentValue = UnitProfile.BaseData.Health.StartValue;
-    }
-
-    public void Knockback(Vector2 direction)
-    {
-        KnockbackCoroutine(direction).Forget();
-    }
-
-    private async UniTaskVoid KnockbackCoroutine(Vector2 direction)
-    {
-        if (IsPushing || IsDead) return;
-        if (!CanBeAttacked)
-        {
-            return;
-        }
-
-        IsPushing = true;
-        var currentTime = 0f;
-        var targetOffset = direction * UnitProfile.BaseData.KnockbackDistance;
-
-        Vector3 pushVelocity = targetOffset / UnitProfile.BaseData.KnockbackTime;
-
-        while (currentTime < UnitProfile.BaseData.KnockbackTime)
-        {
-            if (IsDead) break;
-
-            transform.position += pushVelocity * Time.deltaTime;
-
-            currentTime += Time.deltaTime;
-            await UniTask.DelayFrame(1);
-        }
-
-        IsPushing = false;
     }
 
     public float GetHealthInProcent()

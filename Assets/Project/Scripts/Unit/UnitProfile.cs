@@ -31,10 +31,16 @@ public class UnitData : ProgressableData
     public int BaseMaxHealth;
     public int MaxHealth;
     public float DeadCooldown;
-    public float ForseAttack;
-    public float KnockbackTime;
-    public float KnockbackDistance;
+    public KnockbackData KnockbackData;
     public UnitSize SizeType = UnitSize.Medium;
 
     public List<DropItem> DropItems;
+}
+
+[Serializable]
+public class KnockbackData
+{
+    public float ForceAttack;
+    public float KnockbackTime;
+    public float KnockbackDistance;
 }

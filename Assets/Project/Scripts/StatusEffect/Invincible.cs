@@ -1,24 +1,28 @@
+
+using UnityEngine;
+
 public class Invincible : IEffect
 {
     public bool IsActive { get; private set; }
 
-    private Unit _unit;
+    private IDamageable _damagableObject;
 
-    public Invincible(Unit unit)
+    public Invincible(IDamageable damagableObject)
     {
-        _unit = unit;
+        _damagableObject = damagableObject;
     }
 
     public void Apply()
     {
         if (IsActive) return;
         IsActive = true;
-        _unit.CanBeAttacked = false;
+        _damagableObject.CanBeAttacked = false;
     }
 
     public void Remove()
     {
-        _unit.CanBeAttacked = true;
+        _damagableObject.CanBeAttacked = true;
         IsActive = false;
     }
 }
+

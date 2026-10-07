@@ -15,10 +15,7 @@ public class TurretBuilding : Building, IDamageable // нужен рефакто
 
     public TurretBuildingProfile TurretProfile;
 
-    public Health Health { get; set; }
-
     private BuildingEventManager _buildingEventManager;
-    private bool _isDead;
 
     [Inject]
     public void Construct(BuildingEventManager buildingEventManager)
@@ -26,8 +23,10 @@ public class TurretBuilding : Building, IDamageable // нужен рефакто
         _buildingEventManager = buildingEventManager;
     }
 
-    public void Initialize()
+    public override void Initialize()
     {
+        base.Initialize();
+
         Health = new Health(TurretProfile);
 
         Health.Initialize(TurretProfile.Data.Health.StartValue);
@@ -36,7 +35,6 @@ public class TurretBuilding : Building, IDamageable // нужен рефакто
 
         _buildingEventManager.TriggetInitialize();
 
-        _isDead = false;
     }
 
     private void Update()
@@ -47,9 +45,9 @@ public class TurretBuilding : Building, IDamageable // нужен рефакто
         }
     }
 
-    public void ApplyDamage(float damage)
+    public override void ApplyDamage(float damage)
     {
-        if (_isDead) return;
+        if (IsDead) return;
 
         var resultDamage = Mathf.Round(damage);
 
@@ -66,9 +64,20 @@ public class TurretBuilding : Building, IDamageable // нужен рефакто
         _buildingEventManager.TriggetDamage(resultDamage);
     }
 
-    public void Dead()
+    public override bool TryApplyDamage(float damage)
     {
-        _isDead = true;
+        if (damage < 0) return false;
+
+        if (!CanBeAttacked) return false;
+
+        ApplyDamage(damage);
+
+        return true;
+    }
+
+    public override void Dead()
+    {
+        base.Dead();
 
         Destroy(gameObject);
         Destroy(HealthBar.gameObject);
@@ -77,15 +86,6 @@ public class TurretBuilding : Building, IDamageable // нужен рефакто
     public float CalculateTotalDamage()
     {
         return TurretProfile.Data.Damage.CurrentValue;
-    }
-
-    public bool TryApplyDamage(float damage)
-    {
-        if (damage < 0) return false;
-
-        ApplyDamage(damage);
-
-        return true;
     }
 }
 

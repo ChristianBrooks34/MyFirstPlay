@@ -1,22 +1,23 @@
+using Cysharp.Threading.Tasks;
 using System;
 using System.Threading;
-using Cysharp.Threading.Tasks;
+using UnityEngine;
 
-public class PlayerStatusEffectManager : EffectManager, IDisposable
+public class BuildingStatusEffectManager : EffectManager
 {
-    private readonly Player _player;
-    private readonly PlayerEventManager _playerEventManager;
+    private readonly Building _building;
+    private readonly BuildingEventManager _buildingEventManager;
 
     private IEffect _invincibleEffect;
 
     private CancellationTokenSource _cts;
 
-    public PlayerStatusEffectManager(PlayerEventManager playerEventManager, Player player)
+    public BuildingStatusEffectManager(BuildingEventManager buildingEventManager, Building building)
     {
-        _player = player;
-        _playerEventManager = playerEventManager;
+        _building = building;
+        _buildingEventManager = buildingEventManager;
 
-        _playerEventManager.OnDamage += TriggerDamageStatusEffect;
+        _buildingEventManager.OnDamage += TriggerDamageStatusEffect;
     }
 
     public void TriggerDamageStatusEffect(float value)
@@ -27,7 +28,7 @@ public class PlayerStatusEffectManager : EffectManager, IDisposable
 
         if (_invincibleEffect == null)
         {
-            _invincibleEffect = new Invincible(_player);
+            _invincibleEffect = new Invincible(_building);
             AddEffect(_invincibleEffect);
         }
 
@@ -39,23 +40,24 @@ public class PlayerStatusEffectManager : EffectManager, IDisposable
         try
         {
             await UniTask.Delay(TimeSpan.FromSeconds(1f), cancellationToken: token)
-                         .AttachExternalCancellation(_player.GetCancellationTokenOnDestroy());
+                         .AttachExternalCancellation(_building.GetCancellationTokenOnDestroy());
 
             if (_invincibleEffect != null)
             {
                 RemoveEffect(_invincibleEffect);
+
                 _invincibleEffect = null;
             }
         }
         catch (OperationCanceledException)
         {
-            
+
         }
     }
 
     public void Dispose()
     {
-        _playerEventManager.OnDamage -= TriggerDamageStatusEffect;
+        _buildingEventManager.OnDamage -= TriggerDamageStatusEffect;
 
         _cts?.Cancel();
         _cts?.Dispose();

@@ -223,6 +223,7 @@
     <Compile Include="Assets\Project\Scripts\UI\PlayerHub\DevelopItem.cs" />
     <Compile Include="Assets\Project\Scripts\UI\Buttons\ExitLevelMenuButton.cs" />
     <Compile Include="Assets\Project\Scripts\UI\Buttons\OpenLevelMenuButton.cs" />
+    <Compile Include="Assets\Project\Scripts\StatusEffect\BuildingStatusEffectManager.cs" />
     <Compile Include="Assets\Project\Scripts\Attacks\Turret\BulletTurretAttack.cs" />
     <Compile Include="Assets\Project\Scripts\Unit\UnitLevelManager.cs" />
     <Compile Include="Assets\Project\Scripts\Objects Pool\TurretPool.cs" />

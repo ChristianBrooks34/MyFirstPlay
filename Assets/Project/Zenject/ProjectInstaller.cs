@@ -56,11 +56,6 @@ public class ProjectInstaller : ScriptableObjectInstaller
             .NonLazy();
 
         Container
-            .Bind<BuildingEventManager>()
-            .AsSingle()
-            .NonLazy();
-
-        Container
             .Bind<LevelProfileManager>()
             .AsSingle()
             .NonLazy();

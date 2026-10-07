@@ -20,6 +20,8 @@ public abstract class Enemy : Unit, IKnockbackable, IDamageable
     protected abstract UnitEventManager UnitEventManager { get; set; }
     protected abstract GlobalEventManager GlobalEventManager { get; set; }
     protected abstract IStateMachine StateMachine { get; set; }
+    public bool IsPushing { get; set; }
+    public bool CanBeAttacked { get; set; }
 
     public virtual void Initialize(EnemyProfile enemyProfile)
     {
@@ -41,6 +43,8 @@ public abstract class Enemy : Unit, IKnockbackable, IDamageable
         SetActive(true);
 
         IsDisposable = false;
+
+        CanBeAttacked = true;
     }
 
     public virtual void RecycleActivate()
@@ -68,7 +72,6 @@ public abstract class Enemy : Unit, IKnockbackable, IDamageable
     public virtual void ApplyDamage(float damage)
     {
         if (StateMachine.IsCurrentState(EnemyState.Dead)) return;
-        if (!CanBeAttacked) return;
 
         var resultDamage = Mathf.Round(damage);
 
@@ -139,5 +142,10 @@ public abstract class Enemy : Unit, IKnockbackable, IDamageable
         ApplyDamage(damage);
 
         return true;
+    }
+
+    public void Knockback(Vector2 direction)
+    {
+        KnockbackControoller.KnockbackCoroutine(direction, this, UnitProfile.BaseData.KnockbackData).Forget(); ;
     }
 }

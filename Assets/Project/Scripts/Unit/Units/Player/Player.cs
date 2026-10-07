@@ -11,8 +11,11 @@ public class Player : Unit, IKnockbackable, IPicked, IDisposable, IDamageable
     public Weapon Weapon;
     
     protected PlayerEventManager playerEventManager;
-    protected LevelEventManager    levelEventManager;
+    protected LevelEventManager levelEventManager;
     public List<BaseAttack> BaseAttacks { get; protected set; }
+    public bool CanBeAttacked { get; set; }
+    public bool IsPushing { get; set; }
+
     public override float CalculateTotalDamage()
     {
         if (CurrentAttack == null) return UnitProfile.BaseData.Damage.CurrentValue;
@@ -32,11 +35,12 @@ public class Player : Unit, IKnockbackable, IPicked, IDisposable, IDamageable
         Health = new Health(UnitData);
 
         HealthBar.Initialize(this, Health);
+
+        CanBeAttacked = true;
     }
 
     public virtual void ApplyDamage(float damage)
     {
-        Debug.LogError("ApplyDamage");
         var resultDamage = Mathf.Round(damage);
 
         if (Health.CurrentValue - resultDamage <= 0)
@@ -85,11 +89,15 @@ public class Player : Unit, IKnockbackable, IPicked, IDisposable, IDamageable
 
     public virtual bool TryApplyDamage(float damage)
     {
-        Debug.LogError("TryApplyDamage");
         if (!CanBeAttacked) return false;
 
         ApplyDamage(damage);
 
         return true;
+    }
+
+    public void Knockback(Vector2 direction)
+    {
+        KnockbackControoller.KnockbackCoroutine(direction, this, UnitProfile.BaseData.KnockbackData).Forget();
     }
 }

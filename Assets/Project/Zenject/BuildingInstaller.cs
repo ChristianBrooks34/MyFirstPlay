@@ -7,8 +7,6 @@ public class BuildingInstaller : MonoInstaller
 
     public override void InstallBindings()
     {
-        BindAttack();
-
         Container
             .Bind<BuildingSpawnFactory>()
             .AsSingle();
@@ -19,10 +17,14 @@ public class BuildingInstaller : MonoInstaller
             .AsSingle()
             .NonLazy();
 
-        //Container
-        //    .Bind<Transform>()
-        //    .FromInstance(_building.transform)
-        //    .AsSingle();
+        Container
+            .Bind<BuildingEventManager>()
+            .AsSingle();
+
+        Container
+            .Bind<BuildingStatusEffectManager>()
+            .AsSingle()
+            .NonLazy();
 
         Container
             .Bind<DamageFlash>()
@@ -32,15 +34,5 @@ public class BuildingInstaller : MonoInstaller
             .Bind<Health>()
             .FromInstance(new Health(_building.Profile))
             .AsSingle();
-    }
-
-    public void BindAttack()
-    {
-        //Container
-        //   .Bind<BaseAttack>()
-        //   .To<StandartEnemyAttack>()
-        //   .FromInstance(_standartEnemyAttack)
-        //   .AsSingle()
-        //   .NonLazy();
     }
 }

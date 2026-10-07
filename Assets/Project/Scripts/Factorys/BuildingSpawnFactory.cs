@@ -28,7 +28,7 @@ public class BuildingSpawnFactory
 
         go2.transform.localScale = Vector3.one;
         healthBar.transform.localScale = Vector3.one * 150;
-        healthBar.Initialize(turret, turret.Health);
+
 
         healthBar.DisplayPoint = turret.HealthBarDisplayPoint;
 
