@@ -32,7 +32,6 @@ public class LootDroper
         var drop = go.GetComponent<Drop>();
 
         drop.DropProfile = dropItem.DropProfile;
-
         drop.DropProfile.BaseData.Count = Random.Range(dropItem.MinDropCount, dropItem.MaxDropCount);
 
         _dropContainer.Add(go);

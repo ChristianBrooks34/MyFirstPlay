@@ -14,10 +14,35 @@ public class LevelEffectsInstaller : MonoInstaller
     [SerializeField] private int _deadBloodSplashEffectPoolSize;
     [SerializeField] private Transform _parenForDeadBloodSplashEffect;
 
+    [Header("Configs")]
+    [SerializeField] private AnimationCurvesConfig _curvesConfig;
+
+    [Header("Drop Effects Assets")]
+    [SerializeField] private VisualEffectTween _waveVerticalAsset;
+    [SerializeField] private VisualEffectTween _pulsateScaleAsset;
+
     public override void InstallBindings()
     {
         BindEffects();
+
         BindObjectsPool();
+
+        BindVisualEffect();
+    }
+
+    private void BindVisualEffect()
+    {
+        Container.BindInstance(_curvesConfig).AsSingle();
+
+        Container.Bind<VisualEffectManager>().AsSingle();
+
+        Container.Bind<VisualEffectTween>()
+            .WithId(nameof(WaveVerticalEffect))
+            .FromInstance(_waveVerticalAsset);
+
+        Container.Bind<VisualEffectTween>()
+            .WithId(nameof(PulsateScaleEffect))
+            .FromInstance(_pulsateScaleAsset);
     }
 
     private void BindEffects()
@@ -50,10 +75,6 @@ public class LevelEffectsInstaller : MonoInstaller
                 _deadBloodSplashEffectPoolPrefab,
                 _deadBloodSplashEffectPoolSize,
                 _parenForDeadBloodSplashEffect);
-
-        Container
-            .Bind<EnemyPool>()
-            .AsSingle();
     }
 }
 

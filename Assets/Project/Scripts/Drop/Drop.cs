@@ -1,11 +1,8 @@
 using System;
 using UnityEngine;
 
-public abstract class Drop : MonoBehaviour // нужен рефакторинг
+public abstract class Drop : MonoBehaviour
 {
-    [SerializeField] private AnimationCurve _waveVerticalAnimation;
-    [SerializeField] private AnimationCurve _pulsateScaleAnimation;
-
-    public bool _isDead { get; set; } // дроп не может быть мертвым
+    public bool IsCollected { get; set; }
     [NonSerialized] public DropProfile DropProfile;
 }

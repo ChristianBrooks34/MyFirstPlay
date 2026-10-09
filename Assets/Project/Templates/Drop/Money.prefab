@@ -10,8 +10,8 @@ GameObject:
   m_Component:
   - component: {fileID: 7531547883778906542}
   - component: {fileID: 7239759914758384290}
-  - component: {fileID: 6575898423543795274}
   - component: {fileID: -7042434544872473602}
+  - component: {fileID: 6575898423543795274}
   - component: {fileID: 7422090325584054078}
   m_Layer: 0
   m_Name: Money
@@ -87,18 +87,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &6575898423543795274
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6186125688993172119}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c44babbe45981a6438db585ed2909dae, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!58 &-7042434544872473602
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -134,6 +122,18 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0.020751953}
   serializedVersion: 2
   m_Radius: 0.8679199
+--- !u!114 &6575898423543795274
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6186125688993172119}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c44babbe45981a6438db585ed2909dae, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &7422090325584054078
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -146,69 +146,3 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 83d9c5dd7d5e9ab4d842064975f9403f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _waveVerticalAnimation:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 0.000011444092
-      inSlope: 0.0999558
-      outSlope: 0.0999558
-      tangentMode: 34
-      weightedMode: 0
-      inWeight: 0
-      outWeight: 0.33333334
-    - serializedVersion: 3
-      time: 0.5
-      value: 0.049989343
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 34
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    - serializedVersion: 3
-      time: 1
-      value: 0.000011444092
-      inSlope: -0.20429535
-      outSlope: -0.20429535
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.9668939
-      outWeight: 0
-    m_PreInfinity: 1
-    m_PostInfinity: 1
-    m_RotationOrder: 4
-  _pulsateScaleAnimation:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 0.000011444092
-      inSlope: 0.0999558
-      outSlope: 0.0999558
-      tangentMode: 34
-      weightedMode: 0
-      inWeight: 0
-      outWeight: 0.33333334
-    - serializedVersion: 3
-      time: 0.5
-      value: 0.049989343
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 34
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    - serializedVersion: 3
-      time: 1
-      value: 0.000011444092
-      inSlope: -0.20429535
-      outSlope: -0.20429535
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.9668939
-      outWeight: 0
-    m_PreInfinity: 1
-    m_PostInfinity: 1
-    m_RotationOrder: 4

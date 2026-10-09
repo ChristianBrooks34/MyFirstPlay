@@ -90,7 +90,6 @@
     <Compile Include="Assets\Project\FlipDirection.cs" />
     <Compile Include="Assets\Project\Scripts\Unit\StateUnit.cs" />
     <Compile Include="Assets\Project\Scripts\interfaces\IKnockbackable.cs" />
-    <Compile Include="Assets\Project\Scripts\Drop\VisualEffectManager.cs" />
     <Compile Include="Assets\Project\Scripts\Event\BuildingEventManager.cs" />
     <Compile Include="Assets\Project\Scripts\Unit\Units\Turret\Rotation.cs" />
     <Compile Include="Assets\Project\Scripts\interfaces\ISelectable.cs" />
@@ -99,11 +98,13 @@
     <Compile Include="Assets\Project\Scripts\LevelsMenu\LevelsMenu.cs" />
     <Compile Include="Assets\Project\Scripts\Event\EnemyEventManager.cs" />
     <Compile Include="Assets\Project\Scripts\Unit\Units\Enemy\EnemyMoveController.cs" />
+    <Compile Include="Assets\Project\Scripts\Animation\WaveVerticalEffect.cs" />
     <Compile Include="Assets\Project\Scripts\Event\BossEventManager.cs" />
     <Compile Include="Assets\Project\Scripts\UI\PlayerHub\PlayerStatsPanel.cs" />
     <Compile Include="Assets\Project\Scripts\Weapon\WeaponProfile.cs" />
     <Compile Include="Assets\Project\Scripts\Unit\Units\Enemy\Boss\BossPhase.cs" />
     <Compile Include="Assets\Project\Scripts\UI\PlayerLevelBar\PlayerLevelBar.cs" />
+    <Compile Include="Assets\Project\Scripts\Animation\VisualEffectManager.cs" />
     <Compile Include="Assets\Project\Scripts\Wave\WaveEnemy.cs" />
     <Compile Include="Assets\Project\Scripts\Container\ProjectileContainer.cs" />
     <Compile Include="Assets\Project\Scripts\UI\PlayerHub\DisplayPlayerLevel.cs" />
@@ -116,6 +117,7 @@
     <Compile Include="Assets\Project\Scripts\Unit\Units\Enemy\Enemy.cs" />
     <Compile Include="Assets\Project\Scripts\Level\LevelProfile.cs" />
     <Compile Include="Assets\Project\Scripts\UI\Buttons\ExitGameButton.cs" />
+    <Compile Include="Assets\Project\Scripts\Animation\VisualEffectTween.cs" />
     <Compile Include="Assets\Project\Zenject\AttackSlotInstaller.cs" />
     <Compile Include="Assets\Project\Scripts\Drop\GoldMoney.cs" />
     <Compile Include="Assets\Project\Scripts\System\PositionGenerator.cs" />
@@ -193,7 +195,6 @@
     <Compile Include="Assets\Project\Zenject\LobbySceneInstaller.cs" />
     <Compile Include="Assets\Project\Scripts\Projectile\Projectile.cs" />
     <Compile Include="Assets\Project\Scripts\Unit\Units\Player\PlayerUpgradeSistem.cs" />
-    <Compile Include="Assets\Project\Scripts\Drop\AnimationCurvesConfig.cs" />
     <Compile Include="Assets\Project\Scripts\Unit\Units\Enemy\EnemyController.cs" />
     <Compile Include="Assets\Project\Zenject\StartMenuInstaller.cs" />
     <Compile Include="Assets\Project\Scripts\interfaces\BuildingState.cs" />
@@ -256,6 +257,7 @@
     <Compile Include="Assets\Project\Scripts\System\JsonSaveSystem\JsonSaveSystem.cs" />
     <Compile Include="Assets\Project\Scripts\Projectile\ProjectileMovement.cs" />
     <Compile Include="Assets\Project\Scripts\Unit\Units\Enemy\EnemyAnimationController.cs" />
+    <Compile Include="Assets\Project\Scripts\Animation\AnimationCurvesConfig.cs" />
     <Compile Include="Assets\Project\Scripts\RandomPointGenerator.cs" />
     <Compile Include="Assets\Project\Scripts\interfaces\ITargetInfo.cs" />
     <Compile Include="Assets\Project\Scripts\Building\BuildingPreviewSystem.cs" />
@@ -298,6 +300,7 @@
     <Compile Include="Assets\Project\Scripts\Factorys\SpawnUnitForUIFactory.cs" />
     <Compile Include="Assets\Project\Scripts\UI\ValueBar\HealthBar.cs" />
     <Compile Include="Assets\Project\Scripts\Animation\AnimatorBase.cs" />
+    <Compile Include="Assets\Project\Scripts\Animation\PulsateScaleEffect.cs" />
     <Compile Include="Assets\Project\Scripts\System\Game\Game.cs" />
     <Compile Include="Assets\Project\Scripts\Projectile\IceBall.cs" />
     <Compile Include="Assets\Project\Scripts\Unit\Units\Enemy\Enemys\Zombie.cs" />

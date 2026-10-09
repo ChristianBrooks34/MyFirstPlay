@@ -10,8 +10,6 @@ public class CoreLevelInstaller : MonoInstaller
     [SerializeField] private LayerMask _flipableSprites;
     [SerializeField] private AnimationCurve _animationCurve;
     [SerializeField] private DamageRules _damageRules;
-    [SerializeField] private AnimationCurvesConfig _animationCurvesConfig;
-
 
     private SpawnUnitEventManager _spawnUnitEventManager;
 
@@ -41,15 +39,6 @@ public class CoreLevelInstaller : MonoInstaller
             .BindInterfacesTo<LevelEventManager>()
             .AsCached()
             .NonLazy();
-
-        Container
-            .Bind<AnimationCurvesConfig>()
-            .FromInstance(_animationCurvesConfig)
-            .AsSingle();
-
-        Container
-            .Bind<VisualEffectManager>()
-            .AsSingle();
 
         Container
             .Bind<DamageRules>()
@@ -102,6 +91,10 @@ public class CoreLevelInstaller : MonoInstaller
             .BindInterfacesTo<ProjectileMovementController>()
             .AsSingle()
             .NonLazy();
+
+        Container
+            .Bind<EnemyPool>()
+            .AsSingle();
     }
 
     private void BindPlayer(Player player)

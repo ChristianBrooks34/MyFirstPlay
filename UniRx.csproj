@@ -90,8 +90,8 @@
     <Compile Include="Assets\Plugins\UniRx\Scripts\TimeInterval.cs" />
     <Compile Include="Assets\Plugins\UniRx\Scripts\UnityEngineBridge\Operators\FrameTimeInterval.cs" />
     <Compile Include="Assets\Plugins\UniRx\Scripts\UnityWinRTBridge\ThreadPoolScheduler_UnityWinRT.cs" />
-    <Compile Include="Assets\Plugins\UniRx\Scripts\UnityEngineBridge\Triggers\ObservableTriggerBase.cs" />
     <Compile Include="Assets\Plugins\UniRx\Scripts\UnityEngineBridge\Triggers\ObservableUpdateTrigger.cs" />
+    <Compile Include="Assets\Plugins\UniRx\Scripts\UnityEngineBridge\Triggers\ObservableTriggerBase.cs" />
     <Compile Include="Assets\Plugins\UniRx\Scripts\UnityEngineBridge\Diagnostics\ObservableDebugExtensions.cs" />
     <Compile Include="Assets\Plugins\UniRx\Scripts\Operators\Create.cs" />
     <Compile Include="Assets\Plugins\UniRx\Scripts\InternalUtil\ImmutableList.cs" />

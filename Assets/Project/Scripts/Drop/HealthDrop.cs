@@ -1,59 +1,74 @@
-using Cysharp.Threading.Tasks;
 using System.Threading;
+using Cysharp.Threading.Tasks;
+using UnityEngine;
 using Zenject;
 
 public class HealthDrop : Drop, IPickable
 {
     private Player _player;
     private Game _game;
-    private CancellationTokenSource _cts;
     private VisualEffectManager _visualEffectManager;
 
+    private VisualEffectTween _waveEffect;
+    private VisualEffectTween _pulseEffect;
+    private CancellationTokenSource _cts;
+
     [Inject]
-    public void Construct(Game game, Player player, VisualEffectManager visualEffectManager)
+    public void Construct(Game game, Player player, VisualEffectManager visualEffectManager,
+        [Inject(Id = nameof(WaveVerticalEffect))] VisualEffectTween waveEffect,
+        [Inject(Id = nameof(PulsateScaleEffect))] VisualEffectTween pulseEffect)
     {
         _game = game;
         _player = player;
         _visualEffectManager = visualEffectManager;
+        _waveEffect = waveEffect;
+        _pulseEffect = pulseEffect;
 
         StartAnimation();
     }
 
     public bool CanBePicked()
     {
-        return false;
+        return !IsCollected;
     }
 
     public void OnPicked()
     {
-        _player.Health.Add(DropProfile.BaseData.Count);
+        if (!CanBePicked()) return;
 
+        _player.Health.Add(DropProfile.BaseData.Count);
         Delete();
     }
 
     private void StartAnimation()
     {
-        _cts = new CancellationTokenSource();
+        _cts = CancellationTokenSource.CreateLinkedTokenSource(this.GetCancellationTokenOnDestroy());
 
-        _visualEffectManager.WaveVectical(_cts.Token, transform).Forget();
-        _visualEffectManager.PulsateScale(_cts.Token, transform).Forget();
+        _visualEffectManager.PlayEffectAsync(_waveEffect, gameObject, _cts.Token).Forget();
+        _visualEffectManager.PlayEffectAsync(_pulseEffect, gameObject, _cts.Token).Forget();
     }
-
 
     private void OnDestroy()
     {
-        Delete();
+        CleanUp();
     }
 
     private void Delete()
     {
-        if (_isDead) return;
+        if (IsCollected) return;
+        IsCollected = true;
 
-        _isDead = true;
-
-        _cts.Cancel();
-        _cts.Dispose();
-
+        CleanUp();
         Destroy(gameObject);
+    }
+
+    private void CleanUp()
+    {
+        if (_cts != null)
+        {
+            _cts.Cancel();
+            _cts.Dispose();
+            _cts = null;
+        }
     }
 }

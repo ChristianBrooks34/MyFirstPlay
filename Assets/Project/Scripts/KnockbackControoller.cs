@@ -10,14 +10,11 @@ public static class KnockbackControoller
 
     public static async UniTaskVoid KnockbackCoroutine<T>(Vector2 direction, T gameObject, KnockbackData knockbackData) where T : Component, IDamageable, IKnockbackable
     {
-        Debug.LogError("KnockbackCoroutine 1");
         if (gameObject.IsPushing || gameObject == null) return;
-        Debug.LogError("KnockbackCoroutine 2");
         if (!gameObject.CanBeAttacked)
         {
             return;
         }
-        Debug.LogError("KnockbackCoroutine 3");
 
         gameObject.IsPushing = true;
         var currentTime = 0f;

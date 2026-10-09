@@ -22285,6 +22285,9 @@ MonoBehaviour:
     type: 3}
   _deadBloodSplashEffectPoolSize: 10
   _parenForDeadBloodSplashEffect: {fileID: 807233917}
+  _curvesConfig: {fileID: 11400000, guid: ef0fa62fc6f39a9479130c06991b29fd, type: 2}
+  _waveVerticalAsset: {fileID: 11400000, guid: 9daf0168574b278438f280beea0cdf27, type: 2}
+  _pulsateScaleAsset: {fileID: 11400000, guid: c7e3573fbb9ef2447b55886d3e3398a8, type: 2}
 --- !u!114 &2145241384
 MonoBehaviour:
   m_ObjectHideFlags: 0
