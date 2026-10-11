@@ -8,7 +8,7 @@ public static class AttackHitChecker
     {
         List<GameObject> gameObjects = new List<GameObject>();
 
-        var colliders = Physics2D.OverlapCircleAll(center.position, radiysAttack, 1 << layerMask);
+        var colliders = Physics2D.OverlapCircleAll(center.position, radiysAttack, layerMask);
 
         foreach (var collider in colliders)
         {

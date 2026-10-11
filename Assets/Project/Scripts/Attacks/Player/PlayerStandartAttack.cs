@@ -1,3 +1,4 @@
+using Cysharp.Threading.Tasks;
 using UnityEngine;
 using Zenject;
 
@@ -10,7 +11,7 @@ public class PlayerStandardAttack : BaseAttack
     [Inject]
     public void Construct(Player player, WeaponUpDownAnimationController swordAnimationController)
     {
-        _layerMask = LayerMask.NameToLayer("Enemy");
+        _layerMask = LayerMask.GetMask("Enemy");
         _player = player;
         _swordAnimationController = swordAnimationController;
 
@@ -19,6 +20,8 @@ public class PlayerStandardAttack : BaseAttack
         _swordAnimationController.Attack += Attack;
         _swordAnimationController.OnStartedSwordUpAnimation += () => _player.CurrentAttack = this;
     }
+
+    private void SetAsCurrentAttack() => _player.CurrentAttack = this;
 
     public override void Attack()
     {
@@ -32,25 +35,31 @@ public class PlayerStandardAttack : BaseAttack
 
         foreach (var collider in colliders)
         {
-            if (collider.GetComponent<Enemy>() != null)
-            {
-                OnHit(collider);
-            }
+            OnHit(collider);
         }
 
-        //AttackLoop(AttackData.Cooldown).Forget();
+        AttackLoop(AttackData.Cooldown, this.GetCancellationTokenOnDestroy()).Forget();
     }
 
     public override void OnHit(GameObject gameObject)
     {
-        var enemy = gameObject.GetComponent<Enemy>();
+        if (gameObject.TryGetComponent<Enemy>(out var enemy))
+        {
+            enemy.ApplyDamage(_player.CalculateTotalDamage());
 
-        enemy.ApplyDamage(_player.CalculateTotalDamage());
+            KnockbackControoller.Knockback(
+                enemy,
+                enemy.transform.position - _player.transform.position
+            );
+        }
+    }
 
-        KnockbackControoller.Knockback
-        (
-            enemy,
-            enemy.transform.position - _player.transform.position
-        );
+    private void OnDestroy()
+    {
+        if (_swordAnimationController != null)
+        {
+            _swordAnimationController.Attack -= Attack;
+            _swordAnimationController.OnStartedSwordUpAnimation -= SetAsCurrentAttack;
+        }
     }
 }
