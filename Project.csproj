@@ -89,6 +89,7 @@
     <Compile Include="Assets\Project\Scripts\Attacks\Player\PlayerStandartAttack.cs" />
     <Compile Include="Assets\Project\FlipDirection.cs" />
     <Compile Include="Assets\Project\Scripts\Unit\StateUnit.cs" />
+    <Compile Include="Assets\Project\Scripts\System\TransformExtensions.cs" />
     <Compile Include="Assets\Project\Scripts\interfaces\IKnockbackable.cs" />
     <Compile Include="Assets\Project\Scripts\Event\BuildingEventManager.cs" />
     <Compile Include="Assets\Project\Scripts\Unit\Units\Turret\Rotation.cs" />
@@ -137,7 +138,6 @@
     <Compile Include="Assets\Project\Zenject\SwordChargeBarInstaller.cs" />
     <Compile Include="Assets\Project\Scripts\StatusEffect\PlayerStatusEffectManager.cs" />
     <Compile Include="Assets\Project\Scripts\System\AdaptiveSpawnZoneAnalyzer.cs" />
-    <Compile Include="Assets\Project\Scripts\Attacks\Player\BallController.cs" />
     <Compile Include="Assets\Project\Scripts\Unit\UnitDataInitializer.cs" />
     <Compile Include="Assets\Project\Scripts\Animation\PlayerAnimator.cs" />
     <Compile Include="Assets\Project\Scripts\Projectile\ProjectileMovementController.cs" />
@@ -242,7 +242,6 @@
     <Compile Include="Assets\Project\Scripts\UI\Wallet\Wallet.cs" />
     <Compile Include="Assets\Project\Scripts\Unit\Units\Enemy\Boss\BossController.cs" />
     <Compile Include="Assets\Project\Scripts\System\TargetLocator.cs" />
-    <Compile Include="Assets\Project\Scripts\Attacks\Player\BallMovement.cs" />
     <Compile Include="Assets\Project\Scripts\UI\PlayerHub\DisplayDevelopButton.cs" />
     <Compile Include="Assets\Project\Scripts\Attacks\Player\PlayerIceBallAttack.cs" />
     <Compile Include="Assets\Project\Scripts\Projectile\RedirectingProjectile.cs" />

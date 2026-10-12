@@ -1,3 +1,4 @@
+using Cysharp.Threading.Tasks;
 using System;
 using UnityEngine;
 
@@ -100,7 +101,8 @@ public abstract class Enemy : Unit, IKnockbackable, IDamageable
 
         DeadRoutine(
             () => ObjectPool.ReturnObject(gameObject),
-            UnitProfile.BaseData.DeadCooldown)
+            UnitProfile.BaseData.DeadCooldown,
+            this.GetCancellationTokenOnDestroy())
             .Forget();
     }
 

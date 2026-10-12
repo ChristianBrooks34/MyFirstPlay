@@ -467,6 +467,7 @@ GameObject:
   - component: {fileID: 3418480245064895065}
   - component: {fileID: 3053378645206781818}
   - component: {fileID: 6318718634842488961}
+  - component: {fileID: 1357117454976570836}
   m_Layer: 6
   m_Name: DroneStriker
   m_TagString: Untagged
@@ -604,12 +605,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   PointDropSpawn: {fileID: 3685643133489493194}
-  Type: 1
+  _type: 2
   IsStaticEnemy: 0
   HealthBarDisplayPoint: {fileID: 7942749809903034423}
   PointDamageBloodSplash: {fileID: 3310058605824985002}
   PointDeadBloodSplash: {fileID: 8061772305543396641}
-  TriggerChecker: {fileID: 0}
+  TriggerChecker: {fileID: 1357117454976570836}
   _timeScaleDownAnim: 2
 --- !u!114 &6318718634842488961
 MonoBehaviour:
@@ -624,6 +625,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _safeDistance: 5
+--- !u!114 &1357117454976570836
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9072300329071963469}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c44babbe45981a6438db585ed2909dae, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &9147237248949894448
 GameObject:
   m_ObjectHideFlags: 0

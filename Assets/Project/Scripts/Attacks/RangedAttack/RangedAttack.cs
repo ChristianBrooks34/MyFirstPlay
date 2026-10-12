@@ -1,5 +1,5 @@
 public class RangedAttack : BaseAttack
 {
-    public float DistantsAttack;
+    public float DistanceAttack;
     public Projectile Projectile { get; protected set; }
 }

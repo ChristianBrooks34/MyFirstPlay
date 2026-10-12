@@ -4,8 +4,6 @@ public class ProjectileMovement : BaseProjectileMovement
 {
     [SerializeField] private Projectile _projectile;
 
-    private bool _isDisable = false;
-
     private void OnEnable()
     {
         _projectile.OnInitialized += Initialize;
@@ -13,20 +11,17 @@ public class ProjectileMovement : BaseProjectileMovement
 
     private void OnDisable()
     {
-        _isDisable = true;
-        _projectile.OnInitialized -= Initialize;
+        if (_projectile != null)
+        {
+            _projectile.OnInitialized -= Initialize;
+        }
     }
 
     public override void MoveBall()
     {
         if (!CanMove()) return;
 
-        var offset = new Vector3(
-            _projectile.transform.position.x,
-            _projectile.transform.position.y,
-            _projectile.transform.position.z) + Direction * _projectile.Profile.BaseData.Speed * Time.deltaTime;
-
-        _projectile.transform.position = offset;
+        _projectile.transform.position += Direction * (_projectile.Profile.BaseData.Speed * Time.deltaTime);
     }
 
     private void Initialize()

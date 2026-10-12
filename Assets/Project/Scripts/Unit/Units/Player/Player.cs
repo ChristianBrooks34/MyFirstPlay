@@ -1,3 +1,4 @@
+using Cysharp.Threading.Tasks;
 using System;
 using System.Collections.Generic;
 using UnityEngine;
@@ -73,7 +74,8 @@ public class Player : Unit, IKnockbackable, IPicked, IDisposable, IDamageable
 
         DeadRoutine(
             () => gameObject.SetActive(false),
-            UnitProfile.BaseData.DeadCooldown)
+            UnitProfile.BaseData.DeadCooldown,
+            this.GetCancellationTokenOnDestroy())
             .Forget();
     }
 

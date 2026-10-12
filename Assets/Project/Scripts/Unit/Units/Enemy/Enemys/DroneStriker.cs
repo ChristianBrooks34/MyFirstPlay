@@ -76,7 +76,8 @@ public class DroneStriker : Enemy
 
                 DeadRoutine(
                     () => ObjectPool.ReturnObject(gameObject),
-                    UnitProfile.BaseData.DeadCooldown)
+                    UnitProfile.BaseData.DeadCooldown,
+                    this.GetCancellationTokenOnDestroy())
                     .Forget();
 
                 break;

@@ -1,3 +1,4 @@
+using Cysharp.Threading.Tasks;
 using System;
 using UnityEngine;
 using Zenject;
@@ -76,7 +77,8 @@ public class Turret : Enemy, IBuildingEnemy
 
         DeadRoutine(
             () => ObjectPool.ReturnObject(gameObject),
-            UnitProfile.BaseData.DeadCooldown)
+            UnitProfile.BaseData.DeadCooldown,
+            this.GetCancellationTokenOnDestroy())
             .Forget();
     }
 

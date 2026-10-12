@@ -24,19 +24,17 @@ public abstract class Unit : MonoBehaviour, IUnit<UnitProfile, UnitData>, ITarge
         UnitData = unitData.BaseData;
     }
 
-    public async UniTaskVoid DeadRoutine(Action action, float seconds)
+    public async UniTaskVoid DeadRoutine(Action action, float seconds, System.Threading.CancellationToken cancellationToken)
     {
-        await UniTask.Delay((int)(seconds * 1000));
-
-        if (this == null || gameObject == null)
-            return;
+        bool isCancelled = await UniTask.Delay((int)(seconds * 1000), cancellationToken: cancellationToken).SuppressCancellationThrow();
+        if (isCancelled || this == null || gameObject == null) return;
 
         action?.Invoke();
 
-        if (this == null || gameObject == null)
-            return;
-
-        UnitProfile.BaseData.Health.CurrentValue = UnitProfile.BaseData.Health.StartValue;
+        if (UnitProfile?.BaseData?.Health != null)
+        {
+            UnitProfile.BaseData.Health.CurrentValue = UnitProfile.BaseData.Health.StartValue;
+        }
     }
 
     public float GetHealthInProcent()

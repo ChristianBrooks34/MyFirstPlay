@@ -38,7 +38,6 @@ public class EnemyPool : IObjectPool
                     return null;
                 }
 
-                // ЗАМЕНА: используем новый метод с обработкой ошибок
                 if (!TryGetValidSpawnPosition(out _spawnPosition, enemy.Target.gameObject.transform.position))
                 {
                     Debug.LogError("Не удалось найти валидную позицию для спавна!");
@@ -198,8 +197,6 @@ public class EnemyPool : IObjectPool
     {
         get { return _poolByName.Sum(kvp => kvp.Value.Count); }
     }
-
-    // НОВЫЙ МЕТОД: валидный спавн для обычных врагов
     private bool TryGetValidSpawnPosition(out Vector3 spawnPosition, Vector3 playerPosition)
     {
         const int maxAttempts = 50;
@@ -210,7 +207,6 @@ public class EnemyPool : IObjectPool
 
             Vector3Int tilePos = _cursorTileLocator.GetTilePosition(randomPoint);
 
-            // ИСПРАВЛЕНИЕ: проверка на занятость — IsOccupied, а не IsCellFree
             if (_cursorTileLocator.HasTileAtWorldPosition(randomPoint) &&
                 _tileOccupancyMap.IsCellFree(tilePos))
             {
@@ -242,17 +238,14 @@ public class EnemyPool : IObjectPool
             }
         }
 
-        // Резервный вариант: пробуем найти любую валидную точку для обычного врага
         if (TryGetValidSpawnPosition(out spawnPosition, playerPosition))
         {
             return true;
         }
 
-        // Дополнительный резервный вариант: поиск свободной области в случайных точках карты
         const int fallbackAttempts = 20;
         for (int fallbackAttempt = 0; fallbackAttempt < fallbackAttempts; fallbackAttempt++)
         {
-            // Генерируем случайную точку на всей карте (без адаптивной зоны)
             Vector3 fallbackPoint = RandomPointGenerator.GetRandomPointOnTilemapAdaptive(
                 _cursorTileLocator.Tilemap, Camera.main, playerPosition);
 
@@ -267,7 +260,6 @@ public class EnemyPool : IObjectPool
             }
         }
 
-        // Финальный резервный вариант: используем позицию игрока
         Vector3Int playerTilePos = _cursorTileLocator.GetTilePosition(playerPosition);
 
         if (_tileOccupancyMap.IsAreaFree(playerTilePos, buildingEnemy.Size) &&
@@ -277,7 +269,6 @@ public class EnemyPool : IObjectPool
             return true;
         }
 
-        // Если все попытки провалились — возвращаем позицию по умолчанию и false
         spawnPosition = Vector3.zero;
         Debug.LogWarning("Не удалось найти валидную позицию для строительного врага после всех попыток!");
         return false;

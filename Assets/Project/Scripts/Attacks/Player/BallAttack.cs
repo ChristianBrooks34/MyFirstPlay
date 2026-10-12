@@ -4,7 +4,7 @@ using Zenject;
 public class BallAttack : RangedAttack
 {
     [SerializeField] protected GameObject ballPrefab;
-    [SerializeField] protected float pushForse;
+    [SerializeField] protected float pushForce;
     [SerializeField] protected float explosionRadius;
     [SerializeField] protected Transform pointSpawnBall;
     [SerializeField] protected Unit unit;
@@ -28,10 +28,13 @@ public class BallAttack : RangedAttack
             return;
         }
 
-        if (Projectile.Profile.BaseData.SourceUnit.gameObject.layer == gameObject.transform.parent.gameObject.layer)
+        if (gameObject.TryGetComponent<Unit>(out var targetUnit))
         {
-            Debug.LogWarning("Source and target are the same unit — skipping damage.");
-            return;
+            if (Projectile.Profile.BaseData.SourceUnit == targetUnit)
+            {
+                Debug.LogWarning("Source and target are the same unit — skipping damage.");
+                return;
+            }
         }
 
         if (!IsLayerInMask(gameObject.layer, layerMask))
@@ -60,7 +63,20 @@ public class BallAttack : RangedAttack
             projectileTrigger.OnProjectileHit += HandleProjectileHit;
         }
 
-        projectile.OnExplosion += () => unit.CurrentAttack = null;
+        projectile.OnExplosion += ResetUnitAttack;
+    }
+
+    private void ResetUnitAttack()
+    {
+        if (unit != null)
+        {
+            unit.CurrentAttack = null;
+        }
+
+        if (Projectile != null)
+        {
+            Projectile.OnExplosion -= ResetUnitAttack;
+        }
     }
 
     protected virtual GameObject InstantiateProjectile(DiContainer diContainer, ProjectileContainer projectileContainer)
@@ -98,6 +114,12 @@ public class BallAttack : RangedAttack
 
     protected virtual void HandleProjectileHit(Projectile projectile, GameObject gameObject)
     {
+        var projectileTrigger = projectile.GetComponent<ProjectileTrigerChecker>();
+        if (projectileTrigger != null)
+        {
+            projectileTrigger.OnProjectileHit -= HandleProjectileHit;
+        }
+
         Projectile = projectile;
         OnHit(gameObject);
     }
