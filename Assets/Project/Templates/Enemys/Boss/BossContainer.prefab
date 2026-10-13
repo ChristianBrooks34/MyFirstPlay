@@ -290,7 +290,7 @@ PrefabInstance:
     - target: {fileID: 8563256633721991077, guid: 486da2de52f741643ae3b8921139c371,
         type: 3}
       propertyPath: BossPhases.Array.data[0].Attacks.Array.size
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 8563256633721991077, guid: 486da2de52f741643ae3b8921139c371,
         type: 3}
@@ -311,12 +311,12 @@ PrefabInstance:
         type: 3}
       propertyPath: BossPhases.Array.data[0].Attacks.Array.data[0]
       value: 
-      objectReference: {fileID: 1458606165778544784}
+      objectReference: {fileID: 307927505271053954}
     - target: {fileID: 8563256633721991077, guid: 486da2de52f741643ae3b8921139c371,
         type: 3}
       propertyPath: BossPhases.Array.data[0].Attacks.Array.data[1]
       value: 
-      objectReference: {fileID: 307927505271053954}
+      objectReference: {fileID: 1458606165778544784}
     - target: {fileID: 8563256633721991077, guid: 486da2de52f741643ae3b8921139c371,
         type: 3}
       propertyPath: BossPhases.Array.data[1].Attacks.Array.data[0]

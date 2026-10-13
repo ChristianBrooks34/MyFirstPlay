@@ -1,5 +1,6 @@
 ﻿using Cysharp.Threading.Tasks;
 using System.Collections.Generic;
+using System.Threading;
 using UnityEngine;
 using Random = UnityEngine.Random;
 
@@ -9,38 +10,101 @@ public class RedirectingProjectileBossAttack : RedirectingProjectileAttack
     [SerializeField] private int _attackProjectileCount;
     [SerializeField] private List<Transform> _spawnPoints;
 
-    public override void Attack()
+    private CancellationTokenSource _bossAttackCts;
+
+    private void OnEnable()
     {
-        AttackCooldown().Forget();
+        CancelAttackTasks();
+        _bossAttackCts = new CancellationTokenSource();
     }
 
-    public new async UniTaskVoid AttackCooldown()
+    private void OnDisable()
     {
+        CancelAttackTasks();
+    }
+
+    protected void OnDestroy()
+    {
+        CancelAttackTasks();
+    }
+
+    private void CancelAttackTasks()
+    {
+        if (_bossAttackCts != null)
+        {
+            _bossAttackCts.Cancel();
+            _bossAttackCts.Dispose();
+            _bossAttackCts = null;
+        }
+    }
+
+    public override void Attack()
+    {
+        if (_bossAttackCts == null)
+        {
+            _bossAttackCts = new CancellationTokenSource();
+        }
+
+        if (_bossAttackCts.IsCancellationRequested) return;
+
+        ExecuteBurstAttack(_bossAttackCts.Token).Forget();
+    }
+
+    private async UniTaskVoid ExecuteBurstAttack(CancellationToken cancellationToken)
+    {
+        if (_spawnPoints == null || _spawnPoints.Count == 0) return;
+
         for (int i = 0; i < _attackProjectileCount; i++)
         {
+            // ЖЕСТКАЯ ПРОВЕРКА ПЕРЕД ВЫСТРЕЛОМ: 
+            // `this == null` проверяет, не был ли скрипт уничтожен движком Unity (например, при смерти босса)
+            if (cancellationToken.IsCancellationRequested || this == null || gameObject == null || !gameObject.activeInHierarchy)
+                return;
+
             pointSpawnBall = _spawnPoints[Random.Range(0, _spawnPoints.Count)];
 
+            // Вызываем базовый метод только если объект физически существует
             base.Attack();
 
-            await UniTask.Delay((int)(_projectileSpawnIntervalInSeconds * 1000));
+            // Асинхронное ожидание перед следующим выстрелом
+            bool isCancelled = await UniTask.Delay(
+                (int)(_projectileSpawnIntervalInSeconds * 1000),
+                cancellationToken: cancellationToken
+            ).SuppressCancellationThrow();
+
+            // ЖЕСТКАЯ ПРОВЕРКА ПОСЛЕ ПРОСЫПАНИЯ:
+            // Если за время ожидания (await) босса убили или удалили — немедленно выходим,
+            // не допуская перехода на следующую итерацию цикла и вызова base.Attack()
+            if (isCancelled || this == null || gameObject == null)
+                return;
         }
     }
 
     protected override void InitializeProjectile(Projectile projectile, Unit target)
     {
-        if (target is Enemy)
+        if (projectile == null) return;
+
+        if (target is Enemy enemyTarget)
         {
-            var enemy = (Enemy)target;
-
             var startDirection = GetProjectileStartDirection();
+            projectile.Initialized(startDirection, enemyTarget);
 
-            projectile.Initialized(startDirection, enemy);
-            projectile.SetTarget(enemy.Target);
+            if (enemyTarget.Target != null)
+            {
+                projectile.SetTarget(enemyTarget.Target);
+            }
+        }
+        else
+        {
+            var startDirection = GetProjectileStartDirection();
+            if (unit != null) projectile.Initialized(startDirection, unit);
+            if (target != null) projectile.SetTarget(target);
         }
     }
 
     protected override Vector2 GetProjectileStartDirection()
     {
-        return pointSpawnBall.position - unit.transform.position;
+        if (pointSpawnBall == null || unit == null) return Vector2.right;
+        return (pointSpawnBall.position - unit.transform.position).normalized;
     }
 }

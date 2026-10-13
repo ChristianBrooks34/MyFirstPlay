@@ -24,10 +24,8 @@ public class CircleProjectileBossAttack : BallAttack
 
     public override void Attack()
     {
-        if (!CanAttack) return;
-        if (_projectileContainer == null) return;
-        if (!unit.CanAttack) return;
-        if (_target.IsDead) return;
+        if (!CanAttack || _projectileContainer == null || unit == null || !unit.CanAttack) return;
+        if (_player == null || _player.IsDead) return;
 
         _centerCircle = unit.transform.position;
         unit.CurrentAttack = this;
@@ -47,9 +45,31 @@ public class CircleProjectileBossAttack : BallAttack
 
         for (var i = 0; i < positions.Count; i++)
         {
-            spawnPosition = positions[i];
-            SpawnProjectile(_diContainer, _projectileContainer);
+            SpawnProjectileAtPosition(_diContainer, _projectileContainer, positions[i]);
         }
+    }
+
+    private void SpawnProjectileAtPosition(DiContainer diContainer, ProjectileContainer projectileContainer, Vector3 position)
+    {
+        if (ballPrefab == null) return;
+
+        var ball = InstantiateProjectile(diContainer, projectileContainer, position);
+        var projectile = ball.GetComponent<Projectile>();
+
+        InitializeProjectile(projectile, _player);
+
+        var projectileTrigger = ball.GetComponent<ProjectileTrigerChecker>();
+        if (projectileTrigger != null)
+        {
+            projectileTrigger.OnProjectileHit += HandleProjectileHit;
+        }
+
+        projectile.OnExplosion += ResetUnitAttack;
+    }
+
+    private void ResetUnitAttack()
+    {
+        if (unit != null) unit.CurrentAttack = null;
     }
 
     protected override GameObject InstantiateProjectile(DiContainer diContainer, ProjectileContainer projectileContainer)

@@ -642,7 +642,6 @@ MonoBehaviour:
   - PhaseNumber: 1
     HealthThreshold: 0.9
     Attacks:
-    - {fileID: 5843981028518077230}
     - {fileID: 4711333878745089340}
     AttackInterval: 500
 --- !u!114 &1355245305418082431
@@ -671,17 +670,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   AttackData: {fileID: 11400000, guid: 73d8e85555cfa9d4487ab8dcf1466317, type: 2}
-  DistantsAttack: 3
+  DistanceAttack: 0
   ballPrefab: {fileID: 7125795421731275995, guid: e26e99bb47392274aadf54caf88031fa,
     type: 3}
-  pushForse: 1
+  pushForce: 0
   explosionRadius: 1
   pointSpawnBall: {fileID: 6011436567618947357}
   unit: {fileID: 8563256633721991077}
   layerMask:
     serializedVersion: 2
     m_Bits: 69760
-  _projectileSpawnIntervalInSeconds: 0.5
+  _projectileSpawnIntervalInSeconds: 2
   _attackProjectileCount: 4
   _spawnPoints:
   - {fileID: 6011436567618947357}
@@ -700,10 +699,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   AttackData: {fileID: 11400000, guid: 73d8e85555cfa9d4487ab8dcf1466317, type: 2}
-  DistantsAttack: 3
+  DistanceAttack: 0
   ballPrefab: {fileID: 764423925803430071, guid: 03355794f371e7d4585b035780ed6cef,
     type: 3}
-  pushForse: 1
+  pushForce: 0
   explosionRadius: 1
   pointSpawnBall: {fileID: 6196616087520618983}
   unit: {fileID: 8563256633721991077}
@@ -725,10 +724,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   AttackData: {fileID: 11400000, guid: 73d8e85555cfa9d4487ab8dcf1466317, type: 2}
-  DistantsAttack: 3
+  DistanceAttack: 0
   ballPrefab: {fileID: 764423925803430071, guid: 03355794f371e7d4585b035780ed6cef,
     type: 3}
-  pushForse: 1
+  pushForce: 0
   explosionRadius: 1
   pointSpawnBall: {fileID: 6196616087520618983}
   unit: {fileID: 8563256633721991077}
