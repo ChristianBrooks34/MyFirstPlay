@@ -6,14 +6,12 @@ public class RedirectingProjectileAttack : BallAttack
 {
     private ProjectileContainer _projectileContainer;
     private DiContainer _diContainer;
-    private Player _player;
 
     [Inject]
-    public void Construct(DiContainer diContainer, ProjectileContainer projectileContainer, Player player)
+    public void Construct(DiContainer diContainer, ProjectileContainer projectileContainer)
     {
         _projectileContainer = projectileContainer;
         _diContainer = diContainer;
-        _player = player;
     }
 
     public override void Attack()
@@ -21,8 +19,6 @@ public class RedirectingProjectileAttack : BallAttack
         if (!CanAttack()) return;
 
         SpawnProjectile(_diContainer, _projectileContainer);
-
-        //AttackLoop(AttackData.Cooldown).Forget();
 
         TriggerAttack();
     }
@@ -81,6 +77,6 @@ public class RedirectingProjectileAttack : BallAttack
 
     protected bool CanAttack()
     {
-        return _player != null && !unit.IsDead;
+        return !unit.IsDead;
     }
 }

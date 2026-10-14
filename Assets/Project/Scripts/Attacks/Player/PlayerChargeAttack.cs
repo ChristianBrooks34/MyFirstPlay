@@ -64,7 +64,7 @@ public class PlayerChargeAttack : BaseAttack, IAnimation
     public override void Attack()
     {
         if (!(_player.CurrentAttack is PlayerChargeAttack)) return;
-        if (!CanAttack) return;
+        if (!CanAttack()) return;
 
         TriggerAttack();
 
@@ -99,7 +99,7 @@ public class PlayerChargeAttack : BaseAttack, IAnimation
 
     public void StartAnimation()
     {
-        if (!CanAttack)
+        if (!CanAttack())
         {
             _swordAnimationController.StartAnimationSwordDown();
             return;

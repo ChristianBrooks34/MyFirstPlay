@@ -5,6 +5,7 @@ public class StandartEnemyAttack : BaseAttack
 {
     private Enemy _enemy;
     private EnemyEventManager _enemyEventManager;
+    private bool _isSubscribed;
 
     [Inject]
     public void Construct(Enemy enemy, EnemyEventManager enemyEventManager)
@@ -12,12 +13,45 @@ public class StandartEnemyAttack : BaseAttack
         _enemy = enemy;
         _enemyEventManager = enemyEventManager;
 
-        enemyEventManager.OnStartAttack += OnHit;
+        ToggleSubscription(true);
+    }
+
+    private void OnEnable()
+    {
+        ToggleSubscription(true);
+    }
+
+    private void OnDisable()
+    {
+        ToggleSubscription(false);
+    }
+
+    private void OnDestroy()
+    {
+        ToggleSubscription(false);
+    }
+
+    private void ToggleSubscription(bool subscribe)
+    {
+        if (_enemyEventManager == null) return;
+
+        if (subscribe)
+        {
+            if (_isSubscribed) return;
+            _enemyEventManager.OnStartAttack += OnHit;
+            _isSubscribed = true;
+        }
+        else
+        {
+            if (!_isSubscribed) return;
+            _enemyEventManager.OnStartAttack -= OnHit;
+            _isSubscribed = false;
+        }
     }
 
     public override void OnHit(GameObject gameObject)
     {
-        if (!CanAttack()) return;
+        if (this == null || gameObject == null || !CanAttack()) return;
 
         if (gameObject.TryGetComponent<IDamageable>(out var damageable))
         {
@@ -29,14 +63,12 @@ public class StandartEnemyAttack : BaseAttack
 
             _enemyEventManager.TriggerCanceledAttack();
         }
-
-        //AttackLoop(AttackData.Cooldown).Forget();
     }
 
     private bool CanAttack()
     {
         return
-            base.CanAttack &&
+            base.CanAttack() &&
             _enemy.CanAttack &&
             _enemy.Target != null &&
             _enemy.Target.transform != null &&

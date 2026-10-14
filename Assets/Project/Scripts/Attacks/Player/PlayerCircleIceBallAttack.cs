@@ -26,7 +26,7 @@ public class PlayerCircleIceBallAttack : BallAttack
 
     public override void Attack()
     {
-        if (unit.CurrentAttack != null || !CanAttack) return;
+        if (unit.CurrentAttack != null || !CanAttack()) return;
 
         unit.CurrentAttack = this;
 

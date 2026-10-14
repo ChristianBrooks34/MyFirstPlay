@@ -56,25 +56,18 @@ public class RedirectingProjectileBossAttack : RedirectingProjectileAttack
 
         for (int i = 0; i < _attackProjectileCount; i++)
         {
-            // ЖЕСТКАЯ ПРОВЕРКА ПЕРЕД ВЫСТРЕЛОМ: 
-            // `this == null` проверяет, не был ли скрипт уничтожен движком Unity (например, при смерти босса)
             if (cancellationToken.IsCancellationRequested || this == null || gameObject == null || !gameObject.activeInHierarchy)
                 return;
 
             pointSpawnBall = _spawnPoints[Random.Range(0, _spawnPoints.Count)];
 
-            // Вызываем базовый метод только если объект физически существует
             base.Attack();
 
-            // Асинхронное ожидание перед следующим выстрелом
             bool isCancelled = await UniTask.Delay(
                 (int)(_projectileSpawnIntervalInSeconds * 1000),
                 cancellationToken: cancellationToken
             ).SuppressCancellationThrow();
 
-            // ЖЕСТКАЯ ПРОВЕРКА ПОСЛЕ ПРОСЫПАНИЯ:
-            // Если за время ожидания (await) босса убили или удалили — немедленно выходим,
-            // не допуская перехода на следующую итерацию цикла и вызова base.Attack()
             if (isCancelled || this == null || gameObject == null)
                 return;
         }

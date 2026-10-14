@@ -25,7 +25,7 @@ public class PlayerStandardAttack : BaseAttack
 
     public override void Attack()
     {
-        if (!CanAttack) return;
+        if (!CanAttack()) return;
         if (_player.CurrentAttack != this) return;
 
         TriggerAttack();

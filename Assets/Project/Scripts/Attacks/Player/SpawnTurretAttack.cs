@@ -33,7 +33,7 @@ public class SpawnTurretAttack : SpawnBuildingAttack
 
     public override void Attack()
     {
-        if (_player.CurrentAttack == this || CanAttack == false) return;
+        if (_player.CurrentAttack == this || CanAttack() == false) return;
         if (_player.IsDead) return;
 
         _player.CurrentAttack = this;

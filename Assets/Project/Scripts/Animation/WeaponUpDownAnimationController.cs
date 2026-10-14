@@ -46,7 +46,7 @@ public class WeaponUpDownAnimationController : MonoBehaviour
     {
         if (_player.CurrentAttack is PlayerStandardAttack)
         {
-            if (!_player.CurrentAttack.CanAttack)
+            if (!_player.CurrentAttack.CanAttack())
             {
                 return;
             }

@@ -24,7 +24,7 @@ public class CircleProjectileBossAttack : BallAttack
 
     public override void Attack()
     {
-        if (!CanAttack || _projectileContainer == null || unit == null || !unit.CanAttack) return;
+        if (!CanAttack() || _projectileContainer == null || unit == null || !unit.CanAttack) return;
         if (_player == null || _player.IsDead) return;
 
         _centerCircle = unit.transform.position;

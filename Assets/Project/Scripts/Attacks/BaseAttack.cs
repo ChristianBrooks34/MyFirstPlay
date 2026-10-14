@@ -7,25 +7,28 @@ using UnityEngine;
 public abstract class BaseAttack : MonoBehaviour
 {
     public AttackData AttackData;
-    public bool CanAttack { get; protected set; } = true;
 
     public event Action OnAttack;
+
+    protected bool canAttack = true;
 
     public virtual void Attack() { }
 
     public virtual void OnHit(GameObject gameObject) { }
 
+    public virtual bool CanAttack() { return canAttack; }
+
     public async UniTaskVoid AttackLoop(float seconds, CancellationToken cancellationToken)
     {
-        if (!CanAttack) return;
+        if (!CanAttack()) return;
 
-        CanAttack = false;
+        canAttack = false;
 
         bool isCancelled = await UniTask.Delay((int)(seconds * 1000), cancellationToken: cancellationToken).SuppressCancellationThrow();
 
         if (!isCancelled)
         {
-            CanAttack = true;
+            canAttack = true;
         }
     }
 

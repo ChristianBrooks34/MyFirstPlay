@@ -18,7 +18,7 @@ public class BulletTurretAttack : BallAttack
 
     public override void Attack()
     {
-        if (!base.CanAttack) return;
+        if (!base.CanAttack()) return;
 
         unit.CurrentAttack = this;
 
