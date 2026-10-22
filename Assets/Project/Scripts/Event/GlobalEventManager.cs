@@ -20,18 +20,6 @@ public class GlobalEventManager
 
     public event Action<Enemy> OnDeadEnemy;
 
-    private int ID;
-
-    public GlobalEventManager()
-    {
-        ID = Time.frameCount;
-    }
-
-    public int GetInstanceID()
-    {
-        return ID;
-    }
-
     public void TriggerDeadEnemy(Enemy enemy)
     {
         OnDeadEnemy?.Invoke(enemy);

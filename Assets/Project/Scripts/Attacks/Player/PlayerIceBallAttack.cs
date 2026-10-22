@@ -1,4 +1,5 @@
 using Cysharp.Threading.Tasks;
+using System.Threading;
 using UnityEngine;
 using Zenject;
 
@@ -8,8 +9,8 @@ public class PlayerIceBallAttack : BallAttack
 
     private WeaponUpDownAnimationController _weaponUpDownAnimationController;
     private ProjectileContainer _projectileContainer;
-    private Projectile _projectile;
-    private ProjectileTrigerChecker _projectileTrigerChecker;
+    private Camera _mainCamera;
+    private bool _isSubscribed;
 
     [Inject]
     public void Construct(ProjectileContainer projectileContainer, WeaponUpDownAnimationController weaponUpDownAnimationController)
@@ -20,51 +21,88 @@ public class PlayerIceBallAttack : BallAttack
         _weaponUpDownAnimationController.Attack += Attack;
     }
 
-    private Vector3 GetMouseWordPosition()
+    private void Start()
     {
-        return Camera.main.ScreenToWorldPoint(Input.mousePosition);
+        _mainCamera = Camera.main;
+    }
+
+    private void OnEnable() => ToggleSubscription(true);
+    private void OnDisable() => ToggleSubscription(false);
+    private void OnDestroy() => ToggleSubscription(false);
+
+    private void ToggleSubscription(bool subscribe)
+    {
+        if (_weaponUpDownAnimationController == null) return;
+
+        if (subscribe)
+        {
+            if (_isSubscribed) return;
+            _weaponUpDownAnimationController.Attack += Attack;
+            _isSubscribed = true;
+        }
+        else
+        {
+            if (!_isSubscribed) return;
+            _weaponUpDownAnimationController.Attack -= Attack;
+            _isSubscribed = false;
+        }
+    }
+
+    private Vector3 GetMouseWorldPosition()
+    {
+        if (_mainCamera == null) _mainCamera = Camera.main;
+        return _mainCamera.ScreenToWorldPoint(Input.mousePosition);
     }
 
     public override void SpawnProjectile(DiContainer diContainer = null, ProjectileContainer projectileContainer = null)
     {
+        if (pointSpawnBall == null || ballPrefab == null || _projectileContainer == null) return;
+
         var ball = _diContainer.InstantiatePrefab(ballPrefab, pointSpawnBall.position, Quaternion.identity, _projectileContainer.transform);
 
         ball.name = "Projectile " + Time.frameCount;
 
-        _projectile = ball.GetComponent<Projectile>();
+        var currentProjectile = ball.GetComponent<Projectile>();
 
-        _projectile.Initialized(
-            GetMouseWordPosition() - pointSpawnBall.position,
-            unit);
-
-        ScaleUpBall(0, _projectile.transform.localScale.x, 0.2f, _projectile).Forget();
-
-        _projectileTrigerChecker = ball.GetComponent<ProjectileTrigerChecker>();
-
-        if (_projectileTrigerChecker != null)
+        if (currentProjectile != null)
         {
-            _projectileTrigerChecker.OnProjectileHit += HandleProjectileHit;
+            currentProjectile.Initialized(GetMouseWorldPosition() - pointSpawnBall.position, unit);
+
+            ScaleUpBall(0f, currentProjectile.transform.localScale.x, 0.2f, currentProjectile, ball.GetCancellationTokenOnDestroy()).Forget();
+
+            currentProjectile.OnExplosion += ResetUnitAttack;
         }
 
-        _projectile.OnExplosion += () => unit.CurrentAttack = null;
+        var currentTrigger = ball.GetComponent<ProjectileTrigerChecker>();
 
-        //AttackLoop(AttackData.Cooldown).Forget();
+        if (currentTrigger != null)
+        {
+            currentTrigger.OnProjectileHit += HandleProjectileHit;
+        }
     }
 
-    private async UniTaskVoid ScaleUpBall(float startScale, float endScale, float maxTimeInSeconds, Projectile ball)
+    private void ResetUnitAttack()
+    {
+        if (unit != null) unit.CurrentAttack = null;
+    }
+
+    private async UniTaskVoid ScaleUpBall(float startScale, float endScale, float maxTimeInSeconds, Projectile ball,
+        CancellationToken cancellationToken)
     {
         float currentTime = 0f;
-        var coefficent = 1 / maxTimeInSeconds;
+        var coefficient = 1f / maxTimeInSeconds;
 
         while (currentTime < maxTimeInSeconds)
         {
-            var scale = Mathf.Lerp(startScale, endScale, coefficent * currentTime);
+            if (cancellationToken.IsCancellationRequested || ball == null || ball.gameObject == null) return;
 
+            var scale = Mathf.Lerp(startScale, endScale, coefficient * currentTime);
             ball.transform.localScale = new Vector3(scale, scale, scale);
 
             currentTime += Time.deltaTime;
 
-            await UniTask.DelayFrame(1);
+            bool isCancelled = await UniTask.DelayFrame(1, cancellationToken: cancellationToken).SuppressCancellationThrow();
+            if (isCancelled) return;
         }
     }
 }

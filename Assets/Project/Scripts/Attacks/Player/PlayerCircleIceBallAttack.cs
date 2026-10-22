@@ -12,8 +12,8 @@ public class PlayerCircleIceBallAttack : BallAttack
 
     private PlayerEventManager _playerEventManager;
     private ProjectileContainer _projectileContainer;
-    private Projectile _projectile;
-    private ProjectileTrigerChecker _projectileTrigerChecker;
+
+    private bool _isSubscribed;
 
     [Inject]
     public void Construct(ProjectileContainer projectileContainer, PlayerEventManager playerEventManager)
@@ -21,7 +21,29 @@ public class PlayerCircleIceBallAttack : BallAttack
         _projectileContainer = projectileContainer;
         _playerEventManager = playerEventManager;
 
-        _playerEventManager.OnCircleBallAttackStart += Attack;
+        ToggleSubscription(true);
+    }
+
+    private void OnEnable() => ToggleSubscription(true);
+    private void OnDisable() => ToggleSubscription(false);
+    private void OnDestroy() => ToggleSubscription(false);
+
+    private void ToggleSubscription(bool subscribe)
+    {
+        if (_playerEventManager == null) return;
+
+        if (subscribe)
+        {
+            if (_isSubscribed) return;
+            _playerEventManager.OnCircleBallAttackStart += Attack;
+            _isSubscribed = true;
+        }
+        else
+        {
+            if (!_isSubscribed) return;
+            _playerEventManager.OnCircleBallAttackStart -= Attack;
+            _isSubscribed = false;
+        }
     }
 
     public override void Attack()
@@ -44,41 +66,48 @@ public class PlayerCircleIceBallAttack : BallAttack
 
             ball.name = "Projectile " + Time.frameCount;
 
-            _projectile = ball.GetComponent<Projectile>();
+            var currentProjectile = ball.GetComponent<Projectile>();
 
-            _projectile.Initialized(
-                position - pointSpawnBall.position,
-                unit);
-
-            ScaleUpBall(0, _projectile.transform.localScale.x, 0.2f, _projectile).Forget();
-
-            _projectileTrigerChecker = ball.GetComponent<ProjectileTrigerChecker>();
-
-            if (_projectileTrigerChecker != null)
+            if (currentProjectile != null)
             {
-                _projectileTrigerChecker.OnProjectileHit += HandleProjectileHit;
+                currentProjectile.Initialized(position - pointSpawnBall.position, unit);
+
+                // ИЗМЕНЕНО: В анимацию передан токен отмены от уничтожения конкретного шара ball.GetCancellationTokenOnDestroy()
+                ScaleUpBall(0f, currentProjectile.transform.localScale.x, 0.2f, currentProjectile, ball.GetCancellationTokenOnDestroy()).Forget();
+
+                currentProjectile.OnExplosion += ResetUnitAttack;
             }
 
-            _projectile.OnExplosion += () => unit.CurrentAttack = null;
-
+            // ИЗМЕНЕНО: Триггер-чекер теперь тоже локальный
+            var currentTrigger = ball.GetComponent<ProjectileTrigerChecker>();
+            if (currentTrigger != null)
+            {
+                currentTrigger.OnProjectileHit += HandleProjectileHit;
+            }
         }
-        //AttackLoop(AttackData.Cooldown).Forget();
     }
 
-    private async UniTaskVoid ScaleUpBall(float startScale, float endScale, float maxTimeInSeconds, Projectile ball)
+    private void ResetUnitAttack()
+    {
+        if (unit != null) unit.CurrentAttack = null;
+    }
+
+    private async UniTaskVoid ScaleUpBall(float startScale, float endScale, float maxTimeInSeconds, Projectile ball, System.Threading.CancellationToken cancellationToken)
     {
         float currentTime = 0f;
-        var coefficent = 1 / maxTimeInSeconds;
+        var coefficient = 1f / maxTimeInSeconds;
 
         while (currentTime < maxTimeInSeconds)
         {
-            var scale = Mathf.Lerp(startScale, endScale, coefficent * currentTime);
+            if (cancellationToken.IsCancellationRequested || ball == null || ball.gameObject == null) return;
 
+            var scale = Mathf.Lerp(startScale, endScale, coefficient * currentTime);
             ball.transform.localScale = new Vector3(scale, scale, scale);
 
             currentTime += Time.deltaTime;
 
-            await UniTask.DelayFrame(1);
+            bool isCancelled = await UniTask.DelayFrame(1, cancellationToken: cancellationToken).SuppressCancellationThrow();
+            if (isCancelled) return;
         }
     }
 }
