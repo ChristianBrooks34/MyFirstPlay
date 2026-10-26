@@ -72,13 +72,11 @@ public class PlayerCircleIceBallAttack : BallAttack
             {
                 currentProjectile.Initialized(position - pointSpawnBall.position, unit);
 
-                // ИЗМЕНЕНО: В анимацию передан токен отмены от уничтожения конкретного шара ball.GetCancellationTokenOnDestroy()
                 ScaleUpBall(0f, currentProjectile.transform.localScale.x, 0.2f, currentProjectile, ball.GetCancellationTokenOnDestroy()).Forget();
 
                 currentProjectile.OnExplosion += ResetUnitAttack;
             }
 
-            // ИЗМЕНЕНО: Триггер-чекер теперь тоже локальный
             var currentTrigger = ball.GetComponent<ProjectileTrigerChecker>();
             if (currentTrigger != null)
             {

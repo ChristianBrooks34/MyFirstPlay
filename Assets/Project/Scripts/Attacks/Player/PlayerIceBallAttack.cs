@@ -17,8 +17,6 @@ public class PlayerIceBallAttack : BallAttack
     {
         _projectileContainer = projectileContainer;
         _weaponUpDownAnimationController = weaponUpDownAnimationController;
-
-        _weaponUpDownAnimationController.Attack += Attack;
     }
 
     private void Start()

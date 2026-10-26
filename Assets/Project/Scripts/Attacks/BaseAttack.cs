@@ -18,9 +18,10 @@ public abstract class BaseAttack : MonoBehaviour
 
     public virtual bool CanAttack() { return canAttack; }
 
-    public async UniTaskVoid AttackLoop(float seconds, CancellationToken cancellationToken)
+    public async UniTaskVoid AttackLoop(float seconds, CancellationToken cancellationToken, Unit unit = null)
     {
         if (!CanAttack()) return;
+        Debug.LogError("AttackLoop");
 
         canAttack = false;
 
@@ -29,6 +30,12 @@ public abstract class BaseAttack : MonoBehaviour
         if (!isCancelled)
         {
             canAttack = true;
+            if (unit != null)
+            {
+                Debug.LogError("Cancel AttackLoop");
+
+                unit.CurrentAttack = null;
+            }
         }
     }
 

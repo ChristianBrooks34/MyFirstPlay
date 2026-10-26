@@ -33,7 +33,7 @@ public class AttackSlot : MonoBehaviour
         var cooldownDuration = BaseAttack.AttackData.Cooldown;
         var currentTime = cooldownDuration;
 
-        BaseAttack.AttackLoop(cooldownDuration, cancellationToken).Forget();
+        //BaseAttack.AttackLoop(cooldownDuration, cancellationToken).Forget();
 
         while (currentTime >= 0 && !cancellationToken.IsCancellationRequested)
         {

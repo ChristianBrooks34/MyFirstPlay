@@ -1,3 +1,5 @@
+using Cysharp.Threading.Tasks;
+using System.Threading;
 using UnityEngine;
 using Zenject;
 
@@ -12,12 +14,15 @@ public class BallAttack : RangedAttack
 
     public override void Attack()
     {
+        Debug.LogError($"unit.CurrentAttack != null = {unit.CurrentAttack != null}; !CanAttack() = {!CanAttack()}");
         if (unit.CurrentAttack != null || !CanAttack()) return;
 
         unit.CurrentAttack = this;
 
         TriggerAttack();
         SpawnProjectile();
+
+        AttackLoop(unit.CurrentAttack.AttackData.Cooldown, unit.GetCancellationTokenOnDestroy(), unit).Forget();
     }
 
     public override void OnHit(GameObject gameObject)
@@ -62,8 +67,6 @@ public class BallAttack : RangedAttack
         {
             projectileTrigger.OnProjectileHit += HandleProjectileHit;
         }
-
-        projectile.OnExplosion += ResetUnitAttack;
     }
 
     private void ResetUnitAttack()
@@ -71,11 +74,6 @@ public class BallAttack : RangedAttack
         if (unit != null)
         {
             unit.CurrentAttack = null;
-        }
-
-        if (Projectile != null)
-        {
-            Projectile.OnExplosion -= ResetUnitAttack;
         }
     }
 
