@@ -37,9 +37,9 @@ MonoBehaviour:
     Damage:
       NumberDevelop: 0
       Name: Damage
-      CurrentValue: 2
-      StartValue: 2
-      BaseStartValue: 0
+      CurrentValue: 5
+      StartValue: 5
+      BaseStartValue: 5
       IncrementValue: 0
       Price: 0
       StartPrice: 0
@@ -49,7 +49,7 @@ MonoBehaviour:
       Name: Speed
       CurrentValue: 2
       StartValue: 2
-      BaseStartValue: 0
+      BaseStartValue: 2
       IncrementValue: 0
       Price: 0
       StartPrice: 0
@@ -57,9 +57,10 @@ MonoBehaviour:
     BaseMaxHealth: 10
     MaxHealth: 10
     DeadCooldown: 2
-    ForseAttack: 200
-    KnockbackTime: 0.2
-    KnockbackDistance: 0.7
+    KnockbackData:
+      ForceAttack: 0
+      KnockbackTime: 0
+      KnockbackDistance: 0
     SizeType: 1
     DropItems:
     - DropRage: 100

@@ -49,10 +49,12 @@ public class UnitProfileManager
             unitData.Health.Price = unitData.Health.StartPrice;
             unitData.Health.NumberDevelop = 0;
 
+            unitData.SpeedMovement.StartValue = unitData.SpeedMovement.BaseStartValue;
             unitData.SpeedMovement.CurrentValue = unitData.SpeedMovement.StartValue;
             unitData.SpeedMovement.Price = unitData.SpeedMovement.StartPrice;
             unitData.SpeedMovement.NumberDevelop = 0;
 
+            unitData.Damage.StartValue = unitData.Damage.BaseStartValue;
             unitData.Damage.CurrentValue = unitData.Damage.StartValue;
             unitData.Damage.Price = unitData.Damage.StartPrice;
             unitData.Damage.NumberDevelop = 0;

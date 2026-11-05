@@ -12,6 +12,7 @@ public class AttackSlot : MonoBehaviour
     public ValueBar AttackCooldawnBar;
 
     private DisplayValueBar _displayValueBar;
+    private PlayerEventManager _playerEventManager;
 
     [Inject]
     public void Construct()
@@ -33,7 +34,7 @@ public class AttackSlot : MonoBehaviour
         var cooldownDuration = BaseAttack.AttackData.Cooldown;
         var currentTime = cooldownDuration;
 
-        //BaseAttack.AttackLoop(cooldownDuration, cancellationToken).Forget();
+        //_playerEventManager.TriggerCooldownAttackStart();
 
         while (currentTime >= 0 && !cancellationToken.IsCancellationRequested)
         {
@@ -44,6 +45,8 @@ public class AttackSlot : MonoBehaviour
 
             currentTime -= Time.deltaTime;
         }
+
+        //_playerEventManager.TriggerCooldownAttackFinish();
     }
 
     private async UniTaskVoid InitializeCooldownSubscription()

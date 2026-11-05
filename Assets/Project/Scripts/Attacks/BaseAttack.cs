@@ -21,7 +21,6 @@ public abstract class BaseAttack : MonoBehaviour
     public async UniTaskVoid AttackLoop(float seconds, CancellationToken cancellationToken, Unit unit = null)
     {
         if (!CanAttack()) return;
-        Debug.LogError("AttackLoop");
 
         canAttack = false;
 
@@ -32,9 +31,18 @@ public abstract class BaseAttack : MonoBehaviour
             canAttack = true;
             if (unit != null)
             {
-                Debug.LogError("Cancel AttackLoop");
+                if (unit.CurrentAttack == null)
+                {
+                    Debug.LogError("unit.CurrentAttack = null");
+                    return;
+                }
 
-                unit.CurrentAttack = null;
+                Debug.LogError($"3) {Time.frameCount} Cancel AttackLoop {unit.CurrentAttack.AttackData.Name}");
+
+                if (unit.CurrentAttack == this)
+                {
+                    unit.CurrentAttack = null;
+                }
             }
         }
     }

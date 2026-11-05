@@ -18,7 +18,7 @@ public class PlayerStandardAttack : BaseAttack
         _player.CurrentAttack = this;
 
         _swordAnimationController.Attack += Attack;
-        _swordAnimationController.OnStartedSwordUpAnimation += () => _player.CurrentAttack = this;
+        _swordAnimationController.OnStartedSwordUpAnimation += SetAsCurrentAttack;
     }
 
     private void SetAsCurrentAttack() => _player.CurrentAttack = this;

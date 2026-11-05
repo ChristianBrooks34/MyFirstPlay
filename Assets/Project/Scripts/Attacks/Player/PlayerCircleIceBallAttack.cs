@@ -20,8 +20,6 @@ public class PlayerCircleIceBallAttack : BallAttack
     {
         _projectileContainer = projectileContainer;
         _playerEventManager = playerEventManager;
-
-        ToggleSubscription(true);
     }
 
     private void OnEnable() => ToggleSubscription(true);
@@ -48,12 +46,14 @@ public class PlayerCircleIceBallAttack : BallAttack
 
     public override void Attack()
     {
-        if (unit.CurrentAttack != null || !CanAttack()) return;
+        if (unit.CurrentAttack == this || !CanAttack()) return;
 
         unit.CurrentAttack = this;
 
         TriggerAttack();
         SpawnProjectile();
+
+        AttackLoop(unit.CurrentAttack.AttackData.Cooldown, unit.GetCancellationTokenOnDestroy(), unit).Forget();
     }
 
     public override void SpawnProjectile(DiContainer diContainer = null, ProjectileContainer projectileContainer = null)

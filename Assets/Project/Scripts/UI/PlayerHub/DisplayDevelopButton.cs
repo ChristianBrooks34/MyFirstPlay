@@ -18,14 +18,18 @@ public class DisplayDevelopButton : MonoBehaviour
     {
         _wallet = wallet;
         _globalEventManager = globalEventManager;
+    }
 
+    private void OnEnable()
+    {
         _globalEventManager.OnCangeMoneyInWallet += DisplayNotEnoughMoneyPanel;
     }
 
-    private void OnDestroy()
+    private void OnDisable()
     {
         _globalEventManager.OnCangeMoneyInWallet -= DisplayNotEnoughMoneyPanel;
     }
+
 
     public void Display(DevelopButton developButton)
     {
@@ -48,7 +52,7 @@ public class DisplayDevelopButton : MonoBehaviour
         {
             Debug.LogError("NotEnoughMoneyPanel == null");
         }
-
+        
         if (currentMoney >= _developButton.DevelopItem.Price)
         {
             NotEnoughMoneyPanel.gameObject.SetActive(false);

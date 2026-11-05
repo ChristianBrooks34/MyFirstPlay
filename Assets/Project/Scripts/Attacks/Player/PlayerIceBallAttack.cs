@@ -10,11 +10,15 @@ public class PlayerIceBallAttack : BallAttack
     private WeaponUpDownAnimationController _weaponUpDownAnimationController;
     private ProjectileContainer _projectileContainer;
     private Camera _mainCamera;
+    private PlayerEventManager _playerEventManager;
     private bool _isSubscribed;
+    private bool _isCooldownAttackFinish;
 
     [Inject]
-    public void Construct(ProjectileContainer projectileContainer, WeaponUpDownAnimationController weaponUpDownAnimationController)
+    public void Construct(ProjectileContainer projectileContainer, WeaponUpDownAnimationController weaponUpDownAnimationController,
+        PlayerEventManager playerEventManager)
     {
+        _playerEventManager = playerEventManager;
         _projectileContainer = projectileContainer;
         _weaponUpDownAnimationController = weaponUpDownAnimationController;
     }
@@ -35,15 +39,32 @@ public class PlayerIceBallAttack : BallAttack
         if (subscribe)
         {
             if (_isSubscribed) return;
+
+            _playerEventManager.OnCooldownAttackFinished += OnCooldownAttackFinish;
+            _playerEventManager.OnCooldownAttackStarted += OnCooldownAttackStart;
+
             _weaponUpDownAnimationController.Attack += Attack;
             _isSubscribed = true;
         }
         else
         {
             if (!_isSubscribed) return;
+
+            _playerEventManager.OnCooldownAttackFinished -= OnCooldownAttackFinish;
+            _playerEventManager.OnCooldownAttackStarted -= OnCooldownAttackStart;
+
             _weaponUpDownAnimationController.Attack -= Attack;
             _isSubscribed = false;
         }
+    }
+
+    private void OnCooldownAttackFinish() => _isCooldownAttackFinish = true;
+
+    private void OnCooldownAttackStart() => _isCooldownAttackFinish = false;
+
+    public override bool CanAttack()
+    {
+        return base.CanAttack();
     }
 
     private Vector3 GetMouseWorldPosition()

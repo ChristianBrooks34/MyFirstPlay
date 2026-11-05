@@ -46,7 +46,7 @@ public class PlayerChargeAttack : BaseAttack, IAnimation
         _player = player;
         _animationCurve = animationCurve;
         _playerEventManager = playerEventManager;
-        _layerMask = LayerMask.NameToLayer("Enemy"); // ??
+        _layerMask = LayerMask.GetMask("Enemy"); // ??
         _playerAttackController = playerAttackController;
         _swordAnimationController = swordAnimationController;
 
@@ -66,13 +66,20 @@ public class PlayerChargeAttack : BaseAttack, IAnimation
         if (!(_player.CurrentAttack is PlayerChargeAttack)) return;
         if (!CanAttack()) return;
 
+        _player.CurrentAttack = this;
+        Debug.LogError("@!@#Q# Attack");
         TriggerAttack();
+        AttackLoop(_player.CurrentAttack.AttackData.Cooldown, _player.GetCancellationTokenOnDestroy()).Forget();
 
         var colliders = AttackHitChecker.GetFrontTargetsInAttackRange(
             _player.transform, _layerMask, AttackData.AttackRadius);
 
+        Debug.LogError("@!@#Q# 2) Attack");
+
         foreach (var collider in colliders)
         {
+            Debug.LogError($"@!@#Q# 2) collider = {collider.gameObject.name}");
+
             if (collider.GetComponent<Enemy>() != null)
             {
                 OnHit(collider);
@@ -82,6 +89,8 @@ public class PlayerChargeAttack : BaseAttack, IAnimation
 
     public override void OnHit(GameObject gameObject)
     {
+        Debug.LogError("@!@#Q# 1) OnHit");
+
         var enemy = gameObject.GetComponent<Enemy>();
 
         CalculateDamage();
@@ -120,8 +129,6 @@ public class PlayerChargeAttack : BaseAttack, IAnimation
         if (_player.CurrentAttack != this) return;
 
         _weaponSpriteRenderer.transform.localScale = new Vector3(_startLocalScale.x, _startLocalScale.y, _startLocalScale.z);
-
-        //AttackLoop(AttackData.Cooldown).Forget();
     }
 
     public void CancelAnimateDiagonalWaveScale()

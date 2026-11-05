@@ -15,7 +15,7 @@ public class BallAttack : RangedAttack
     public override void Attack()
     {
         Debug.LogError($"unit.CurrentAttack != null = {unit.CurrentAttack != null}; !CanAttack() = {!CanAttack()}");
-        if (unit.CurrentAttack != null || !CanAttack()) return;
+        if (unit.CurrentAttack == this || !CanAttack()) return;
 
         unit.CurrentAttack = this;
 

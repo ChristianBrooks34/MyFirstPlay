@@ -6,9 +6,12 @@ public static class AttackHitChecker
 {
     public static List<GameObject> GetFrontTargetsInAttackRange(Transform center, LayerMask layerMask, float radiysAttack)
     {
+        Debug.LogError("GetFrontTargetsInAttackRange 1");
         List<GameObject> gameObjects = new List<GameObject>();
 
         var colliders = Physics2D.OverlapCircleAll(center.position, radiysAttack, layerMask);
+
+        Debug.LogError($"GetFrontTargetsInAttackRange 2 colliders.Length = {colliders.Length}");
 
         foreach (var collider in colliders)
         {
@@ -18,6 +21,8 @@ public static class AttackHitChecker
                 gameObjects.Add(collider.gameObject);
             }
         }
+
+        Debug.LogError($"GetFrontTargetsInAttackRange 2 gameObjects.Count = {gameObjects.Count}");
 
         return gameObjects;
     }

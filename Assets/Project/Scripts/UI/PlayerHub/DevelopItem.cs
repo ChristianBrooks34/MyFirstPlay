@@ -28,7 +28,8 @@ public class DevelopItem<T> where T : struct, IConvertible
     {
         double valueA = Convert.ToDouble(a);
         double valueB = Convert.ToDouble(b);
-        double result = valueA + valueB;
+
+        double result = Math.Round(valueA + valueB, 1, MidpointRounding.AwayFromZero);
 
         return (T)Convert.ChangeType(result, typeof(T));
     }

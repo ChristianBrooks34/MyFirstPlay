@@ -5,6 +5,8 @@ public class PlayerEventManager : UnitEventManager
 {
     public event Action OnStartedAttack;
     public event Action OnCanseledAttack;
+    public event Action OnCooldownAttackFinished;
+    public event Action OnCooldownAttackStarted;
 
     public event Action<float> OnChangeHoldTimeAttack;
 
@@ -28,6 +30,9 @@ public class PlayerEventManager : UnitEventManager
     public void TriggerAttackStart() => OnStartedAttack?.Invoke();
 
     public void TriggerAttackCancel() => OnCanseledAttack?.Invoke();
+
+    public void TriggerCooldownAttackFinish() => OnCooldownAttackFinished.Invoke();
+    public void TriggerCooldownAttackStart() => OnCooldownAttackStarted.Invoke();
 
     public void TriggerAttackChangeHoldTime(float value) => OnChangeHoldTimeAttack?.Invoke(value);
 
