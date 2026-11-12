@@ -27,6 +27,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UniRx.Examples", "UniRx.Exa
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Zenject-TestFramework", "Zenject-TestFramework.csproj", "{D26EBAFF-F100-E4C3-D74A-87A94BF27FEE}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BattleText", "BattleText.csproj", "{53639E33-D273-0634-71F9-FEF546C5457C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AnimatedBattleText.Example.Damage", "AnimatedBattleText.Example.Damage.csproj", "{E4ED8F09-67B1-67DA-FA45-62D40B62934E}"
+EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Assembly-CSharp-Editor", "Assembly-CSharp-Editor.csproj", "{D0CEE7BF-297B-93DC-7129-B41E2BDE9AD4}"
 EndProject
 Global
@@ -87,6 +91,14 @@ Global
 		{D26EBAFF-F100-E4C3-D74A-87A94BF27FEE}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D26EBAFF-F100-E4C3-D74A-87A94BF27FEE}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D26EBAFF-F100-E4C3-D74A-87A94BF27FEE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{53639E33-D273-0634-71F9-FEF546C5457C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{53639E33-D273-0634-71F9-FEF546C5457C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{53639E33-D273-0634-71F9-FEF546C5457C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{53639E33-D273-0634-71F9-FEF546C5457C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E4ED8F09-67B1-67DA-FA45-62D40B62934E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E4ED8F09-67B1-67DA-FA45-62D40B62934E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E4ED8F09-67B1-67DA-FA45-62D40B62934E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E4ED8F09-67B1-67DA-FA45-62D40B62934E}.Release|Any CPU.Build.0 = Release|Any CPU
 		{D0CEE7BF-297B-93DC-7129-B41E2BDE9AD4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{D0CEE7BF-297B-93DC-7129-B41E2BDE9AD4}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D0CEE7BF-297B-93DC-7129-B41E2BDE9AD4}.Release|Any CPU.ActiveCfg = Release|Any CPU

@@ -991,8 +991,16 @@
       <HintPath>Library\ScriptAssemblies\UnityEditor.UI.dll</HintPath>
       <Private>False</Private>
     </Reference>
+    <Reference Include="Unity.TextMeshPro.Editor">
+      <HintPath>Library\ScriptAssemblies\Unity.TextMeshPro.Editor.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
     <Reference Include="UnityEngine.UI">
       <HintPath>Library\ScriptAssemblies\UnityEngine.UI.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Unity.TextMeshPro">
+      <HintPath>Library\ScriptAssemblies\Unity.TextMeshPro.dll</HintPath>
       <Private>False</Private>
     </Reference>
     <Reference Include="UniTask">
@@ -1017,6 +1025,10 @@
       <Project>{5A3CCE93-4847-92EB-4586-E380E24CE116}</Project>
       <Name>Zenject-Editor</Name>
     </ProjectReference>
+    <ProjectReference Include="AnimatedBattleText.Example.Damage.csproj">
+      <Project>{E4ED8F09-67B1-67DA-FA45-62D40B62934E}</Project>
+      <Name>AnimatedBattleText.Example.Damage</Name>
+    </ProjectReference>
     <ProjectReference Include="Zenject.csproj">
       <Project>{70F5BF5F-98CC-E51F-1FB0-7423E3DCC6ED}</Project>
       <Name>Zenject</Name>
@@ -1024,6 +1036,10 @@
     <ProjectReference Include="Project.csproj">
       <Project>{56D32CE8-B295-E7E0-B04A-DA74D081AB8F}</Project>
       <Name>Project</Name>
+    </ProjectReference>
+    <ProjectReference Include="BattleText.csproj">
+      <Project>{53639E33-D273-0634-71F9-FEF546C5457C}</Project>
+      <Name>BattleText</Name>
     </ProjectReference>
     <ProjectReference Include="Zenject-PoolMonitor-Editor.csproj">
       <Project>{B8733C04-2096-8FBE-199F-8A69DACAABA6}</Project>

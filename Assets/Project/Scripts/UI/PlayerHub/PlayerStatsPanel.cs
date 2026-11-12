@@ -67,5 +67,8 @@ public class PlayerStatsPanel : IDisposable
         _globalEventManager.OnCangeSelectedPlayer -= ChangeDisplayPlayerStatsOnCangeSelectedPlayer;
 
         _globalEventManager.OnOpenPlayerPanel -= ChangeDisplayPlayerStatsOnOpenPlayerPanel;
+        _globalEventManager.OnDevelopPlayer -= ChangeDisplayPlayerStatsOndevelop;
+
+        _playerHub.OnClose -= DestroyPlayerStateItems;
     }
 }

@@ -133,6 +133,7 @@
     <Compile Include="Assets\Project\Scripts\UI\ValueBar\DisplayValueBar.cs" />
     <Compile Include="Assets\Project\Zenject\IDiContainer.cs" />
     <Compile Include="Assets\Project\Scripts\TileMap\TilemapUtils.cs" />
+    <Compile Include="Assets\Project\Scripts\Sound\BaseSoundController.cs" />
     <Compile Include="Assets\Project\Scripts\Drop\DropProfile.cs" />
     <Compile Include="Assets\Project\Scripts\UI\PlayerHub\PlayerHub.cs" />
     <Compile Include="Assets\Project\Zenject\SwordChargeBarInstaller.cs" />
@@ -161,6 +162,7 @@
     <Compile Include="Assets\Project\Scripts\Building\Building.cs" />
     <Compile Include="Assets\Project\Scripts\Attacks\Player\BallAttack.cs" />
     <Compile Include="Assets\Project\Scripts\Container\Container.cs" />
+    <Compile Include="Assets\Project\Scripts\UI\Buttons\SoundButton.cs" />
     <Compile Include="Assets\Project\Scripts\Explosion\Explosion.cs" />
     <Compile Include="Assets\Project\Scripts\Attacks\Player\SpawnBuildingAttack.cs" />
     <Compile Include="Assets\Project\Scripts\UI\PlayerLevelBar\DisplayPlayerLevelBar.cs" />
@@ -228,6 +230,7 @@
     <Compile Include="Assets\Project\Scripts\Attacks\Turret\BulletTurretAttack.cs" />
     <Compile Include="Assets\Project\Scripts\Unit\UnitLevelManager.cs" />
     <Compile Include="Assets\Project\Scripts\Objects Pool\TurretPool.cs" />
+    <Compile Include="Assets\Project\Scripts\Event\SoundsEventManager.cs" />
     <Compile Include="Assets\Project\Scripts\Attacks\BaseAttack.cs" />
     <Compile Include="Assets\Project\Scripts\Weapon\Weapon.cs" />
     <Compile Include="Assets\Project\Scripts\interfaces\IBuildableOnTilemap.cs" />
@@ -294,6 +297,7 @@
     <Compile Include="Assets\Project\Scripts\interfaces\IDamageable.cs" />
     <Compile Include="Assets\Project\Scripts\Unit\Units\Player\Players\Mechanic.cs" />
     <Compile Include="Assets\Project\Scripts\LevelsMenu\SpawnerLevelButton.cs" />
+    <Compile Include="Assets\Project\Scripts\Sound\SoundUIProfile.cs" />
     <Compile Include="Assets\Project\Scripts\System\JsonSaveSystem\TestSaveSystem.cs" />
     <Compile Include="Assets\Project\Scripts\Drop\Drop.cs" />
     <Compile Include="Assets\Project\Scripts\Factorys\SpawnUnitForUIFactory.cs" />
