@@ -2,30 +2,19 @@ using System;
 using UnityEngine.UI;
 using Zenject;
 
-public class StartGameButton : IInitializable, IDisposable
+public class StartGameButton : SoundButton, IInitializable, IDisposable
 {
-    private readonly Button _startGameButton;
     private readonly GameLauncer _gameLauncer;
     private readonly GlobalEventManager _globalEventManager;
 
-    public StartGameButton(Button startGameButton, GameLauncer gameLauncer, GlobalEventManager globalEventManager)
+    public StartGameButton(Button startGameButton, GameLauncer gameLauncer, GlobalEventManager globalEventManager,
+        SoundsEventManager soundsEventManager) : base(startGameButton, soundsEventManager)
     {
-        _startGameButton = startGameButton;
         _gameLauncer = gameLauncer;
         _globalEventManager = globalEventManager;
     }
 
-    public void Initialize()
-    {
-        _startGameButton.onClick.AddListener(OnButtonClicked);
-    }
-
-    public void Dispose()
-    {
-        _startGameButton.onClick.RemoveListener(OnButtonClicked);
-    }
-
-    public void OnButtonClicked()
+    protected override void OnButtonClicked()
     {
         _globalEventManager.TriggerStartGame();
 

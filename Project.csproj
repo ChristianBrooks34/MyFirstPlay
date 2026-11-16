@@ -118,13 +118,14 @@
     <Compile Include="Assets\Project\Scripts\Unit\Units\Enemy\Enemy.cs" />
     <Compile Include="Assets\Project\Scripts\Level\LevelProfile.cs" />
     <Compile Include="Assets\Project\Scripts\UI\Buttons\ExitGameButton.cs" />
-    <Compile Include="Assets\Project\Scripts\Animation\VisualEffectTween.cs" />
     <Compile Include="Assets\Project\Zenject\AttackSlotInstaller.cs" />
+    <Compile Include="Assets\Project\Scripts\Animation\VisualEffectTween.cs" />
     <Compile Include="Assets\Project\Scripts\Drop\GoldMoney.cs" />
     <Compile Include="Assets\Project\Scripts\System\PositionGenerator.cs" />
     <Compile Include="Assets\Project\Zenject\Level\LevelEffectsInstaller.cs" />
     <Compile Include="Assets\Project\Scripts\UI\PlayerHub\PlayerStateItem.cs" />
     <Compile Include="Assets\Project\Scripts\interfaces\BaseMove.cs" />
+    <Compile Include="Assets\Project\Scripts\UI\Buttons\ButtonType.cs" />
     <Compile Include="Assets\Project\Scripts\Unit\Units\Player\PlayerAnimationController.cs" />
     <Compile Include="Assets\Project\Scripts\Unit\Units\Enemy\Boss\Boss.cs" />
     <Compile Include="Assets\Project\Scripts\Event\LevelEventManager.cs" />
@@ -255,6 +256,7 @@
     <Compile Include="Assets\Project\Zenject\WeaponInstaller.cs" />
     <Compile Include="Assets\Project\Scripts\Wave\Wave.cs" />
     <Compile Include="Assets\Project\Zenject\Level\WaveInstaller.cs" />
+    <Compile Include="Assets\Project\Scripts\Sound\SoundLibrary.cs" />
     <Compile Include="Assets\Project\Scripts\Unit\Units\Enemy\DistanceKeepingEnemyMovement.cs" />
     <Compile Include="Assets\Project\Scripts\System\JsonSaveSystem\JsonSaveSystem.cs" />
     <Compile Include="Assets\Project\Scripts\Projectile\ProjectileMovement.cs" />
@@ -306,6 +308,7 @@
     <Compile Include="Assets\Project\Scripts\Animation\PulsateScaleEffect.cs" />
     <Compile Include="Assets\Project\Scripts\System\Game\Game.cs" />
     <Compile Include="Assets\Project\Scripts\Projectile\IceBall.cs" />
+    <Compile Include="Assets\Project\Scripts\Sound\SoundManager.cs" />
     <Compile Include="Assets\Project\Scripts\Unit\Units\Enemy\Enemys\Zombie.cs" />
     <Compile Include="Assets\Project\Scripts\Level\LevelType.cs" />
     <Compile Include="Assets\Project\Scripts\Attacks\AttackData.cs" />

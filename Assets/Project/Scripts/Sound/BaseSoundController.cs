@@ -1,3 +1,5 @@
+using UnityEngine;
+
 public class BaseSoundController
 {
 
@@ -5,14 +7,15 @@ public class BaseSoundController
 
 public class SoundUIController : BaseSoundController
 {
-    private readonly SoundUIProfile _soundUIProfile;
-
-    public SoundUIController(SoundUIProfile soundUIProfile)
+    public SoundUIController()
     {
-        _soundUIProfile = soundUIProfile;
+        
     }
 
-
+    public void Play(AudioSource audioSource, AudioClip clip, float volume)
+    {
+        audioSource.PlayOneShot(clip, volume);
+    }
 }
 
 

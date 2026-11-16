@@ -253,11 +253,11 @@
     <Compile Include="Assets\Plugins\UniRx\Scripts\Operators\SelectMany.cs" />
     <Compile Include="Assets\Plugins\UniRx\Scripts\UnityEngineBridge\Triggers\ObservableTriggerExtensions.Component.cs" />
     <Compile Include="Assets\Plugins\UniRx\Scripts\Operators\Cast.cs" />
-    <Compile Include="Assets\Plugins\UniRx\Scripts\Observable.Joins.cs" />
     <Compile Include="Assets\Plugins\UniRx\Scripts\Observable.ErrorHandling.cs" />
-    <Compile Include="Assets\Plugins\UniRx\Scripts\Operators\SynchronizedObserver.cs" />
+    <Compile Include="Assets\Plugins\UniRx\Scripts\Observable.Joins.cs" />
     <Compile Include="Assets\Plugins\UniRx\Scripts\UnityEngineBridge\Triggers\ObservableEventTrigger.cs" />
     <Compile Include="Assets\Plugins\UniRx\Scripts\UnityEngineBridge\Operators\ThrottleFirstFrame.cs" />
+    <Compile Include="Assets\Plugins\UniRx\Scripts\Operators\SynchronizedObserver.cs" />
     <Compile Include="Assets\Plugins\UniRx\Scripts\Operators\Aggregate.cs" />
     <Compile Include="Assets\Plugins\UniRx\Scripts\UnityEngineBridge\Observable.Unity.cs" />
     <Compile Include="Assets\Plugins\UniRx\Scripts\UnityEngineBridge\Triggers\ObservableTransformChangedTrigger.cs" />

@@ -8,6 +8,7 @@ using Zenject;
 
 public class ProjectInstaller : ScriptableObjectInstaller
 {
+    [SerializeField] private SoundLibrary _soundLibrary;
     public override void InstallBindings()
     {
         Container
@@ -71,6 +72,20 @@ public class ProjectInstaller : ScriptableObjectInstaller
         Container
             .Bind<SpawnUnitForUIFactory>()
             .AsSingle();
+
+        Container
+            .Bind<SoundsEventManager>()
+            .AsSingle();
+
+        Container
+            .Bind<SoundLibrary>()
+            .FromInstance(_soundLibrary)
+            .AsSingle();
+
+        Container
+            .BindInterfacesTo<SoundManager>()
+            .AsSingle()
+            .NonLazy();
 
         BindGlobalEventManager();
     }
