@@ -17,6 +17,7 @@ public sealed class ExitGameButton : SoundButton
 
     protected override void OnButtonClicked()
     {
+        base.OnButtonClicked();
         _globalEventManager.TriggerExitGame();
         _applicationFinisher.Finish();
     }

@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using UniRx;
 using UnityEngine;
+using UnityEngine.UI;
 using Zenject;
 
 public class SpawnerDevelopButton : IDisposable
@@ -9,29 +10,26 @@ public class SpawnerDevelopButton : IDisposable
     private readonly DiContainer _diContainer;
     private readonly GameObject _developButtonPrefab;
     private readonly Transform _parentForDevelopButton;
+    private readonly SoundsEventManager _soundsEventManager;
     private readonly PlayerHub _playerHub;
     private readonly Game _game;
-    private readonly GlobalEventManager _globalEventManager;
 
     private List<GameObject> _developButtons = new List<GameObject>();
     private bool _isSpawend;
 
     public SpawnerDevelopButton(GameObject developButtonPrefab, DiContainer diContainer, Transform parentForDevelopButton,
-        Game game, PlayerHub playerHub, GlobalEventManager globalEventManager)
+        Game game, PlayerHub playerHub, SoundsEventManager soundsEventManager)
     {
         _game = game;
         _playerHub = playerHub;
         _diContainer = diContainer;
-        _globalEventManager = globalEventManager;
         _developButtonPrefab = developButtonPrefab;
+        _soundsEventManager = soundsEventManager;
         _parentForDevelopButton = parentForDevelopButton;
 
-        // Добавляем подписку прямо в контейнер
         _game.GameData.SelectedPlayer.Subscribe(Spawn);
 
-        // Аналогично для событий (если нужно хранить подписку явно)
-        //_playerHub.OnOpen += OnPlayerHubOpen;
-        _globalEventManager.OnOpenPlayerPanel += OnPlayerHubOpen;
+        _playerHub.OnOpen += OnPlayerHubOpen;
     }
 
     private void OnPlayerHubOpen()
@@ -66,12 +64,13 @@ public class SpawnerDevelopButton : IDisposable
             var go = _diContainer.InstantiatePrefab(_developButtonPrefab, _parentForDevelopButton);
             if (go == null) continue;
 
-            var developButton = go.GetComponent<DevelopButton>();
-            if (developButton == null)
-            {
-                GameObject.Destroy(go);
-                continue;
-            }
+            var developButton = _diContainer.Instantiate<DevelopButton>(
+                new object[]
+                {
+                    go.GetComponent<Button>(),
+                    _soundsEventManager,
+                    go.GetComponent<DisplayDevelopButton>()
+                });
 
             developButton.Initialize(developItem);
             _developButtons.Add(go);
@@ -82,12 +81,11 @@ public class SpawnerDevelopButton : IDisposable
 
     public void Dispose()
     {
-        // 2. Отписываемся от событий (если использовали += без контейнера)
         _playerHub.OnOpen -= OnPlayerHubOpen;
 
-        // 3. Чистим UI
         foreach (var go in _developButtons)
             GameObject.Destroy(go);
+
         _developButtons.Clear();
     }
 }

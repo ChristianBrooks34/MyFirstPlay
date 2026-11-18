@@ -16,6 +16,7 @@ public class StartGameButton : SoundButton, IInitializable, IDisposable
 
     protected override void OnButtonClicked()
     {
+        base.OnButtonClicked();
         _globalEventManager.TriggerStartGame();
 
         _gameLauncer.StartPlay();

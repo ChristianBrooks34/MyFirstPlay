@@ -19,9 +19,9 @@ public class Player : Unit, IKnockbackable, IPicked, IDisposable, IDamageable
 
     public override float CalculateTotalDamage()
     {
-        if (CurrentAttack == null) return UnitProfile.BaseData.Damage.CurrentValue;
+        if (CurrentAttack == null) return UnitProfile.BaseData.Damage.StartValue;
 
-        return UnitProfile.BaseData.Damage.CurrentValue + CurrentAttack.AttackData.Damage;
+        return UnitProfile.BaseData.Damage.StartValue + CurrentAttack.AttackData.Damage;
     }
 
     public virtual void Initialize(PlayerProfile playerProfile)

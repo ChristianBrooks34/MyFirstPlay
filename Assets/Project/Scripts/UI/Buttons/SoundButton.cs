@@ -15,14 +15,11 @@ public abstract class SoundButton : IInitializable, IDisposable
         _buttonType = buttonType;
     }
 
-    public void Initialize() => _button.onClick.AddListener(HandleClick);
-    public void Dispose() => _button.onClick.RemoveListener(HandleClick);
+    public void Initialize() => _button.onClick.AddListener(OnButtonClicked);
+    public void Dispose() => _button.onClick.RemoveListener(OnButtonClicked);
 
-    private void HandleClick()
+    protected virtual void OnButtonClicked()
     {
         _soundsEventManager.TriggerButtonClicked(_buttonType);
-        OnButtonClicked();
     }
-
-    protected abstract void OnButtonClicked();
 }

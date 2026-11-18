@@ -224,6 +224,7 @@
     <Compile Include="Assets\Project\Scripts\Attacks\Player\PlayerCircleIceBallAttack.cs" />
     <Compile Include="Assets\Project\Zenject\EnemyInstaller.cs" />
     <Compile Include="Assets\Project\Scripts\UI\ValueBar\SwordChargeBar.cs" />
+    <Compile Include="Assets\Project\Scripts\UI\Buttons\BuyButton.cs" />
     <Compile Include="Assets\Project\Scripts\UI\PlayerHub\DevelopItem.cs" />
     <Compile Include="Assets\Project\Scripts\UI\Buttons\ExitLevelMenuButton.cs" />
     <Compile Include="Assets\Project\Scripts\UI\Buttons\OpenLevelMenuButton.cs" />

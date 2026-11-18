@@ -4,5 +4,7 @@
     Play,
     Pause,
     Settings,
-    Exit
+    Exit,
+    Buy,
+    BuyFail
 }

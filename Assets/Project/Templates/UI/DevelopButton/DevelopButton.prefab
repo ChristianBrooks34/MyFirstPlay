@@ -12,7 +12,6 @@ GameObject:
   - component: {fileID: 5943499054552640146}
   - component: {fileID: 3156802318718334155}
   - component: {fileID: 5712619020362121659}
-  - component: {fileID: 2844472954226791068}
   - component: {fileID: 8527740788832348}
   m_Layer: 5
   m_Name: DevelopButton
@@ -126,20 +125,6 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls: []
---- !u!114 &2844472954226791068
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1238067199594793721}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ffdd240146bf4864d875516d27401180, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Button: {fileID: 5712619020362121659}
-  _displayDevelopButton: {fileID: 8527740788832348}
 --- !u!114 &8527740788832348
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -2,19 +2,28 @@ using UnityEngine;
 using UnityEngine.UI;
 using Zenject;
 
-public class DevelopButton : MonoBehaviour
+public class DevelopButton : BuyButton
 {
-    public Button Button;
-    public DisplayDevelopButton _displayDevelopButton;
-
+    private DisplayDevelopButton _displayDevelopButton;
+    private SoundsEventManager _soundsEventManager;
+    private Button _button;
     private Wallet _wallet;
     private GlobalEventManager _globalEventManager;
-
     public DevelopItemFloat DevelopItem { get; private set; }
+
+    public DevelopButton(Button button, SoundsEventManager soundsEventManager, DisplayDevelopButton displayDevelopButton)
+        : base(button, soundsEventManager)
+    {
+        _button = button;
+        _soundsEventManager = soundsEventManager;
+        _displayDevelopButton = displayDevelopButton;
+    }
+
 
     [Inject]
     public void Construct(GlobalEventManager globalEventManager, Wallet wallet)
     {
+        Debug.LogError("Construct");
         _wallet = wallet;
         _globalEventManager = globalEventManager;
 
@@ -27,18 +36,20 @@ public class DevelopButton : MonoBehaviour
 
         _displayDevelopButton.Display(this);
 
-        Button.onClick.AddListener(OnButtonClicked);
+        base.Initialize();
     }
 
-    public void OnButtonClicked()
+    protected override void OnButtonClicked()
     {
         Develop();
     }
 
     private void Develop()
     {
+        Debug.LogError($"_wallet = {_wallet}; DevelopItem = {DevelopItem}");
         if (_wallet.Money >= DevelopItem.Price)
         {
+            _soundsEventManager.TriggerButtonClicked(ButtonType.Buy);
             _wallet.Substract(DevelopItem.Price);
 
             DevelopItem.Develop();
@@ -47,11 +58,10 @@ public class DevelopButton : MonoBehaviour
 
             _displayDevelopButton.Display(this);
         }
-    }
-
-    public void Dispose()
-    {
-        Button.onClick.RemoveListener(OnButtonClicked);
+        else
+        {
+            _soundsEventManager.TriggerButtonClicked(ButtonType.BuyFail);
+        }
     }
 
     private void OnExitGame()
