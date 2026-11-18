@@ -88,7 +88,7 @@ GameObject:
   - component: {fileID: 923816364995881206}
   - component: {fileID: 4864845903092323361}
   - component: {fileID: 8713079978937614816}
-  - component: {fileID: 3722393202328009214}
+  - component: {fileID: 8165178879616596008}
   m_Layer: 5
   m_Name: LevelOpenButton
   m_TagString: Untagged
@@ -200,7 +200,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls: []
---- !u!114 &3722393202328009214
+--- !u!114 &8165178879616596008
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -209,7 +209,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 6376462913226925479}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7d7709f07fd13ec498c73c1741744e81, type: 3}
+  m_Script: {fileID: 11500000, guid: 4e19303980fccd040aebf484b0687da6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   Button: {fileID: 8713079978937614816}

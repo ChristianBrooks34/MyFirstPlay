@@ -1,26 +1,21 @@
 using System;
 using UnityEngine.UI;
 
-public class ExitPlayerHubButton : IDisposable
+public class ExitPlayerHubButton : SoundButton
 {
-    private readonly Button _exitInLobbyButton;
     private readonly PlayerHub _playerHub;
 
-    public ExitPlayerHubButton(Button exitInLobbyButton, PlayerHub playerHub)
+    public ExitPlayerHubButton(Button exitInLobbyButton, PlayerHub playerHub, SoundsEventManager soundsEventManager) 
+        : base(exitInLobbyButton, soundsEventManager)
     {
-        _exitInLobbyButton = exitInLobbyButton;
-
-        _exitInLobbyButton.onClick.AddListener(OnButtonClicked);
         _playerHub = playerHub;
     }
 
-    public void Dispose()
-    {
-        _exitInLobbyButton.onClick.RemoveListener(OnButtonClicked);
-    }
 
-    public void OnButtonClicked()
+    protected override void OnButtonClicked()
     {
+        base.OnButtonClicked();
+
         _playerHub.Clouse();
     }
 }

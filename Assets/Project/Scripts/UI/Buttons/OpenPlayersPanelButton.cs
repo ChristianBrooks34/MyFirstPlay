@@ -1,28 +1,22 @@
 using System;
 using UnityEngine.UI;
 
-public class OpenPlayersPanelButton : IDisposable
+public class OpenPlayersPanelButton : SoundButton
 {
-    private readonly Button _openPlayersPanelButton;
     private readonly PlayerHub _playerHub;
     private readonly GlobalEventManager _globalEventManager;
 
-    public OpenPlayersPanelButton(Button openPlayersPanelButton, PlayerHub playerHub, GlobalEventManager globalEventManager)
+    public OpenPlayersPanelButton(Button openPlayersPanelButton, PlayerHub playerHub, GlobalEventManager globalEventManager,
+        SoundsEventManager soundsEventManager) : base(openPlayersPanelButton, soundsEventManager)
     {
-        _openPlayersPanelButton = openPlayersPanelButton;
         _globalEventManager = globalEventManager;
         _playerHub = playerHub;
-
-        _openPlayersPanelButton.onClick.AddListener(OnButtonClicked);
     }
 
-    public void Dispose()
+    protected override void OnButtonClicked()
     {
-        _openPlayersPanelButton.onClick.RemoveListener(OnButtonClicked);
-    }
+        base.OnButtonClicked();
 
-    public void OnButtonClicked()
-    {
         _playerHub.Open();
 
         _globalEventManager.TriggerOpenPlayerPanel();

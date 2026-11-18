@@ -86,6 +86,7 @@
     <Compile Include="Assets\Project\Scripts\UI\Buttons\NextLevelButton.cs" />
     <Compile Include="Assets\Project\Scripts\Objects Pool\DamageBloodSplashEffectPool.cs" />
     <Compile Include="Assets\Project\Zenject\PlayerInstaller.cs" />
+    <Compile Include="Assets\Project\Scripts\Sound\SceneType.cs" />
     <Compile Include="Assets\Project\Scripts\Attacks\Player\PlayerStandartAttack.cs" />
     <Compile Include="Assets\Project\FlipDirection.cs" />
     <Compile Include="Assets\Project\Scripts\Unit\StateUnit.cs" />
@@ -126,6 +127,7 @@
     <Compile Include="Assets\Project\Scripts\UI\PlayerHub\PlayerStateItem.cs" />
     <Compile Include="Assets\Project\Scripts\interfaces\BaseMove.cs" />
     <Compile Include="Assets\Project\Scripts\UI\Buttons\ButtonType.cs" />
+    <Compile Include="Assets\Project\Scripts\Sound\SceneMusicConfig.cs" />
     <Compile Include="Assets\Project\Scripts\Unit\Units\Player\PlayerAnimationController.cs" />
     <Compile Include="Assets\Project\Scripts\Unit\Units\Enemy\Boss\Boss.cs" />
     <Compile Include="Assets\Project\Scripts\Event\LevelEventManager.cs" />
@@ -221,6 +223,7 @@
     <Compile Include="Assets\Project\Scripts\TileMap\CursorTileLocator.cs" />
     <Compile Include="Assets\Project\Scripts\StateMachine\IStateMachine.cs" />
     <Compile Include="Assets\Project\Scripts\TileMap\TileMapClick.cs" />
+    <Compile Include="Assets\Project\Scripts\Sound\MusicByType.cs" />
     <Compile Include="Assets\Project\Scripts\Attacks\Player\PlayerCircleIceBallAttack.cs" />
     <Compile Include="Assets\Project\Zenject\EnemyInstaller.cs" />
     <Compile Include="Assets\Project\Scripts\UI\ValueBar\SwordChargeBar.cs" />
@@ -238,6 +241,7 @@
     <Compile Include="Assets\Project\Scripts\interfaces\IBuildableOnTilemap.cs" />
     <Compile Include="Assets\Project\Scripts\UI\Buttons\ExitInStartMenuButton.cs" />
     <Compile Include="Assets\Project\Scripts\StateMachine\EnemyStateMachine.cs" />
+    <Compile Include="Assets\Project\Scripts\UI\PlayerHub\LevelOpenButtonView.cs" />
     <Compile Include="Assets\Project\Scripts\Attacks\Player\SpawnTurretAttack.cs" />
     <Compile Include="Assets\Project\Scripts\Level\LevelController.cs" />
     <Compile Include="Assets\Project\Scripts\Projectile\RedirectingProjectileMovement.cs" />
@@ -304,6 +308,7 @@
     <Compile Include="Assets\Project\Scripts\System\JsonSaveSystem\TestSaveSystem.cs" />
     <Compile Include="Assets\Project\Scripts\Drop\Drop.cs" />
     <Compile Include="Assets\Project\Scripts\Factorys\SpawnUnitForUIFactory.cs" />
+    <Compile Include="Assets\Project\Scripts\Sound\SceneSoundPlayer.cs" />
     <Compile Include="Assets\Project\Scripts\UI\ValueBar\HealthBar.cs" />
     <Compile Include="Assets\Project\Scripts\Animation\AnimatorBase.cs" />
     <Compile Include="Assets\Project\Scripts\Animation\PulsateScaleEffect.cs" />

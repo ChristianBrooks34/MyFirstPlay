@@ -6,7 +6,6 @@ public class DevelopButton : BuyButton
 {
     private DisplayDevelopButton _displayDevelopButton;
     private SoundsEventManager _soundsEventManager;
-    private Button _button;
     private Wallet _wallet;
     private GlobalEventManager _globalEventManager;
     public DevelopItemFloat DevelopItem { get; private set; }
@@ -14,7 +13,6 @@ public class DevelopButton : BuyButton
     public DevelopButton(Button button, SoundsEventManager soundsEventManager, DisplayDevelopButton displayDevelopButton)
         : base(button, soundsEventManager)
     {
-        _button = button;
         _soundsEventManager = soundsEventManager;
         _displayDevelopButton = displayDevelopButton;
     }
@@ -23,7 +21,6 @@ public class DevelopButton : BuyButton
     [Inject]
     public void Construct(GlobalEventManager globalEventManager, Wallet wallet)
     {
-        Debug.LogError("Construct");
         _wallet = wallet;
         _globalEventManager = globalEventManager;
 
@@ -46,7 +43,6 @@ public class DevelopButton : BuyButton
 
     private void Develop()
     {
-        Debug.LogError($"_wallet = {_wallet}; DevelopItem = {DevelopItem}");
         if (_wallet.Money >= DevelopItem.Price)
         {
             _soundsEventManager.TriggerButtonClicked(ButtonType.Buy);
@@ -70,4 +66,6 @@ public class DevelopButton : BuyButton
         DevelopItem.Price = DevelopItem.StartPrice;
         DevelopItem.CurrentValue = DevelopItem.StartValue;
     }
+
+    public class Factory : PlaceholderFactory<Button, DisplayDevelopButton, DevelopButton> { }
 }

@@ -22232,8 +22232,6 @@ MonoBehaviour:
     m_PostInfinity: 2
     m_RotationOrder: 4
   _damageRules: {fileID: 11400000, guid: 72b1b710318d2e6458ad887b1037a3be, type: 2}
-  _animationCurvesConfig: {fileID: 11400000, guid: 0389b698a081e3d4bbda909291a26a4d,
-    type: 2}
 --- !u!114 &2145241381
 MonoBehaviour:
   m_ObjectHideFlags: 0

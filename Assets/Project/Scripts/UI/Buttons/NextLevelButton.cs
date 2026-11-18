@@ -1,24 +1,26 @@
 ﻿using System.Linq;
+using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 
-public class NextLevelButton
+public class NextLevelButton : SoundButton
 {
     private readonly Button _button;
-
     private readonly Game _game;
     private readonly GlobalEventManager _globalEventManager;
     private readonly ResultLevelMenu _resultLevelMenu;
 
-    public NextLevelButton(Game game, GlobalEventManager globalEventManager, ResultLevelMenu resultLevelMenu, Button button)
+    public NextLevelButton(Game game, GlobalEventManager globalEventManager, ResultLevelMenu resultLevelMenu, Button button,
+        SoundsEventManager soundsEventManager) : base(button, soundsEventManager)
     {
         _game = game;
         _button = button;
         _globalEventManager = globalEventManager;
         _resultLevelMenu = resultLevelMenu;
 
-        _button.onClick.AddListener(OnButtonClicked);
+        Debug.LogError("NextLevelButton");
+
         _resultLevelMenu.OnClouse += Dispose;
         _resultLevelMenu.OnOpen += OnOpenResultLevelMenu;
     }
@@ -31,8 +33,11 @@ public class NextLevelButton
         }
     }
 
-    public void OnButtonClicked()
+    protected override void OnButtonClicked()
     {
+        Debug.LogError("NextLevelButton OnButtonClicked");
+        base.OnButtonClicked();
+
         var nextLevleData = _game.GameData.SerializedAllLevels
             .Where(x => x.NumberLevel == _game.GameData.CurrentLevel.NumberLevel + 1)
             .FirstOrDefault();
@@ -43,9 +48,9 @@ public class NextLevelButton
         SceneManager.LoadScene("Map" + nextLevleData.NumberMap);
     }
 
-    public void Dispose()
+    public new void Dispose()
     {
-        _button.onClick.RemoveListener(OnButtonClicked);
+        base.Dispose();
         _resultLevelMenu.OnClouse -= Dispose;
         _resultLevelMenu.OnOpen -= OnOpenResultLevelMenu;
     }

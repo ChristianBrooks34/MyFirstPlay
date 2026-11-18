@@ -67,19 +67,14 @@ public class PlayerChargeAttack : BaseAttack, IAnimation
         if (!CanAttack()) return;
 
         _player.CurrentAttack = this;
-        Debug.LogError("@!@#Q# Attack");
         TriggerAttack();
         AttackLoop(_player.CurrentAttack.AttackData.Cooldown, _player.GetCancellationTokenOnDestroy()).Forget();
 
         var colliders = AttackHitChecker.GetFrontTargetsInAttackRange(
             _player.transform, _layerMask, AttackData.AttackRadius);
 
-        Debug.LogError("@!@#Q# 2) Attack");
-
         foreach (var collider in colliders)
         {
-            Debug.LogError($"@!@#Q# 2) collider = {collider.gameObject.name}");
-
             if (collider.GetComponent<Enemy>() != null)
             {
                 OnHit(collider);
@@ -89,8 +84,6 @@ public class PlayerChargeAttack : BaseAttack, IAnimation
 
     public override void OnHit(GameObject gameObject)
     {
-        Debug.LogError("@!@#Q# 1) OnHit");
-
         var enemy = gameObject.GetComponent<Enemy>();
 
         CalculateDamage();

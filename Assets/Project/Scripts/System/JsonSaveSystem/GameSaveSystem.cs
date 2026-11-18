@@ -19,7 +19,9 @@ public class GameSaveSystem : IObjectSaveSystem, IDisposable, ITickable // нужно
 
         _jsonSaveSystem = new JsonSaveSystem<GameData>();
 
+        Debug.LogError("GameSaveSystem");
         LoadObject();
+
         _globalEventManager.OnExitGame += SaveObject;
     }
 
@@ -27,6 +29,7 @@ public class GameSaveSystem : IObjectSaveSystem, IDisposable, ITickable // нужно
     {
         var gameProfile = _jsonSaveSystem.Load();
 
+        Debug.LogError($"LoadObject; gameProfile = {gameProfile}");
         if (gameProfile != null)
         {
 
@@ -41,6 +44,7 @@ public class GameSaveSystem : IObjectSaveSystem, IDisposable, ITickable // нужно
         }
         else
         {
+            Debug.LogError("GameSaveSystem");
             _unitProfileManager.InitializeAllUnitProfile();
             _levelProfileManager.InitializeAllLevelProfile();
         }

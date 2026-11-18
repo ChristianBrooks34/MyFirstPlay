@@ -2,24 +2,18 @@ using System;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
-public class ExitInStartMenuButton : IDisposable
+public class ExitInStartMenuButton : SoundButton
 {
-    private readonly Button _exitInMainMenuButton;
-
-    public ExitInStartMenuButton(Button exitInMainMenuButton)
+    public ExitInStartMenuButton(Button exitInMainMenuButton, SoundsEventManager soundsEventManager)
+        : base(exitInMainMenuButton, soundsEventManager)
     {
-        _exitInMainMenuButton = exitInMainMenuButton;
 
-        _exitInMainMenuButton.onClick.AddListener(OnButtonClicked);
     }
 
-    public void Dispose()
+    protected override void OnButtonClicked()
     {
-        _exitInMainMenuButton.onClick.RemoveListener(OnButtonClicked);
-    }
+        base.OnButtonClicked();
 
-    public void OnButtonClicked()
-    {
         SceneManager.LoadScene("StartMenu");
     }
 }

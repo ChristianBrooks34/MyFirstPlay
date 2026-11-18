@@ -2,24 +2,17 @@ using System;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
-public class ExitLevelMenuButton : IDisposable
+public class ExitLevelMenuButton : SoundButton
 {
-    private readonly Button _exitLevelMenuButton;
-
-    public ExitLevelMenuButton(Button exitLevelMenuButton)
+    public ExitLevelMenuButton(Button exitLevelMenuButton, SoundsEventManager soundsEventManager)
+        : base(exitLevelMenuButton, soundsEventManager)
     {
-        _exitLevelMenuButton = exitLevelMenuButton;
 
-        _exitLevelMenuButton.onClick.AddListener(OnButtonClicked);
     }
 
-    public void Dispose()
+    protected override void OnButtonClicked()
     {
-        _exitLevelMenuButton.onClick.RemoveListener(OnButtonClicked);
-    }
-
-    public void OnButtonClicked()
-    {
+        base.OnButtonClicked();
         SceneManager.LoadScene("Lobby");
     }
 }

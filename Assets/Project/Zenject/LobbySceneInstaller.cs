@@ -31,6 +31,8 @@ public class LobbySceneInstaller : MonoInstaller
     {
         BindButtons();
 
+        Container.BindFactory<Button, DisplayDevelopButton, DevelopButton, DevelopButton.Factory>();
+
         Container
             .BindInterfacesTo<PlayerStatsPanel>()
             .AsSingle()

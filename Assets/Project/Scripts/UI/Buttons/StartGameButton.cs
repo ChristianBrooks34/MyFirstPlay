@@ -1,8 +1,9 @@
 using System;
+using UnityEngine;
 using UnityEngine.UI;
 using Zenject;
 
-public class StartGameButton : SoundButton, IInitializable, IDisposable
+public class StartGameButton : SoundButton
 {
     private readonly GameLauncer _gameLauncer;
     private readonly GlobalEventManager _globalEventManager;
@@ -17,6 +18,7 @@ public class StartGameButton : SoundButton, IInitializable, IDisposable
     protected override void OnButtonClicked()
     {
         base.OnButtonClicked();
+        Debug.LogError("StartGameButton");
         _globalEventManager.TriggerStartGame();
 
         _gameLauncer.StartPlay();

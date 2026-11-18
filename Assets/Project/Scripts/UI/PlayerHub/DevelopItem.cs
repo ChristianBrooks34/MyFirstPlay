@@ -21,7 +21,6 @@ public class DevelopItem<T> where T : struct, IConvertible
         NumberDevelop++;
 
         StartValue = AddValues(StartValue, IncrementValue);
-        Debug.LogError($"StartValue = {StartValue}");
     }
 
     private T AddValues(T a, float b)

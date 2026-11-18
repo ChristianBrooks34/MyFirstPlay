@@ -4,20 +4,18 @@ using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 using Zenject;
 
-public class LevelOpenButton : MonoBehaviour, IDisposable
+public class LevelOpenButton : SoundButton
 {
-    public Button Button;
-    public Text NumberLevel;
-    public GameObject LevelCompletedPanel;
-    public GameObject LevelClosedPanel;
+    private readonly Game _game;
+    private readonly GlobalEventManager _globalEventManager;
+    private readonly LevelOpenButtonView _view;
 
-    private Game _game;
     private LevelData _levelData;
-    private GlobalEventManager _globalEventManager;
 
-    [Inject]
-    public void Construct(Game game, GlobalEventManager globalEventManager)
+    public LevelOpenButton(Game game, GlobalEventManager globalEventManager, SoundsEventManager soundsEventManager,
+        LevelOpenButtonView view) : base(view.Button, soundsEventManager, ButtonType.OpenLevel)
     {
+        _view = view;
         _game = game;
         _globalEventManager = globalEventManager;
     }
@@ -26,31 +24,36 @@ public class LevelOpenButton : MonoBehaviour, IDisposable
     {
         _levelData = levelProfile;
 
-        switch (levelProfile.LevelState)
-        {
-            case LevelState.Available:
-                LevelCompletedPanel.SetActive(false);
-                LevelClosedPanel.SetActive(false);
-                break;
+        //switch (levelProfile.LevelState)
+        //{
+        //    case LevelState.Available:
+        //        _view.LevelCompletedPanel.SetActive(false);
+        //        _view.LevelClosedPanel.SetActive(false);
+        //        break;
 
-            case LevelState.Locked:
-                LevelClosedPanel.SetActive(true);
-                LevelCompletedPanel.SetActive(false);
-                break;
+        //    case LevelState.Locked:
+        //        _view.LevelClosedPanel.SetActive(true);
+        //        _view.LevelCompletedPanel.SetActive(false);
+        //        break;
 
-            case LevelState.Completed:
-                LevelCompletedPanel.SetActive(true);
-                LevelClosedPanel.SetActive(false);
-                break;
-        }
+        //    case LevelState.Completed:
+        //        _view.LevelCompletedPanel.SetActive(true);
+        //        _view.LevelClosedPanel.SetActive(false);
+        //        break;
+        //}
 
-        NumberLevel.text = levelProfile.NumberLevel.ToString();
+        _view.LevelCompletedPanel.SetActive(levelProfile.LevelState == LevelState.Completed);
+        _view.LevelClosedPanel.SetActive(levelProfile.LevelState == LevelState.Locked);
+        _view.NumberLevel.text = levelProfile.NumberLevel.ToString();
 
-        Button.onClick.AddListener(OnButtonClicked);
+        _view.NumberLevel.text = levelProfile.NumberLevel.ToString();
+
+        base.Initialize();
     }
 
-    public void OnButtonClicked()
+    protected override void OnButtonClicked()
     {
+        base.OnButtonClicked();
         if (_levelData.LevelState == LevelState.Completed
             //|| _levelData.LevelState == LevelState.Locked
             )
@@ -61,8 +64,5 @@ public class LevelOpenButton : MonoBehaviour, IDisposable
         SceneManager.LoadScene("Map" + _levelData.NumberMap);
     }
 
-    public void Dispose()
-    {
-        Button.onClick.RemoveListener(OnButtonClicked);
-    }
+    public class Factory : PlaceholderFactory<LevelOpenButtonView, LevelOpenButton> { }
 }

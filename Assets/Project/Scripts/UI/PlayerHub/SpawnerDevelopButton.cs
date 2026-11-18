@@ -7,28 +7,26 @@ using Zenject;
 
 public class SpawnerDevelopButton : IDisposable
 {
-    private readonly DiContainer _diContainer;
+    private readonly DevelopButton.Factory _developButtonFactory;
     private readonly GameObject _developButtonPrefab;
     private readonly Transform _parentForDevelopButton;
-    private readonly SoundsEventManager _soundsEventManager;
     private readonly PlayerHub _playerHub;
     private readonly Game _game;
+    private readonly List<(DevelopButton controller, GameObject view)> _spawnedButtons = new();
+    private readonly IDisposable _playerSubscription;
+    private readonly IInstantiator _instantiator;
 
-    private List<GameObject> _developButtons = new List<GameObject>();
-    private bool _isSpawend;
-
-    public SpawnerDevelopButton(GameObject developButtonPrefab, DiContainer diContainer, Transform parentForDevelopButton,
-        Game game, PlayerHub playerHub, SoundsEventManager soundsEventManager)
+    public SpawnerDevelopButton(GameObject developButtonPrefab, DevelopButton.Factory developButtonFactory,
+        Transform parentForDevelopButton, Game game, PlayerHub playerHub, IInstantiator instantiator)
     {
         _game = game;
         _playerHub = playerHub;
-        _diContainer = diContainer;
+        _instantiator = instantiator;
+        _developButtonFactory = developButtonFactory;
         _developButtonPrefab = developButtonPrefab;
-        _soundsEventManager = soundsEventManager;
         _parentForDevelopButton = parentForDevelopButton;
 
-        _game.GameData.SelectedPlayer.Subscribe(Spawn);
-
+        _playerSubscription = _game.GameData.SelectedPlayer.Subscribe(Spawn);
         _playerHub.OnOpen += OnPlayerHubOpen;
     }
 
@@ -45,47 +43,42 @@ public class SpawnerDevelopButton : IDisposable
     {
         if (playerProfile == null) return;
 
-        if (_isSpawend)
-        {
-            foreach (var go in _developButtons)
-                GameObject.Destroy(go);
-            _developButtons.Clear();
-            _isSpawend = false;
-        }
+        ClearButtons();
 
         var develops = playerProfile.GetAllDevelops(playerProfile.BaseData);
-
         if (develops == null) return;
 
         foreach (var developItem in develops)
         {
             if (developItem == null) continue;
 
-            var go = _diContainer.InstantiatePrefab(_developButtonPrefab, _parentForDevelopButton);
+            var go = _instantiator.InstantiatePrefab(_developButtonPrefab, _parentForDevelopButton);
             if (go == null) continue;
 
-            var developButton = _diContainer.Instantiate<DevelopButton>(
-                new object[]
-                {
-                    go.GetComponent<Button>(),
-                    _soundsEventManager,
-                    go.GetComponent<DisplayDevelopButton>()
-                });
+            var developButton = _developButtonFactory.Create(
+                go.GetComponent<Button>(),
+                go.GetComponent<DisplayDevelopButton>());
 
             developButton.Initialize(developItem);
-            _developButtons.Add(go);
+            _spawnedButtons.Add((developButton, go));
         }
+    }
 
-        _isSpawend = true;
+    private void ClearButtons()
+    {
+        foreach (var (controller, view) in _spawnedButtons)
+        {
+            controller.Dispose();
+            if (view != null)
+                GameObject.Destroy(view);
+        }
+        _spawnedButtons.Clear();
     }
 
     public void Dispose()
     {
+        _playerSubscription?.Dispose();
         _playerHub.OnOpen -= OnPlayerHubOpen;
-
-        foreach (var go in _developButtons)
-            GameObject.Destroy(go);
-
-        _developButtons.Clear();
+        ClearButtons();
     }
 }

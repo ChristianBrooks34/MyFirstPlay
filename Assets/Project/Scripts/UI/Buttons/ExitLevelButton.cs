@@ -3,28 +3,19 @@ using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 using Zenject;
 
-public class ExitLevelButton : IInitializable, IDisposable
+public class ExitLevelButton : SoundButton
 {
-    private readonly Button _exitGameButton;
     private readonly GlobalEventManager _globalEventManager;
-    public ExitLevelButton(Button exitGameButton, GlobalEventManager globalEventManager)
+    public ExitLevelButton(Button exitGameButton, GlobalEventManager globalEventManager, SoundsEventManager soundsEventManager)
+        : base(exitGameButton, soundsEventManager)
     {
-        _exitGameButton = exitGameButton;
         _globalEventManager = globalEventManager;
     }
 
-    public void Initialize()
+    protected override void OnButtonClicked()
     {
-        _exitGameButton.onClick.AddListener(OnButtonClicked);
-    }
+        base.OnButtonClicked();
 
-    public void Dispose()
-    {
-        _exitGameButton.onClick.RemoveListener(OnButtonClicked);
-    }
-
-    public void OnButtonClicked()
-    {
         _globalEventManager.TriggerExitLevel();
 
         SceneManager.LoadScene("Lobby");

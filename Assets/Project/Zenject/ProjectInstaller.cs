@@ -9,6 +9,7 @@ using Zenject;
 public class ProjectInstaller : ScriptableObjectInstaller
 {
     [SerializeField] private SoundLibrary _soundLibrary;
+    [SerializeField] private SceneMusicConfig _sceneMusicConfig;
     public override void InstallBindings()
     {
         Container
@@ -84,6 +85,17 @@ public class ProjectInstaller : ScriptableObjectInstaller
 
         Container
             .BindInterfacesTo<SoundManager>()
+            .AsSingle()
+            .NonLazy();
+
+        Container.BindInstance(_sceneMusicConfig).AsSingle();
+
+        Container.Bind<AudioSource>()
+            .FromNewComponentOnNewGameObject()
+            .WithGameObjectName("MusicAudioSource")
+            .AsSingle();
+
+        Container.BindInterfacesAndSelfTo<SceneSoundPlayer>()
             .AsSingle()
             .NonLazy();
 

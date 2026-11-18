@@ -2,24 +2,19 @@ using System;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
-public class OpenLevelMenuButton : IDisposable
+public class OpenLevelMenuButton : SoundButton
 {
     private readonly Button _openLevelMenuButton;
 
-    public OpenLevelMenuButton(Button exitGameButton)
+    public OpenLevelMenuButton(Button exitGameButton, SoundsEventManager soundsEventManager)
+        : base(exitGameButton, soundsEventManager)
     {
         _openLevelMenuButton = exitGameButton;
-
-        _openLevelMenuButton.onClick.AddListener(OnButtonClicked);
     }
 
-    public void Dispose()
+    protected override void OnButtonClicked()
     {
-        _openLevelMenuButton.onClick.RemoveListener(OnButtonClicked);
-    }
-
-    public void OnButtonClicked()
-    {
+        base.OnButtonClicked();
         SceneManager.LoadScene("LevelsMenu");
     }
 }

@@ -6,5 +6,6 @@
     Settings,
     Exit,
     Buy,
-    BuyFail
+    BuyFail,
+    OpenLevel
 }

@@ -13,3 +13,4 @@ MonoBehaviour:
   m_Name: ProjectInstaller
   m_EditorClassIdentifier: 
   _soundLibrary: {fileID: 11400000, guid: c140b208daf375440812fc8c9c0f262b, type: 2}
+  _sceneMusicConfig: {fileID: 11400000, guid: 7451f020324a88c4d8adb733babb3144, type: 2}

@@ -54,19 +54,19 @@ public class LevelUIInstaller : MonoInstaller
     private void BindResultLevelMenu()
     {
         Container
-            .Bind<RestartLevelButton>()
+            .BindInterfacesTo<RestartLevelButton>()
             .AsSingle()
             .WithArguments(_restartLevelButton)
             .NonLazy();
 
         Container
-            .Bind<ExitLevelMenuButton>()
+            .BindInterfacesTo<ExitLevelMenuButton>()
             .AsSingle()
             .WithArguments(_exitLevelMenuButton)
             .NonLazy();
 
         Container
-            .Bind<NextLevelButton>()
+            .BindInterfacesTo<NextLevelButton>()
             .AsSingle()
             .WithArguments(_nextLevelButton)
             .NonLazy();

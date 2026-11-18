@@ -5,6 +5,7 @@ using Zenject;
 public class LevelsMenuInstaller : MonoInstaller
 {
     [SerializeField] private Button _exitLevelMenuButton;
+
     [Header("LevelOpenButton")]
     [SerializeField] private GameObject _levelOpenButtonPrefab;
     [SerializeField] private Transform _parentForLevelOpenButton;
@@ -12,6 +13,9 @@ public class LevelsMenuInstaller : MonoInstaller
     public override void InstallBindings()
     {
         BindUI();
+
+        Container
+            .BindFactory<LevelOpenButtonView, LevelOpenButton, LevelOpenButton.Factory>();
 
         Container
             .BindInterfacesTo<LevelsMenu>()

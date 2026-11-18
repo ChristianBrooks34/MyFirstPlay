@@ -1,32 +1,30 @@
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
-public class RestartLevelButton
+public class RestartLevelButton : SoundButton
 {
     private readonly Game _game;
-    private readonly GlobalEventManager _globalEventManager;
-    private readonly Button _button;
     private readonly ResultLevelMenu _resultLevelMenu;
 
-    public RestartLevelButton(Game game, GlobalEventManager globalEventManager, Button button, ResultLevelMenu resultLevelMenu)
+    public RestartLevelButton(Game game, GlobalEventManager globalEventManager, Button button, ResultLevelMenu resultLevelMenu,
+        SoundsEventManager soundsEventManager) : base(button, soundsEventManager)
     {
         _game = game;
         _resultLevelMenu = resultLevelMenu;
-        _globalEventManager = globalEventManager;
-        _button = button;
 
-        _button.onClick.AddListener(OnButtonClicked);
         _resultLevelMenu.OnDisposable += Dispose;
     }
 
-    public void OnButtonClicked()
+    protected override void OnButtonClicked()
     {
+        base.OnButtonClicked();
         SceneManager.LoadScene("Map" + _game.GameData.CurrentLevel.NumberMap);
     }
 
-    public void Dispose()
+    public new void Dispose()
     {
-        _button.onClick.RemoveListener(OnButtonClicked);
+        base.Dispose();
+
         _resultLevelMenu.OnDisposable -= Dispose;
     }
 }

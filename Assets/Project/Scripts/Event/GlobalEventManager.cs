@@ -11,6 +11,8 @@ public class GlobalEventManager
     public event Action OnChangePlayerExp;
     public event Action OnChangedPlayerLevel;
     public event Action OnDevelopPlayer;
+    public event Action<SceneType> OnChangeScene;
+    public event Action OnOpenMainMenu;
 
     public event Action<int> OnCangeMoneyInWallet;
 
@@ -20,12 +22,28 @@ public class GlobalEventManager
 
     public event Action<Enemy> OnDeadEnemy;
 
+    public void TriggerChangeScene(SceneType sceneType)
+    {
+        OnChangeScene?.Invoke(sceneType);
+    }
+
     public void TriggerDeadEnemy(Enemy enemy)
     {
         OnDeadEnemy?.Invoke(enemy);
     }
 
-    public void TriggerStartGame() => OnStartGame?.Invoke();
+    public void TriggerStartGame()
+    {
+        TriggerChangeScene(SceneType.Lobby);
+        OnStartGame?.Invoke();
+    }
+
+    public void TriggerOpenMainMenu()
+    {
+        TriggerChangeScene(SceneType.MainMenu);
+        OnOpenMainMenu?.Invoke();
+    }
+
     public void TriggerExitGame() => OnExitGame?.Invoke();
 
     public void TriggerCangeMoneyInWallet(int value) => OnCangeMoneyInWallet?.Invoke(value);
@@ -43,7 +61,12 @@ public class GlobalEventManager
 
     public void TriggerOpenPlayerPanel() => OnOpenPlayerPanel?.Invoke();
 
-    public void TriggerOpenLevel(LevelData levelProfile) => OnOpenLevel?.Invoke(levelProfile);
+    public void TriggerOpenLevel(LevelData levelProfile)
+    {
+        TriggerChangeScene(SceneType.Game);
+        OnOpenLevel?.Invoke(levelProfile);
+    }
+
     public void TriggerExitLevel() => OnExitLevel?.Invoke();
 
     public void TriggerWinLevel(LevelData levelData)

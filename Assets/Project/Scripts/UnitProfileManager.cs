@@ -41,6 +41,7 @@ public class UnitProfileManager
                 playerProfile.Data.LevelUpExp = playerProfile.Data.StartLevelUpExp;
             }
 
+            Debug.LogError("UnitProfileManager");
             unitData.CurrentLevel = 0;
 
             unitData.Health.StartValue = unitData.BaseMaxHealth;
