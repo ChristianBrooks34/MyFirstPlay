@@ -2,9 +2,10 @@
 using UnityEngine;
 
 [Serializable]
-public struct MusicByType
+public struct SoundSceneType
 {
     public SceneType Type;
     public AudioClip Clip;
+    [Range(0f, 1f)]  public float Value;
 }
 

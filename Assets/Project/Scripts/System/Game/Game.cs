@@ -47,8 +47,6 @@ public class Game : IDisposable
         {
             _globalEventManager.TriggerChangeSelectedPlayer(playerProfile);
         });
-
-        _globalEventManager.TriggerOpenMainMenu();
     }
 
     private void ChangeCurrentLevel(LevelData levelData)

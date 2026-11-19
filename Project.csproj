@@ -66,6 +66,7 @@
     <Compile Include="Assets\Project\Scripts\Attacks\Player\PlayerChargeAttack.cs" />
     <Compile Include="Assets\Project\Scripts\StateMachine\BaseStateMashine.cs" />
     <Compile Include="Assets\Project\Scripts\interfaces\IEffectManager.cs" />
+    <Compile Include="Assets\Project\Scripts\Sound\AudioVolumeFader.cs" />
     <Compile Include="Assets\Project\Scripts\Event\TurretEventManager.cs" />
     <Compile Include="Assets\Project\Scripts\Projectile\ProjectileProfile.cs" />
     <Compile Include="Assets\Project\Scripts\Unit\BaseData.cs" />
@@ -125,9 +126,9 @@
     <Compile Include="Assets\Project\Scripts\System\PositionGenerator.cs" />
     <Compile Include="Assets\Project\Zenject\Level\LevelEffectsInstaller.cs" />
     <Compile Include="Assets\Project\Scripts\UI\PlayerHub\PlayerStateItem.cs" />
+    <Compile Include="Assets\Project\Scripts\Sound\SceneMusicConfig.cs" />
     <Compile Include="Assets\Project\Scripts\interfaces\BaseMove.cs" />
     <Compile Include="Assets\Project\Scripts\UI\Buttons\ButtonType.cs" />
-    <Compile Include="Assets\Project\Scripts\Sound\SceneMusicConfig.cs" />
     <Compile Include="Assets\Project\Scripts\Unit\Units\Player\PlayerAnimationController.cs" />
     <Compile Include="Assets\Project\Scripts\Unit\Units\Enemy\Boss\Boss.cs" />
     <Compile Include="Assets\Project\Scripts\Event\LevelEventManager.cs" />
@@ -158,6 +159,7 @@
     <Compile Include="Assets\Project\Scripts\Objects Pool\IObjectPool.cs" />
     <Compile Include="Assets\Project\Scripts\Unit\Units\Enemy\EnemyMove.cs" />
     <Compile Include="Assets\Project\Scripts\Unit\Units\Enemy\EnemyCounter.cs" />
+    <Compile Include="Assets\Project\Scripts\Sound\SoundSceneType.cs" />
     <Compile Include="Assets\Project\Scripts\UI\PlayerHub\PlayerButton.cs" />
     <Compile Include="Assets\Project\Scripts\Wave\WaveManager.cs" />
     <Compile Include="Assets\Project\Scripts\Unit\UnitProfile.cs" />
@@ -223,7 +225,6 @@
     <Compile Include="Assets\Project\Scripts\TileMap\CursorTileLocator.cs" />
     <Compile Include="Assets\Project\Scripts\StateMachine\IStateMachine.cs" />
     <Compile Include="Assets\Project\Scripts\TileMap\TileMapClick.cs" />
-    <Compile Include="Assets\Project\Scripts\Sound\MusicByType.cs" />
     <Compile Include="Assets\Project\Scripts\Attacks\Player\PlayerCircleIceBallAttack.cs" />
     <Compile Include="Assets\Project\Zenject\EnemyInstaller.cs" />
     <Compile Include="Assets\Project\Scripts\UI\ValueBar\SwordChargeBar.cs" />

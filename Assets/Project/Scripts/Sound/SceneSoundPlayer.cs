@@ -1,31 +1,41 @@
 ﻿using System;
+using System.Collections.Generic;
 using UnityEngine;
+using Zenject;
 
-public class SceneSoundPlayer : IDisposable
+public class SceneSoundPlayer : IInitializable, IDisposable
 {
     private readonly SceneMusicConfig _sceneMusicConfig;
     private readonly GlobalEventManager _globalEventManager;
     private readonly AudioSource _audioSource;
+    private readonly SoundManager _soundManager;
 
-    public SceneSoundPlayer(SceneMusicConfig sceneMusicConfig, GlobalEventManager globalEventManager, AudioSource audioSource)
+    public SceneSoundPlayer(SceneMusicConfig sceneMusicConfig, GlobalEventManager globalEventManager, AudioSource audioSource,
+        SoundManager soundManager)
     {
         _sceneMusicConfig = sceneMusicConfig;
         _globalEventManager = globalEventManager;
         _audioSource = audioSource;
+        _soundManager = soundManager;
+    }
 
+    public void Initialize()
+    {
+        _audioSource.playOnAwake = false;
         _audioSource.loop = true;
+
         _globalEventManager.OnChangeScene += PlaySound;
+        PlaySound(SceneType.MainMenu);
     }
 
     private void PlaySound(SceneType sceneType)
     {
-        var clip = _sceneMusicConfig.GetClip(sceneType);
+        var musicByType = _sceneMusicConfig.GetMusingBuType(sceneType);
 
-        if (clip == null || (_audioSource.clip == clip && _audioSource.isPlaying))
+        if (musicByType.Clip == null || (_audioSource.clip == musicByType.Clip && _audioSource.isPlaying))
             return;
 
-        _audioSource.clip = clip;
-        _audioSource.Play();
+        _soundManager.Play(musicByType.Clip, _audioSource, musicByType.Value, true);
     }
 
     public void Dispose()
@@ -33,4 +43,3 @@ public class SceneSoundPlayer : IDisposable
         _globalEventManager.OnChangeScene -= PlaySound;
     }
 }
-

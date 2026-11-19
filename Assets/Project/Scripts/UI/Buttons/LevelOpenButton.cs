@@ -24,24 +24,6 @@ public class LevelOpenButton : SoundButton
     {
         _levelData = levelProfile;
 
-        //switch (levelProfile.LevelState)
-        //{
-        //    case LevelState.Available:
-        //        _view.LevelCompletedPanel.SetActive(false);
-        //        _view.LevelClosedPanel.SetActive(false);
-        //        break;
-
-        //    case LevelState.Locked:
-        //        _view.LevelClosedPanel.SetActive(true);
-        //        _view.LevelCompletedPanel.SetActive(false);
-        //        break;
-
-        //    case LevelState.Completed:
-        //        _view.LevelCompletedPanel.SetActive(true);
-        //        _view.LevelClosedPanel.SetActive(false);
-        //        break;
-        //}
-
         _view.LevelCompletedPanel.SetActive(levelProfile.LevelState == LevelState.Completed);
         _view.LevelClosedPanel.SetActive(levelProfile.LevelState == LevelState.Locked);
         _view.NumberLevel.text = levelProfile.NumberLevel.ToString();

@@ -4,10 +4,11 @@ using UnityEngine.UI;
 
 public class ExitInStartMenuButton : SoundButton
 {
-    public ExitInStartMenuButton(Button exitInMainMenuButton, SoundsEventManager soundsEventManager)
+    private readonly GlobalEventManager _eventManager;
+    public ExitInStartMenuButton(Button exitInMainMenuButton, SoundsEventManager soundsEventManager, GlobalEventManager eventManager)
         : base(exitInMainMenuButton, soundsEventManager)
     {
-
+        _eventManager = eventManager;
     }
 
     protected override void OnButtonClicked()
@@ -15,5 +16,6 @@ public class ExitInStartMenuButton : SoundButton
         base.OnButtonClicked();
 
         SceneManager.LoadScene("StartMenu");
+        _eventManager.TriggerChangeScene(SceneType.MainMenu);
     }
 }

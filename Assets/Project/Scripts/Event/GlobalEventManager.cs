@@ -24,6 +24,7 @@ public class GlobalEventManager
 
     public void TriggerChangeScene(SceneType sceneType)
     {
+        Debug.LogError("TriggerChangeScene");
         OnChangeScene?.Invoke(sceneType);
     }
 
@@ -40,6 +41,7 @@ public class GlobalEventManager
 
     public void TriggerOpenMainMenu()
     {
+        Debug.LogError("TriggerOpenMainMenu");
         TriggerChangeScene(SceneType.MainMenu);
         OnOpenMainMenu?.Invoke();
     }
@@ -67,8 +69,11 @@ public class GlobalEventManager
         OnOpenLevel?.Invoke(levelProfile);
     }
 
-    public void TriggerExitLevel() => OnExitLevel?.Invoke();
-
+    public void TriggerExitLevel()
+    {
+        TriggerChangeScene(SceneType.Lobby);
+        OnExitLevel?.Invoke();
+    }
     public void TriggerWinLevel(LevelData levelData)
     {
         OnWinLevel?.Invoke(levelData);
