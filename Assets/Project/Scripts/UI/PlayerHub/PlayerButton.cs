@@ -1,26 +1,22 @@
 using System;
-using UnityEngine;
-using UnityEngine.UI;
 using Zenject;
 
-public class PlayerButton : MonoBehaviour, IDisposable
+public class PlayerButton : SoundButton
 {
-    public Button Button;
-    public Text Name;
-    public Image Icon;
-    [SerializeField] private GameObject _playerArea;
-
-    private Game _game;
-    private GlobalEventManager _globalEventManager;
-    private SpawnUnitForUIFactory _spawnUnitForUIFactory;
+    private readonly Game _game;
+    private readonly PlayerButtonView _playerButtonView;
+    private readonly GlobalEventManager _globalEventManager;
+    private readonly SpawnUnitForUIFactory _spawnUnitForUIFactory;
     public PlayerProfile PlayerProfile { get; set; }
 
-    [Inject]
-    public void Construct(Game game, GlobalEventManager globalEventManager, SpawnUnitForUIFactory spawnUnitForUIFactory)
+    public PlayerButton(Game game, GlobalEventManager globalEventManager, SpawnUnitForUIFactory spawnUnitForUIFactory,
+        PlayerButtonView playerButtonView, SoundsEventManager soundsEventManager)
+        : base(playerButtonView.Button, soundsEventManager)
     {
         _game = game;
         _globalEventManager = globalEventManager;
         _spawnUnitForUIFactory = spawnUnitForUIFactory;
+        _playerButtonView = playerButtonView;
     }
 
     public void Initialize(PlayerProfile playerProfile, PlayerData playerData)
@@ -29,15 +25,16 @@ public class PlayerButton : MonoBehaviour, IDisposable
 
         PlayerProfile.Data = playerData;
 
-        Name.text = playerProfile.Data.Name;
+        _playerButtonView.Name.text = playerProfile.Data.Name;
 
-        _spawnUnitForUIFactory.PlayerEmptySpawn(PlayerProfile, _playerArea.transform, false);
+        _spawnUnitForUIFactory.PlayerEmptySpawn(PlayerProfile, _playerButtonView.PlayerArea.transform, false);
 
-        Button.onClick.AddListener(OnButtonClicked);
+        _playerButtonView.Button.onClick.AddListener(OnButtonClicked);
     }
 
-    public void OnButtonClicked()
+    protected override void OnButtonClicked()
     {
+        base.OnButtonClicked();
         if (_game.GameData.SelectedPlayer.Value != PlayerProfile)
         {
             _game.GameData.SelectedPlayer.Value = PlayerProfile;
@@ -46,8 +43,6 @@ public class PlayerButton : MonoBehaviour, IDisposable
         }
     }
 
-    public void Dispose()
-    {
-        Button.onClick.RemoveListener(OnButtonClicked);
-    }
+    public class Factory : PlaceholderFactory<PlayerButtonView, PlayerButton> { }
+
 }

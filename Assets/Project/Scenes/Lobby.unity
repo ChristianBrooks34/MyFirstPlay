@@ -2935,6 +2935,8 @@ MonoBehaviour:
   _openPlayersPanelButton: {fileID: 822320748}
   _exitPlayerHubButton: {fileID: 164042965}
   _exitInStartMenuButton: {fileID: 1568626873}
+  _playerButtonView: {fileID: 4063363226902309475, guid: 59214b576b198584b9d5a24ab887e445,
+    type: 3}
   _displayPlayerStatsTextFormat: '{0}: {1}'
   _stateItemPrefab: {fileID: 8880814875116907506, guid: 72719421ec854d34d81f5e0ca6a89ee5,
     type: 3}

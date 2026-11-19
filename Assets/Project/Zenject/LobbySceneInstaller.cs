@@ -21,6 +21,7 @@ public class LobbySceneInstaller : MonoInstaller
     [SerializeField] private Button _openPlayersPanelButton;
     [SerializeField] private Button _exitPlayerHubButton;
     [SerializeField] private Button _exitInStartMenuButton;
+    [SerializeField] private PlayerButtonView _playerButtonView;
 
     [Header("PlayerStats")]
     [SerializeField] private string _displayPlayerStatsTextFormat;
@@ -58,6 +59,14 @@ public class LobbySceneInstaller : MonoInstaller
             .Bind<SpawnerPlayerButton>()
             .AsSingle()
             .WithArguments(_playerButtonPrefab, _parentForPlayerButton);
+
+        Container
+            .BindFactory<PlayerButtonView, PlayerButton, PlayerButton.Factory>();
+
+        Container
+            .Bind<PlayerButtonView>()
+            .FromInstance(_playerButtonView)
+            .AsSingle();
 
         Container
             .BindInterfacesTo<ExitInStartMenuButton>()

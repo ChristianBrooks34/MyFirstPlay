@@ -138,6 +138,7 @@
     <Compile Include="Assets\Project\Zenject\IDiContainer.cs" />
     <Compile Include="Assets\Project\Scripts\TileMap\TilemapUtils.cs" />
     <Compile Include="Assets\Project\Scripts\Sound\BaseSoundController.cs" />
+    <Compile Include="Assets\Project\Scripts\UI\PlayerHub\PlayerButtonView.cs" />
     <Compile Include="Assets\Project\Scripts\Drop\DropProfile.cs" />
     <Compile Include="Assets\Project\Scripts\UI\PlayerHub\PlayerHub.cs" />
     <Compile Include="Assets\Project\Zenject\SwordChargeBarInstaller.cs" />
