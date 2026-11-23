@@ -77,6 +77,7 @@
     <Compile Include="Assets\Project\Scripts\UI\ResultLevelPanel\ResultLevelMenu.cs" />
     <Compile Include="Assets\Project\Scripts\Attacks\RangedAttack\RangedAttack.cs" />
     <Compile Include="Assets\Project\Scripts\UI\PlayerHub\SpawnerPlayerButton.cs" />
+    <Compile Include="Assets\Project\Scripts\Sound\Unit\UnitAudioConfig.cs" />
     <Compile Include="Assets\Project\Scripts\Unit\Units\Enemy\Boss\BossProfile.cs" />
     <Compile Include="Assets\Project\Scripts\System\EntityType.cs" />
     <Compile Include="Assets\Project\Scripts\Camera\CameraFollow.cs" />
@@ -137,7 +138,6 @@
     <Compile Include="Assets\Project\Scripts\UI\ValueBar\DisplayValueBar.cs" />
     <Compile Include="Assets\Project\Zenject\IDiContainer.cs" />
     <Compile Include="Assets\Project\Scripts\TileMap\TilemapUtils.cs" />
-    <Compile Include="Assets\Project\Scripts\Sound\BaseSoundController.cs" />
     <Compile Include="Assets\Project\Scripts\UI\PlayerHub\PlayerButtonView.cs" />
     <Compile Include="Assets\Project\Scripts\Drop\DropProfile.cs" />
     <Compile Include="Assets\Project\Scripts\UI\PlayerHub\PlayerHub.cs" />
@@ -228,12 +228,14 @@
     <Compile Include="Assets\Project\Scripts\TileMap\TileMapClick.cs" />
     <Compile Include="Assets\Project\Scripts\Attacks\Player\PlayerCircleIceBallAttack.cs" />
     <Compile Include="Assets\Project\Zenject\EnemyInstaller.cs" />
+    <Compile Include="Assets\Project\Scripts\Sound\Unit\AnimationEventReceiver.cs" />
     <Compile Include="Assets\Project\Scripts\UI\ValueBar\SwordChargeBar.cs" />
     <Compile Include="Assets\Project\Scripts\UI\Buttons\BuyButton.cs" />
     <Compile Include="Assets\Project\Scripts\UI\PlayerHub\DevelopItem.cs" />
     <Compile Include="Assets\Project\Scripts\UI\Buttons\ExitLevelMenuButton.cs" />
     <Compile Include="Assets\Project\Scripts\UI\Buttons\OpenLevelMenuButton.cs" />
     <Compile Include="Assets\Project\Scripts\StatusEffect\BuildingStatusEffectManager.cs" />
+    <Compile Include="Assets\Project\Scripts\Sound\Unit\UnitAudio.cs" />
     <Compile Include="Assets\Project\Scripts\Attacks\Turret\BulletTurretAttack.cs" />
     <Compile Include="Assets\Project\Scripts\Unit\UnitLevelManager.cs" />
     <Compile Include="Assets\Project\Scripts\Objects Pool\TurretPool.cs" />
