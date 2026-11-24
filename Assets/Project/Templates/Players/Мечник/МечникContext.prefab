@@ -75,6 +75,8 @@ MonoBehaviour:
   _baseAttacks:
   - {fileID: 3535632837495410165}
   - {fileID: 8070168881701664216}
+  _animationEventReceiver: {fileID: 6650027607113357696}
+  _unitAudioConfig: {fileID: 11400000, guid: d83e145d89b7e104ca2ac5377826af66, type: 2}
 --- !u!114 &3535632837495410165
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -242,6 +244,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 2a016395fbe06a244a5a8029566c4114, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &6650027607113357696 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 9083798211011112512, guid: 8fcbe946a48bd1e4aa8f8136aa94508f,
+    type: 3}
+  m_PrefabInstance: {fileID: 2475157596628924352}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: afc123de621d5af45b7d3408e691692d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!114 &6653091757470331937 stripped

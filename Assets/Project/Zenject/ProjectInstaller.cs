@@ -10,6 +10,7 @@ public class ProjectInstaller : ScriptableObjectInstaller
 {
     [SerializeField] private SoundLibrary _soundLibrary;
     [SerializeField] private SceneMusicConfig _sceneMusicConfig;
+
     public override void InstallBindings()
     {
         Container

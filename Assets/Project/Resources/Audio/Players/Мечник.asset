@@ -1,0 +1,26 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6ee7136be4fcc4549af90049a564ea79, type: 3}
+  m_Name: "\u041C\u0435\u0447\u043D\u0438\u043A"
+  m_EditorClassIdentifier: 
+  Footsteps:
+  - {fileID: 8300000, guid: bd7d6d8f9efe64749a3be0dd47d8519c, type: 3}
+  - {fileID: 8300000, guid: 4d33ee953c941e2449b0f325e128f799, type: 3}
+  - {fileID: 8300000, guid: de812b515a5c45d4fa030cf39e846e84, type: 3}
+  - {fileID: 8300000, guid: 4d6f9ef662a06c148bdbf92d8972618f, type: 3}
+  - {fileID: 8300000, guid: 38025832fbb2254429dd042621e613bc, type: 3}
+  TakeDamage:
+  - {fileID: 8300000, guid: 8b23b175a78d6b5458322e3a6c9905d0, type: 3}
+  Death:
+  - {fileID: 8300000, guid: eaae8fe8d600e1f459f34aa5757fa3b8, type: 3}
+  Volume: 0.1
+  PitchRandomness: 0.1

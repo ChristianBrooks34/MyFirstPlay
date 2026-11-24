@@ -7,6 +7,11 @@ using UnityEngine;
 
 public class AnimationEventReceiver : MonoBehaviour
 {
+    public event Action OnFootsteps;
 
+    public void TriggerEventFootsteps()
+    {
+        OnFootsteps?.Invoke();
+    }
 }
 

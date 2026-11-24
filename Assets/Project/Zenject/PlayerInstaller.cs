@@ -11,6 +11,8 @@ public class PlayerInstaller : MonoInstaller
     [SerializeField] private WeaponUpDownAnimationController _weaponAnimationController;
     [SerializeField] private BaseMove _baseMove;
     [SerializeField] private List<BaseAttack> _baseAttacks;
+    [SerializeField] private AnimationEventReceiver _animationEventReceiver;
+    [SerializeField] private UnitAudioConfig _unitAudioConfig;
 
     private PlayerInput _playerInput;
     private bool _isInitialized = false;
@@ -105,6 +107,21 @@ public class PlayerInstaller : MonoInstaller
     private void BindOtherComponents()
     {
         Container
+            .Bind<PlayerAudio>()
+            .AsSingle()
+            .NonLazy();
+
+        Container
+            .Bind<AnimationEventReceiver>()
+            .FromInstance(_animationEventReceiver)
+            .AsSingle();
+
+        Container
+            .Bind<UnitAudioConfig>()
+            .FromInstance(_unitAudioConfig)
+            .AsSingle();
+
+        Container
             .Bind<UnitProfile>()
             .FromInstance(_player.UnitProfile)
             .AsSingle();
@@ -187,6 +204,11 @@ public class PlayerInstaller : MonoInstaller
 
         Container
             .Bind<PlayerEventManager>()
+            .FromInstance(_playerEventManager)
+            .AsSingle();
+
+        Container
+            .Bind<UnitEventManager>()
             .FromInstance(_playerEventManager)
             .AsSingle();
     }

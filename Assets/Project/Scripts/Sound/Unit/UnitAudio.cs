@@ -1,8 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using UnityEngine;
 
 public class UnitAudio : IDisposable
@@ -27,7 +23,7 @@ public class UnitAudio : IDisposable
 
         _unitEffectManager.OnDead += PlayDeathAudio;
         _unitEffectManager.OnDamage += PlayTakeDamageAudio;
-
+        _animationEventReceiver.OnFootsteps += PlayFootstepsAudio;
     }
 
     private void PlayFootstepsAudio()
@@ -49,6 +45,6 @@ public class UnitAudio : IDisposable
     {
         _unitEffectManager.OnDead -= PlayDeathAudio;
         _unitEffectManager.OnDamage -= PlayTakeDamageAudio;
+        _animationEventReceiver.OnFootsteps -= PlayFootstepsAudio;
     }
 }
-

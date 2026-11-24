@@ -204,6 +204,7 @@
     <Compile Include="Assets\Project\Scripts\Projectile\Projectile.cs" />
     <Compile Include="Assets\Project\Scripts\Unit\Units\Player\PlayerUpgradeSistem.cs" />
     <Compile Include="Assets\Project\Scripts\Unit\Units\Enemy\EnemyController.cs" />
+    <Compile Include="Assets\Project\Scripts\Sound\Unit\PlayerAudio.cs" />
     <Compile Include="Assets\Project\Zenject\StartMenuInstaller.cs" />
     <Compile Include="Assets\Project\Scripts\interfaces\BuildingState.cs" />
     <Compile Include="Assets\Project\Scripts\System\Game\GameData.cs" />

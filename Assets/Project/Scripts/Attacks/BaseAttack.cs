@@ -10,6 +10,9 @@ public abstract class BaseAttack : MonoBehaviour
 
     public event Action OnAttack;
 
+    public event Action OnAttackStarted;
+    public event Action OnAttackPerformed;
+
     protected bool canAttack = true;
 
     public virtual void Attack() { }
