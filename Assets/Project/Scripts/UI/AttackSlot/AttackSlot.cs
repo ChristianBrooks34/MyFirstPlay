@@ -24,7 +24,7 @@ public class AttackSlot : MonoBehaviour
         InitializeCooldownSubscription().Forget();
     }
 
-    private void StartRestoreAttackFill()
+    private void StartRestoreAttackFill(BaseAttack baseAttack)
     {
         RestoreAttackFill(this.GetCancellationTokenOnDestroy()).Forget();
     }

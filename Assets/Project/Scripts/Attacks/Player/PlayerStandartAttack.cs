@@ -19,9 +19,19 @@ public class PlayerStandardAttack : BaseAttack
 
         _swordAnimationController.Attack += Attack;
         _swordAnimationController.OnStartedSwordUpAnimation += SetAsCurrentAttack;
+        _swordAnimationController.OnCancelSwordUpAnimation += CancellAttack;
     }
 
-    private void SetAsCurrentAttack() => _player.CurrentAttack = this;
+    private void SetAsCurrentAttack()
+    {
+        _player.CurrentAttack = this;
+        TriggerAttackStarted();
+    }
+
+    private void CancellAttack()
+    {
+        TriggerAttackPerformed();
+    }
 
     public override void Attack()
     {
@@ -60,6 +70,7 @@ public class PlayerStandardAttack : BaseAttack
         {
             _swordAnimationController.Attack -= Attack;
             _swordAnimationController.OnStartedSwordUpAnimation -= SetAsCurrentAttack;
+            _swordAnimationController.OnCancelSwordUpAnimation -= CancellAttack;
         }
     }
 }

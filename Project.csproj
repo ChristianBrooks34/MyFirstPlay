@@ -139,6 +139,7 @@
     <Compile Include="Assets\Project\Zenject\IDiContainer.cs" />
     <Compile Include="Assets\Project\Scripts\TileMap\TilemapUtils.cs" />
     <Compile Include="Assets\Project\Scripts\UI\PlayerHub\PlayerButtonView.cs" />
+    <Compile Include="Assets\Project\Scripts\Sound\AttackAudio.cs" />
     <Compile Include="Assets\Project\Scripts\Drop\DropProfile.cs" />
     <Compile Include="Assets\Project\Scripts\UI\PlayerHub\PlayerHub.cs" />
     <Compile Include="Assets\Project\Zenject\SwordChargeBarInstaller.cs" />
@@ -160,7 +161,6 @@
     <Compile Include="Assets\Project\Scripts\Objects Pool\IObjectPool.cs" />
     <Compile Include="Assets\Project\Scripts\Unit\Units\Enemy\EnemyMove.cs" />
     <Compile Include="Assets\Project\Scripts\Unit\Units\Enemy\EnemyCounter.cs" />
-    <Compile Include="Assets\Project\Scripts\Sound\SoundSceneType.cs" />
     <Compile Include="Assets\Project\Scripts\UI\PlayerHub\PlayerButton.cs" />
     <Compile Include="Assets\Project\Scripts\Wave\WaveManager.cs" />
     <Compile Include="Assets\Project\Scripts\Unit\UnitProfile.cs" />
@@ -205,6 +205,7 @@
     <Compile Include="Assets\Project\Scripts\Unit\Units\Player\PlayerUpgradeSistem.cs" />
     <Compile Include="Assets\Project\Scripts\Unit\Units\Enemy\EnemyController.cs" />
     <Compile Include="Assets\Project\Scripts\Sound\Unit\PlayerAudio.cs" />
+    <Compile Include="Assets\Project\Scripts\Sound\AttackSoundProfile.cs" />
     <Compile Include="Assets\Project\Zenject\StartMenuInstaller.cs" />
     <Compile Include="Assets\Project\Scripts\interfaces\BuildingState.cs" />
     <Compile Include="Assets\Project\Scripts\System\Game\GameData.cs" />
@@ -283,6 +284,7 @@
     <Compile Include="Assets\Project\Scripts\Attacks\Turret\BuildingTurretAttack.cs" />
     <Compile Include="Assets\Project\Scripts\Event\SpawnUnitEventManager.cs" />
     <Compile Include="Assets\Project\FlipController.cs" />
+    <Compile Include="Assets\Project\Scripts\Sound\DropAudio.cs" />
     <Compile Include="Assets\Project\Scripts\Unit\Units\Enemy\Enemys\DroneStriker.cs" />
     <Compile Include="Assets\Project\Zenject\GameSystemInstaller.cs" />
     <Compile Include="Assets\Project\Scripts\Building\Buildings\TurretBuilding.cs" />
@@ -317,10 +319,12 @@
     <Compile Include="Assets\Project\Scripts\UI\ValueBar\HealthBar.cs" />
     <Compile Include="Assets\Project\Scripts\Animation\AnimatorBase.cs" />
     <Compile Include="Assets\Project\Scripts\Animation\PulsateScaleEffect.cs" />
+    <Compile Include="Assets\Project\Scripts\Sound\BaseSoundType.cs" />
     <Compile Include="Assets\Project\Scripts\System\Game\Game.cs" />
     <Compile Include="Assets\Project\Scripts\Projectile\IceBall.cs" />
     <Compile Include="Assets\Project\Scripts\Sound\SoundManager.cs" />
     <Compile Include="Assets\Project\Scripts\Unit\Units\Enemy\Enemys\Zombie.cs" />
+    <Compile Include="Assets\Project\Scripts\Sound\SceneSoundType.cs" />
     <Compile Include="Assets\Project\Scripts\Level\LevelType.cs" />
     <Compile Include="Assets\Project\Scripts\Attacks\AttackData.cs" />
     <Compile Include="Assets\Project\Scripts\Unit\BaseProfile.cs" />

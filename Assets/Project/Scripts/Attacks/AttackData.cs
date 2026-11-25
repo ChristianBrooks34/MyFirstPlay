@@ -8,4 +8,5 @@ public class AttackData : ScriptableObject
     public float Cooldown;
     public float AttackRadius;
     public Sprite Icon;
+    public AttackSoundProfile AttackSoundProfile;
 }

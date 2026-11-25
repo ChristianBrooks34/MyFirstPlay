@@ -34,8 +34,8 @@ public class ProjectInstaller : ScriptableObjectInstaller
             .AsCached();
 
         Container
-           .BindInterfacesTo<GameSaveSystem>()
-           .AsCached();
+            .BindInterfacesTo<GameSaveSystem>()
+            .AsCached();
 
         Container
             .Bind<EnemyCounter>()

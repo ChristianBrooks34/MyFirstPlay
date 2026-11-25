@@ -40,7 +40,6 @@ public class DisplayDevelopButton : MonoBehaviour
 
         _developButton = developButton;
 
-        Debug.LogError($"_wallet = {_wallet}");
         DisplayNotEnoughMoneyPanel(_wallet.Money);
         Name.text = _developButton.DevelopItem.Name;
         CurrentDevelop.text = _developButton.DevelopItem.NumberDevelop.ToString();

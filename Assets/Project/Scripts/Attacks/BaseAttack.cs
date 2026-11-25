@@ -8,10 +8,10 @@ public abstract class BaseAttack : MonoBehaviour
 {
     public AttackData AttackData;
 
-    public event Action OnAttack;
+    public event Action<BaseAttack> OnAttack;
 
-    public event Action OnAttackStarted;
-    public event Action OnAttackPerformed;
+    public event Action<BaseAttack> OnAttackStarted;
+    public event Action<BaseAttack> OnAttackPerformed;
 
     protected bool canAttack = true;
 
@@ -52,6 +52,16 @@ public abstract class BaseAttack : MonoBehaviour
 
     public void TriggerAttack()
     {
-        OnAttack?.Invoke();
+        OnAttack?.Invoke(this);
+    }
+
+    public void TriggerAttackStarted()
+    {
+        OnAttackStarted?.Invoke(this);
+    }
+
+    public void TriggerAttackPerformed()
+    {
+        OnAttackPerformed?.Invoke(this);
     }
 }

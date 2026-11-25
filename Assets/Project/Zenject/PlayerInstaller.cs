@@ -112,6 +112,10 @@ public class PlayerInstaller : MonoInstaller
             .NonLazy();
 
         Container
+            .BindInterfacesAndSelfTo<AttackAudio>()
+            .AsSingle();
+
+        Container
             .Bind<AnimationEventReceiver>()
             .FromInstance(_animationEventReceiver)
             .AsSingle();
