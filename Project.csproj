@@ -85,6 +85,7 @@
     <Compile Include="Assets\Project\Zenject\Level\TilemapInstaller.cs" />
     <Compile Include="Assets\Project\Scripts\Attacks\Boss\RedirectingProjectileBossAttack.cs" />
     <Compile Include="Assets\Project\Scripts\Projectile\RedirectingBullet.cs" />
+    <Compile Include="Assets\Project\Scripts\Sound\ResultLevelMenuAudioProfile.cs" />
     <Compile Include="Assets\Project\Scripts\UI\Buttons\NextLevelButton.cs" />
     <Compile Include="Assets\Project\Scripts\Objects Pool\DamageBloodSplashEffectPool.cs" />
     <Compile Include="Assets\Project\Zenject\PlayerInstaller.cs" />
@@ -207,6 +208,7 @@
     <Compile Include="Assets\Project\Scripts\Sound\Unit\PlayerAudio.cs" />
     <Compile Include="Assets\Project\Scripts\Sound\AttackSoundProfile.cs" />
     <Compile Include="Assets\Project\Zenject\StartMenuInstaller.cs" />
+    <Compile Include="Assets\Project\Scripts\Sound\ResultLevelMenuAudio.cs" />
     <Compile Include="Assets\Project\Scripts\interfaces\BuildingState.cs" />
     <Compile Include="Assets\Project\Scripts\System\Game\GameData.cs" />
     <Compile Include="Assets\Project\Zenject\Level\ContainersInstaller.cs" />
@@ -325,9 +327,9 @@
     <Compile Include="Assets\Project\Scripts\Sound\SoundManager.cs" />
     <Compile Include="Assets\Project\Scripts\Unit\Units\Enemy\Enemys\Zombie.cs" />
     <Compile Include="Assets\Project\Scripts\Sound\SceneSoundType.cs" />
+    <Compile Include="Assets\Project\Scripts\interfaces\IPicked.cs" />
     <Compile Include="Assets\Project\Scripts\Level\LevelType.cs" />
     <Compile Include="Assets\Project\Scripts\Attacks\AttackData.cs" />
-    <Compile Include="Assets\Project\Scripts\interfaces\IPicked.cs" />
     <Compile Include="Assets\Project\Scripts\Unit\BaseProfile.cs" />
     <Compile Include="Assets\Project\Scripts\Attacks\Enemy\RedirectingProjectileEnemyAttack.cs" />
     <Compile Include="Assets\Project\Scripts\Classed\ПроцедурнаяГенерация.cs" />

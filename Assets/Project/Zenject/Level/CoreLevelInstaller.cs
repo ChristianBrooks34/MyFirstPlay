@@ -10,6 +10,8 @@ public class CoreLevelInstaller : MonoInstaller
     [SerializeField] private LayerMask _flipableSprites;
     [SerializeField] private AnimationCurve _animationCurve;
     [SerializeField] private DamageRules _damageRules;
+    [SerializeField] private ResultLevelMenuAudioProfile _resultLevelMenuAudioProfile;
+    
 
     private SpawnUnitEventManager _spawnUnitEventManager;
 
@@ -23,6 +25,12 @@ public class CoreLevelInstaller : MonoInstaller
             .Bind<LevelController>()
             .FromInstance(_levelController)
             .AsCached()
+            .NonLazy();
+
+        Container
+            .BindInterfacesAndSelfTo<ResultLevelMenuAudio>()
+            .AsSingle()
+            .WithArguments(_resultLevelMenuAudioProfile)
             .NonLazy();
 
         Container
