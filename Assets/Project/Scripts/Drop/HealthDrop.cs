@@ -3,7 +3,7 @@ using Cysharp.Threading.Tasks;
 using UnityEngine;
 using Zenject;
 
-public class HealthDrop : Drop, IPickable
+public class HealthDrop : Drop
 {
     private Player _player;
     private Game _game;
@@ -27,14 +27,16 @@ public class HealthDrop : Drop, IPickable
         StartAnimation();
     }
 
-    public bool CanBePicked()
+    public override bool CanBePicked()
     {
         return !IsCollected;
     }
 
-    public void OnPicked()
+    public override void OnPicked()
     {
         if (!CanBePicked()) return;
+
+        base.OnPicked();
 
         _player.Health.Add(DropProfile.BaseData.Count);
         Delete();

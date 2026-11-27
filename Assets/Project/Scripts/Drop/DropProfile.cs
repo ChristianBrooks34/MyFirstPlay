@@ -26,6 +26,7 @@ public class DropProfile : BaseProfile<DropData>
 public class DropData : BaseData
 {
     public int Count { get; set; }
+    public BaseSoundType PickubSound;
 }
 
 

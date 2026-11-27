@@ -13,12 +13,12 @@ MonoBehaviour:
   m_Name: SceneMusicConfig
   m_EditorClassIdentifier: 
   musicByTypes:
-  - Type: 0
-    Clip: {fileID: 8300000, guid: eb7f10105313640a18ce7926041a4d76, type: 3}
+  - Clip: {fileID: 8300000, guid: eb7f10105313640a18ce7926041a4d76, type: 3}
     Value: 0.1
-  - Type: 1
-    Clip: {fileID: 8300000, guid: 3fc26869a512b4e5187c9be6310ad8c2, type: 3}
+    Type: 0
+  - Clip: {fileID: 8300000, guid: 3fc26869a512b4e5187c9be6310ad8c2, type: 3}
     Value: 0.1
-  - Type: 2
-    Clip: {fileID: 8300000, guid: bea93a38b71b64b598109b3a3b1a0048, type: 3}
-    Value: 0.05
+    Type: 1
+  - Clip: {fileID: 8300000, guid: bea93a38b71b64b598109b3a3b1a0048, type: 3}
+    Value: 0.025
+    Type: 2

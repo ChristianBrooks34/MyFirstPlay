@@ -20,6 +20,7 @@ public class PlayerEventManager : UnitEventManager
     public event Action<Collider2D> OnTriggerStay;
 
     public event Action<IPickable> OnPickableEnter;
+    public event Action<DropProfile> OnPickupSoundTriggered;
 
     public event Action OnMove;
 
@@ -50,11 +51,15 @@ public class PlayerEventManager : UnitEventManager
         }
     }
 
+    public void TriggerPickupSound(DropProfile profile)
+    {
+        OnPickupSoundTriggered?.Invoke(profile);
+    }
+
     public void TriggerTriggerExit2D(Collider2D collider) => OnTriggerExit?.Invoke(collider);
 
     public void TriggerTriggerStay2D(Collider2D collider) => OnTriggerStay?.Invoke(collider);
 
     public void TriggerPlayerInitialize(Player player) => OnPlayerInitialize?.Invoke(player);
-
 }
 

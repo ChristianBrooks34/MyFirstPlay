@@ -90,6 +90,10 @@ public class ProjectInstaller : ScriptableObjectInstaller
             .NonLazy();
 
         Container
+            .Bind<DropAudio>()
+            .AsSingle();
+
+        Container
             .BindInterfacesAndSelfTo<AudioVolumeFader>()
             .AsSingle();
 
@@ -97,12 +101,14 @@ public class ProjectInstaller : ScriptableObjectInstaller
             .BindInstance(_sceneMusicConfig)
             .AsSingle();
 
-        Container.Bind<AudioSource>()
+        Container
+            .Bind<AudioSource>()
             .FromNewComponentOnNewGameObject()
             .WithGameObjectName("MusicAudioSource")
             .AsSingle();
 
-        Container.BindInterfacesAndSelfTo<SceneSoundPlayer>()
+        Container
+            .BindInterfacesAndSelfTo<SceneSoundPlayer>()
             .AsSingle()
             .NonLazy();
 

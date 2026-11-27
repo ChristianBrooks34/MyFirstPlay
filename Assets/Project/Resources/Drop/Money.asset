@@ -15,5 +15,8 @@ MonoBehaviour:
   _dropData:
     Name: 
     Information: 
+    PickubSound:
+      Clip: {fileID: 8300000, guid: 155354391167c664a9bf7198a9bfafc6, type: 3}
+      Value: 0.2
   DropPrefab: {fileID: 6186125688993172119, guid: 4253ac9c0a3efd04d8ec11e876b6636d,
     type: 3}

@@ -96,7 +96,6 @@
     <Compile Include="Assets\Project\Scripts\interfaces\IKnockbackable.cs" />
     <Compile Include="Assets\Project\Scripts\Event\BuildingEventManager.cs" />
     <Compile Include="Assets\Project\Scripts\Unit\Units\Turret\Rotation.cs" />
-    <Compile Include="Assets\Project\Scripts\interfaces\ISelectable.cs" />
     <Compile Include="Assets\Project\Scripts\interfaces\ISpawner.cs" />
     <Compile Include="Assets\Project\Scripts\Drop\LootDrop\LootDroper.cs" />
     <Compile Include="Assets\Project\Scripts\LevelsMenu\LevelsMenu.cs" />
@@ -185,6 +184,7 @@
     <Compile Include="Assets\Project\Scripts\UI\AttackSlot\SpawnerAttackSlot.cs" />
     <Compile Include="Assets\Project\Scripts\Effects\BloodSplashDeadEffect.cs" />
     <Compile Include="Assets\Project\Scripts\System\Game\GameLauncher.cs" />
+    <Compile Include="Assets\Project\Scripts\interfaces\IPickupSoundProvider.cs" />
     <Compile Include="Assets\Project\Scripts\Unit\Units\Player\PlayerController.cs" />
     <Compile Include="Assets\Project\Scripts\Unit\Units\Player\PlayerEffectManager.cs" />
     <Compile Include="Assets\Project\Scripts\Objects Pool\EnemyPool.cs" />
@@ -253,7 +253,6 @@
     <Compile Include="Assets\Project\Scripts\Projectile\RedirectingProjectileMovement.cs" />
     <Compile Include="Assets\Project\Scripts\Building\Buildings\TurretBuildingProfile.cs" />
     <Compile Include="Assets\Project\Scripts\Attacks\RangedAttack\RedirectingProjectileAttack.cs" />
-    <Compile Include="Assets\Project\Scripts\interfaces\ISelected.cs" />
     <Compile Include="Assets\Project\Scripts\UI\Wallet\Wallet.cs" />
     <Compile Include="Assets\Project\Scripts\Unit\Units\Enemy\Boss\BossController.cs" />
     <Compile Include="Assets\Project\Scripts\System\TargetLocator.cs" />
@@ -283,6 +282,7 @@
     <Compile Include="Assets\Project\Zenject\UnitInstaller.cs" />
     <Compile Include="Assets\Project\Scripts\Attacks\Turret\BuildingTurretAttack.cs" />
     <Compile Include="Assets\Project\Scripts\Event\SpawnUnitEventManager.cs" />
+    <Compile Include="Assets\Project\Scripts\interfaces\IPickable.cs" />
     <Compile Include="Assets\Project\FlipController.cs" />
     <Compile Include="Assets\Project\Scripts\Sound\DropAudio.cs" />
     <Compile Include="Assets\Project\Scripts\Unit\Units\Enemy\Enemys\DroneStriker.cs" />
@@ -327,6 +327,7 @@
     <Compile Include="Assets\Project\Scripts\Sound\SceneSoundType.cs" />
     <Compile Include="Assets\Project\Scripts\Level\LevelType.cs" />
     <Compile Include="Assets\Project\Scripts\Attacks\AttackData.cs" />
+    <Compile Include="Assets\Project\Scripts\interfaces\IPicked.cs" />
     <Compile Include="Assets\Project\Scripts\Unit\BaseProfile.cs" />
     <Compile Include="Assets\Project\Scripts\Attacks\Enemy\RedirectingProjectileEnemyAttack.cs" />
     <Compile Include="Assets\Project\Scripts\Classed\ПроцедурнаяГенерация.cs" />

@@ -3,7 +3,7 @@ using Cysharp.Threading.Tasks;
 using UnityEngine;
 using Zenject;
 
-public class GoldMoney : Drop, IPickable
+public class GoldMoney : Drop
 {
     private Wallet _wallet;
     private VisualEffectManager _visualEffectManager;
@@ -25,14 +25,16 @@ public class GoldMoney : Drop, IPickable
         StartAnimation();
     }
 
-    public bool CanBePicked()
+    public override bool CanBePicked()
     {
         return !IsCollected;
     }
 
-    public void OnPicked()
+    public override void OnPicked()
     {
         if (!CanBePicked()) return;
+
+        base.OnPicked();
 
         _wallet.Add(DropProfile.BaseData.Count);
         Delete();
